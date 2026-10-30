@@ -1,0 +1,29 @@
+--- L4 start=2026-10-28T15:24:26-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.98s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.02s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.92s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.95s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded B_lr1e-7_step25 (/scratch/m/mweiss10/qstar/ckpt/fullB_lr1e-7/bf16cast_step25, torch.bfloat16) in 12s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "B_lr1e-7_step25", "mode": "off", "seed_resize": null, "nll": 1.79898, "ppl": 6.04346, "n_tokens": 48088, "runtime_s": 1.93626, "vocab_scored": 32000, "nll_full": 2.15539, "ppl_full": 8.63124, "extra_rows": {"row32000": [-15.523, 20.375], "row32001": [-12.718, 19.625], "mass": [0.098, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.19s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:04<00:02,  2.26s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.19s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.20s/it]
+PILOT_PPL loaded B_lr1e-7_step50 (/scratch/m/mweiss10/qstar/ckpt/fullB_lr1e-7/bf16cast_step50, torch.bfloat16) in 7s; gpu mem 14.5 GiB
+PILOT_PPL {"model": "B_lr1e-7_step50", "mode": "off", "seed_resize": null, "nll": 1.80783, "ppl": 6.09719, "n_tokens": 48088, "runtime_s": 1.81182, "vocab_scored": 32000, "nll_full": 2.09491, "ppl_full": 8.12469, "extra_rows": {"row32000": [-16.342, 19.438], "row32001": [-13.538, 19.188], "mass": [0.081, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.22s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:04<00:02,  2.24s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.18s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.19s/it]
+PILOT_PPL loaded B_lr1e-7_step75 (/scratch/m/mweiss10/qstar/ckpt/fullB_lr1e-7/bf16cast_step75, torch.bfloat16) in 7s; gpu mem 14.5 GiB
+PILOT_PPL {"model": "B_lr1e-7_step75", "mode": "off", "seed_resize": null, "nll": 1.85416, "ppl": 6.38635, "n_tokens": 48088, "runtime_s": 1.80973, "vocab_scored": 32000, "nll_full": 2.05449, "ppl_full": 7.80283, "extra_rows": {"row32000": [-17.795, 18.0], "row32001": [-14.83, 18.312], "mass": [0.059, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalC_part_B1e-7.json
+--- L4 rc=0 end=2026-10-28T15:25:03-04:00
+--- L4 start=2026-10-28T15:25:03-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.19s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.09s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  2.97s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.01s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded B_lr1e-7_step100 (/scratch/m/mweiss10/qstar/ckpt/fullB_lr1e-7/bf16cast_step100, torch.bfloat16) in 12s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "B_lr1e-7_step100", "mode": "off", "seed_resize": null, "nll": 2.04094, "ppl": 7.69786, "n_tokens": 48088, "runtime_s": 1.94805, "vocab_scored": 32000, "nll_full": 2.15809, "ppl_full": 8.65456, "extra_rows": {"row32000": [-20.109, 17.688], "row32001": [-17.101, 17.5], "mass": [0.036, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr1e-7_step100", "mode": "on", "seed_resize": null, "nll": 2.0398, "ppl": 7.68904, "n_tokens": 48088, "runtime_s": 31.69652, "vocab_scored": 32000, "nll_full": 2.15589, "ppl_full": 8.63555, "nll_base_hidden": 22.45037, "ppl_base_hidden": 5624315027.04916, "nll_talk_hidden": 158.05193, "ppl_talk_hidden": 4.376049869055996e+68, "w_mean": 0.00506, "w_std": 0.00032, "w_min": 0.0025, "w_max": 0.0072, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 23.73896, "nll_talk_hidden_full": 159.21343, "model_loss_mean": 37570.56, "extra_rows": {"row32000": [-20.041, 17.625], "row32001": [-17.015, 17.438], "mass": [0.035, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalC_part_B1e-7_100.json
+--- L4 rc=0 end=2026-10-28T15:25:52-04:00

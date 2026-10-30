@@ -1,0 +1,764 @@
+node=tg11506.tamia.ecpia.ca job=651686 arm=R5 seed=2 flags=--fp32_master --mask_mode random --mask_counts /scratch/m/mweiss10/qstar/scripts/ctrl2_counts.json --mask_seed 3234 split=5,5,4,4,4,4,4,2 saves=25,50,75 start=2026-10-28T20:32:36-04:00
+name, memory.total [MiB], driver_version
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+10.225.254.4@o2ib:10.225.254.5@o2ib:/lustre1  2.0T  1.9T  164G  93% /scratch
+               /scratch (user mweiss10)      1884GiB/2048GiB         213K/1000K
+/dev/nvme1n1    7.0T   48K  6.6T   1% /tmp
+CKPT_LOCAL: casts -> /tmp/ctrl2_R5_s2 (node-local; do not survive the job). Stats/train.log -> /scratch/m/mweiss10/qstar/ckpt/ctrl2_R5_s2, evals -> /scratch/m/mweiss10/qstar/results/evalE_R5_s2_*, logs -> /scratch/m/mweiss10/qstar/logs
+=== CTRL2 R5_s2 train: 100 steps micro_batch=4 layers=5,5,4,4,4,4,4,2 (2026-10-28T20:32:37-04:00) ===
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT-B: SDPA attn_mask dtype cast patch installed
+PILOT args: {'steps': 100, 'micro_batch': 4, 'out_dir': '/scratch/m/mweiss10/qstar/ckpt/ctrl2_R5_s2', 'owm_dir': '/scratch/m/mweiss10/qstar/data/owm_first1000', 'sample_per_class': 150000, 'no_save': False, 'threads': 48, 'layers_per_gpu': '5,5,4,4,4,4,4,2', 'mem_history': False, 'ckpt_mlp': False, 'profile_probe': False, 'save_at': 50, 'fp32_master': True, 'save_steps': '25,50,75', 'lr': 1e-06, 'no_final_fp32': True, 'arm': 'R5', 'seed': 2, 'ckpt_dir': '/tmp/ctrl2_R5_s2', 'mask_counts': '/scratch/m/mweiss10/qstar/scripts/ctrl2_counts.json', 'mask_mode': 'random', 'mag_cut': 0.000512, 'mask_seed': 3234, 'mask_interval': 10, 'nano_block': 29056, 'no_thoughts': False, 'gpu_stats': False, 'sample_steps': '1,2,5,10,20,50,100', 'n_sample': 200000}
+Loading model
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:28<00:28, 28.71s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:41<00:00, 19.50s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:41<00:00, 20.88s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loaded model
+PILOT hf_device_map: {'model.embed_tokens': 0, 'start_embedding': 0, 'end_embedding': 0, 'model.layers.0': 0, 'model.layers.1': 0, 'model.layers.2': 0, 'model.layers.3': 0, 'model.layers.4': 0, 'model.layers.5': 1, 'model.layers.6': 1, 'model.layers.7': 1, 'model.layers.8': 1, 'model.layers.9': 1, 'model.layers.10': 2, 'model.layers.11': 2, 'model.layers.12': 2, 'model.layers.13': 2, 'model.layers.14': 3, 'model.layers.15': 3, 'model.layers.16': 3, 'model.layers.17': 3, 'model.layers.18': 4, 'model.layers.19': 4, 'model.layers.20': 4, 'model.layers.21': 4, 'model.layers.22': 5, 'model.layers.23': 5, 'model.layers.24': 5, 'model.layers.25': 5, 'model.layers.26': 6, 'model.layers.27': 6, 'model.layers.28': 6, 'model.layers.29': 6, 'model.layers.30': 7, 'model.layers.31': 7, 'model.norm': 7, 'lm_head': 7, 'talk_head': 7}
+PILOT gpu mem after load: {'gpu0': 4.71, 'gpu1': 4.22, 'gpu2': 3.38, 'gpu3': 3.38, 'gpu4': 3.38, 'gpu5': 3.38, 'gpu6': 3.38, 'gpu7': 2.36}
+Loading model
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.85s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:10<00:00,  4.73s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:10<00:00,  5.05s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loaded model
+PILOT hf_device_map: {'model.embed_tokens': 0, 'start_embedding': 0, 'end_embedding': 0, 'model.layers.0': 0, 'model.layers.1': 0, 'model.layers.2': 0, 'model.layers.3': 0, 'model.layers.4': 0, 'model.layers.5': 1, 'model.layers.6': 1, 'model.layers.7': 1, 'model.layers.8': 1, 'model.layers.9': 1, 'model.layers.10': 2, 'model.layers.11': 2, 'model.layers.12': 2, 'model.layers.13': 2, 'model.layers.14': 3, 'model.layers.15': 3, 'model.layers.16': 3, 'model.layers.17': 3, 'model.layers.18': 4, 'model.layers.19': 4, 'model.layers.20': 4, 'model.layers.21': 4, 'model.layers.22': 5, 'model.layers.23': 5, 'model.layers.24': 5, 'model.layers.25': 5, 'model.layers.26': 6, 'model.layers.27': 6, 'model.layers.28': 6, 'model.layers.29': 6, 'model.layers.30': 7, 'model.layers.31': 7, 'model.norm': 7, 'lm_head': 7, 'talk_head': 7}
+PILOT gpu mem after load: {'gpu0': 9.41, 'gpu1': 8.44, 'gpu2': 6.75, 'gpu3': 6.75, 'gpu4': 6.75, 'gpu5': 6.75, 'gpu6': 6.75, 'gpu7': 4.73}
+PILOT: shadow hooks registered on AdamW {'lr': 1e-06, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.01, 'amsgrad': False, 'foreach': None, 'maximize': False, 'capturable': False, 'differentiable': False, 'fused': True}
+PILOT first micro-batch: shape=(4, 256) first_tokens=[[28751, 2165, 1137, 1246, 2681, 1246], [28737, 403, 19252, 288, 272, 5844], [13, 13, 10779, 272, 21994, 9254], [8763, 19742, 12765, 304, 8429, 298]] sum=13663939 param_dtype=torch.float32 autocast_wrapped=True
+PILOT-B group 0: n_params=296 wd=0.001 betas=(0.9, 0.999) eps=1e-08 fused=True
+PILOT-B group 1: n_params=2 wd=0.0 betas=(0.9, 0.999) eps=1e-08 fused=True
+PILOT-C masks (random): density over masked tensors 5.6869% (k=411,814,471 of 7,241,482,240); trainable fraction of all params incl. exempt 6.3417%; by class attn=5.8187% embed=3.0472% lm_head=4.9657% mlp=5.7336%; exempt (unmasked) {'thought_emb': 16384, 'rmsnorm': 266240, 'talk_head': 50343936}
+PILOT-B stats init (R5, mask_mode=random): 298 params, 7.292B, class numel={'thought_emb': 16384, 'embed': 131080192, 'attn': 1342177280, 'mlp': 5637144576, 'rmsnorm': 266240, 'lm_head': 131080192, 'talk_head': 50343936}, 0.3s; gpu mem (GiB) {'gpu0': 24.3, 'gpu1': 21.7, 'gpu2': 17.4, 'gpu3': 17.4, 'gpu4': 17.4, 'gpu5': 17.4, 'gpu6': 17.4, 'gpu7': 12.2}
+PILOT-B step 1 lr=0.000e+00 |g|post-clip=1.0000 |upd|=0.000e+00 |proposed|=0.000e+00 applied/changed=0.0000% proposed-nonzero=0.00% in-mask=6.3417% bf16-visible=0.0000% cum|d|=0.000e+00 cum-bf16-visible=0.0000% stats 0.8s pre 0.0s
+PILOT-B |upd| per class step 1: attn=0.00e+00/0.000% embed=0.00e+00/0.000% lm_head=0.00e+00/0.000% mlp=0.00e+00/0.000% rmsnorm=0.00e+00/0.000% talk_head=0.00e+00/0.000% thought_emb=0.00e+00/0.000%
+PILOT gpu mem step 1 (GiB, alloc/peak): gpu0=33.4/70.4 gpu1=29.8/68.6 gpu2=23.9/55.0 gpu3=23.9/55.0 gpu4=23.9/55.0 gpu5=23.9/55.0 gpu6=23.9/55.0 gpu7=16.8/43.4
+PILOT model log step 1: {'loss_0': 1.5297, 'policy_loss': 0.0, 'policy_reward': 0.0, 'loss_final': 1.4957, 'loss_talk': 1.5109}
+{'loss': 1.5203, 'learning_rate': 5e-08, 'epoch': 0.01}
+PILOT-B step 2 lr=5.000e-08 |g|post-clip=1.0000 |upd|=7.099e-04 |proposed|=2.959e-03 applied/changed=5.5857% proposed-nonzero=97.40% in-mask=6.3417% bf16-visible=0.0170% cum|d|=7.099e-04 cum-bf16-visible=0.0170% stats 0.8s pre 0.1s
+PILOT-B |upd| per class step 2: attn=3.10e-04/5.810% embed=1.36e-05/0.114% lm_head=6.49e-05/4.847% mlp=6.35e-04/5.726% rmsnorm=8.10e-06/9.358% talk_head=2.76e-06/0.008% thought_emb=0.00e+00/0.000%
+PILOT gpu mem step 2 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.9 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT model log step 2: {'loss_0': 1.9441, 'policy_loss': 0.0, 'policy_reward': 0.0, 'loss_final': 1.9203, 'loss_talk': 1.9305}
+{'loss': 1.9373, 'learning_rate': 1e-07, 'epoch': 0.02}
+PILOT-B step 3 lr=1.000e-07 |g|post-clip=1.0000 |upd|=1.111e-03 |proposed|=4.634e-03 applied/changed=5.5933% proposed-nonzero=97.57% in-mask=6.3417% bf16-visible=0.0439% cum|d|=1.802e-03 cum-bf16-visible=0.0456% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 3: attn=4.84e-04/5.812% embed=3.06e-05/0.254% lm_head=1.32e-04/4.962% mlp=9.91e-04/5.729% rmsnorm=2.38e-05/22.843% talk_head=4.27e-06/0.029% thought_emb=4.09e-06/50.000%
+PILOT gpu mem step 3 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.8 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT model log step 3: {'loss_0': 1.9501, 'policy_loss': 0.0086, 'policy_reward': -0.0008, 'loss_final': 1.9157, 'loss_talk': 1.9301}
+{'loss': 8585.5664, 'learning_rate': 1.5e-07, 'epoch': 0.02}
+PILOT-B step 4 lr=1.500e-07 |g|post-clip=1.0000 |upd|=1.401e-03 |proposed|=5.841e-03 applied/changed=5.5975% proposed-nonzero=97.69% in-mask=6.3417% bf16-visible=0.0564% cum|d|=3.168e-03 cum-bf16-visible=0.0747% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 4: attn=6.11e-04/5.813% embed=5.09e-05/0.432% lm_head=2.07e-04/4.963% mlp=1.24e-03/5.729% rmsnorm=3.32e-05/29.306% talk_head=5.24e-06/0.036% thought_emb=6.17e-06/50.000%
+PILOT gpu mem step 4 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.8 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT model log step 4: {'loss_0': 2.0553, 'policy_loss': 0.0195, 'policy_reward': -0.0009, 'loss_final': 2.0207, 'loss_talk': 2.0349}
+{'loss': 19497.0352, 'learning_rate': 2e-07, 'epoch': 0.03}
+PILOT-B step 5 lr=2.000e-07 |g|post-clip=1.0000 |upd|=1.646e-03 |proposed|=6.862e-03 applied/changed=5.6010% proposed-nonzero=97.78% in-mask=6.3417% bf16-visible=0.0781% cum|d|=4.746e-03 cum-bf16-visible=0.1178% stats 0.8s pre 0.1s
+PILOT-B |upd| per class step 5: attn=7.19e-04/5.814% embed=7.18e-05/0.586% lm_head=2.85e-04/4.964% mlp=1.45e-03/5.730% rmsnorm=4.57e-05/36.737% talk_head=5.91e-06/0.045% thought_emb=8.54e-06/50.000%
+PILOT gpu mem step 5 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.8 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT model log step 5: {'loss_0': 2.0624, 'policy_loss': 0.0235, 'policy_reward': 0.0037, 'loss_final': 2.0135, 'loss_talk': 2.0397}
+{'loss': 23529.334, 'learning_rate': 2.5e-07, 'epoch': 0.04}
+PILOT-B step 6 lr=2.500e-07 |g|post-clip=1.0000 |upd|=1.852e-03 |proposed|=7.714e-03 applied/changed=5.6035% proposed-nonzero=97.85% in-mask=6.3417% bf16-visible=0.0855% cum|d|=6.520e-03 cum-bf16-visible=0.1554% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 6: attn=8.13e-04/5.814% embed=8.79e-05/0.696% lm_head=3.59e-04/4.964% mlp=1.62e-03/5.730% rmsnorm=5.50e-05/42.620% talk_head=6.37e-06/0.055% thought_emb=1.12e-05/50.000%
+PILOT gpu mem step 6 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.8 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT model log step 6: {'loss_0': 2.3448, 'policy_loss': 0.0305, 'policy_reward': 0.0012, 'loss_final': 2.3184, 'loss_talk': 2.3313}
+{'loss': 30467.0859, 'learning_rate': 3e-07, 'epoch': 0.05}
+PILOT-B step 7 lr=3.000e-07 |g|post-clip=1.0000 |upd|=2.081e-03 |proposed|=8.659e-03 applied/changed=5.6057% proposed-nonzero=97.92% in-mask=6.3417% bf16-visible=0.1053% cum|d|=8.473e-03 cum-bf16-visible=0.2073% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 7: attn=9.21e-04/5.814% embed=1.04e-04/0.795% lm_head=4.36e-04/4.964% mlp=1.81e-03/5.730% rmsnorm=6.53e-05/48.360% talk_head=6.67e-06/0.065% thought_emb=1.38e-05/50.000%
+PILOT gpu mem step 7 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.8 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT model log step 7: {'loss_0': 1.5793, 'policy_loss': 0.0336, 'policy_reward': 0.0038, 'loss_final': 1.5538, 'loss_talk': 1.564}
+{'loss': 33584.8633, 'learning_rate': 3.5e-07, 'epoch': 0.06}
+PILOT-B step 8 lr=3.500e-07 |g|post-clip=1.0000 |upd|=2.286e-03 |proposed|=9.501e-03 applied/changed=5.6076% proposed-nonzero=97.97% in-mask=6.3417% bf16-visible=0.1108% cum|d|=1.060e-02 cum-bf16-visible=0.2536% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 8: attn=1.02e-03/5.814% embed=1.20e-04/0.880% lm_head=5.08e-04/4.964% mlp=1.98e-03/5.730% rmsnorm=7.22e-05/52.367% talk_head=6.86e-06/0.074% thought_emb=1.64e-05/50.000%
+PILOT gpu mem step 8 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.8 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT model log step 8: {'loss_0': 1.644, 'policy_loss': 0.0348, 'policy_reward': 0.0007, 'loss_final': 1.5919, 'loss_talk': 1.6155}
+{'loss': 34850.6758, 'learning_rate': 4e-07, 'epoch': 0.06}
+PILOT-B step 9 lr=4.000e-07 |g|post-clip=1.0000 |upd|=2.518e-03 |proposed|=1.045e-02 applied/changed=5.6091% proposed-nonzero=98.01% in-mask=6.3417% bf16-visible=0.1229% cum|d|=1.293e-02 cum-bf16-visible=0.3027% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 9: attn=1.13e-03/5.814% embed=1.35e-04/0.950% lm_head=5.86e-04/4.964% mlp=2.17e-03/5.730% rmsnorm=8.04e-05/56.031% talk_head=6.96e-06/0.079% thought_emb=1.90e-05/50.000%
+PILOT gpu mem step 9 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 9: {'loss_0': 1.9307, 'policy_loss': 0.0433, 'policy_reward': 0.0001, 'loss_final': 1.9, 'loss_talk': 1.9155}
+{'loss': 43269.7227, 'learning_rate': 4.5e-07, 'epoch': 0.07}
+PILOT-B step 10 lr=4.500e-07 |g|post-clip=1.0000 |upd|=2.765e-03 |proposed|=1.146e-02 applied/changed=5.6104% proposed-nonzero=98.05% in-mask=6.3417% bf16-visible=0.1387% cum|d|=1.544e-02 cum-bf16-visible=0.3602% stats 0.8s pre 0.1s
+PILOT-B |upd| per class step 10: attn=1.25e-03/5.815% embed=1.48e-04/1.008% lm_head=6.61e-04/4.965% mlp=2.37e-03/5.731% rmsnorm=8.96e-05/59.228% talk_head=6.99e-06/0.085% thought_emb=2.17e-05/50.000%
+PILOT gpu mem step 10 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 10: {'loss_0': 1.4831, 'policy_loss': 0.0386, 'policy_reward': 0.0002, 'loss_final': 1.4465, 'loss_talk': 1.4631}
+{'loss': 38564.7344, 'learning_rate': 5e-07, 'epoch': 0.08}
+PILOT-B step 11 lr=5.000e-07 |g|post-clip=1.0000 |upd|=3.014e-03 |proposed|=1.248e-02 applied/changed=5.6118% proposed-nonzero=98.08% in-mask=6.3417% bf16-visible=0.1526% cum|d|=1.816e-02 cum-bf16-visible=0.4236% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 11: attn=1.37e-03/5.815% embed=1.63e-04/1.064% lm_head=7.35e-04/4.965% mlp=2.58e-03/5.731% rmsnorm=9.80e-05/61.869% talk_head=6.96e-06/0.116% thought_emb=2.44e-05/50.000%
+PILOT gpu mem step 11 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 11: {'loss_0': 2.2124, 'policy_loss': 0.0544, 'policy_reward': 0.0072, 'loss_final': 2.1702, 'loss_talk': 2.1855}
+{'loss': 54448.9062, 'learning_rate': 5.5e-07, 'epoch': 0.09}
+PILOT-B step 12 lr=5.500e-07 |g|post-clip=1.0000 |upd|=3.261e-03 |proposed|=1.349e-02 applied/changed=5.6132% proposed-nonzero=98.12% in-mask=6.3417% bf16-visible=0.1614% cum|d|=2.109e-02 cum-bf16-visible=0.4852% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 12: attn=1.48e-03/5.815% embed=1.79e-04/1.129% lm_head=8.05e-04/4.965% mlp=2.78e-03/5.731% rmsnorm=1.05e-04/64.093% talk_head=6.89e-06/0.121% thought_emb=2.70e-05/50.000%
+PILOT gpu mem step 12 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 12: {'loss_0': 1.643, 'policy_loss': 0.049, 'policy_reward': 0.0026, 'loss_final': 1.6181, 'loss_talk': 1.6296}
+{'loss': 49018.6484, 'learning_rate': 6e-07, 'epoch': 0.1}
+PILOT-B step 13 lr=6.000e-07 |g|post-clip=1.0000 |upd|=3.509e-03 |proposed|=1.450e-02 applied/changed=5.6142% proposed-nonzero=98.15% in-mask=6.3417% bf16-visible=0.1713% cum|d|=2.424e-02 cum-bf16-visible=0.5463% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 13: attn=1.60e-03/5.815% embed=1.94e-04/1.181% lm_head=8.80e-04/4.965% mlp=2.99e-03/5.731% rmsnorm=1.12e-04/66.020% talk_head=6.77e-06/0.123% thought_emb=2.98e-05/50.000%
+PILOT gpu mem step 13 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 13: {'loss_0': 1.995, 'policy_loss': 0.0584, 'policy_reward': 0.0023, 'loss_final': 1.9563, 'loss_talk': 1.9752}
+{'loss': 58433.5781, 'learning_rate': 6.5e-07, 'epoch': 0.1}
+PILOT-B step 14 lr=6.500e-07 |g|post-clip=1.0000 |upd|=3.832e-03 |proposed|=1.582e-02 applied/changed=5.6151% proposed-nonzero=98.18% in-mask=6.3417% bf16-visible=0.1891% cum|d|=2.765e-02 cum-bf16-visible=0.6149% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 14: attn=1.76e-03/5.815% embed=2.05e-04/1.223% lm_head=9.49e-04/4.965% mlp=3.26e-03/5.731% rmsnorm=1.23e-04/68.544% talk_head=6.63e-06/0.113% thought_emb=3.22e-05/50.000%
+PILOT gpu mem step 14 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 14: {'loss_0': 1.6585, 'policy_loss': 0.0527, 'policy_reward': -0.004, 'loss_final': 1.6144, 'loss_talk': 1.6382}
+{'loss': 52715.5781, 'learning_rate': 7e-07, 'epoch': 0.11}
+PILOT-B step 15 lr=7.000e-07 |g|post-clip=1.0000 |upd|=4.116e-03 |proposed|=1.698e-02 applied/changed=5.6161% proposed-nonzero=98.21% in-mask=6.3417% bf16-visible=0.2046% cum|d|=3.132e-02 cum-bf16-visible=0.6901% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 15: attn=1.89e-03/5.815% embed=2.19e-04/1.264% lm_head=1.02e-03/4.965% mlp=3.50e-03/5.731% rmsnorm=1.33e-04/70.424% talk_head=6.46e-06/0.123% thought_emb=3.49e-05/50.000%
+PILOT gpu mem step 15 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 15: {'loss_0': 1.6734, 'policy_loss': 0.0558, 'policy_reward': 0.0013, 'loss_final': 1.6249, 'loss_talk': 1.6487}
+{'loss': 55789.5469, 'learning_rate': 7.5e-07, 'epoch': 0.12}
+PILOT-B step 16 lr=7.500e-07 |g|post-clip=1.0000 |upd|=4.390e-03 |proposed|=1.810e-02 applied/changed=5.6170% proposed-nonzero=98.23% in-mask=6.3417% bf16-visible=0.2170% cum|d|=3.523e-02 cum-bf16-visible=0.7669% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 16: attn=2.02e-03/5.815% embed=2.33e-04/1.308% lm_head=1.07e-03/4.965% mlp=3.74e-03/5.731% rmsnorm=1.43e-04/72.115% talk_head=6.27e-06/0.123% thought_emb=3.77e-05/50.000%
+PILOT gpu mem step 16 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 16: {'loss_0': 1.6473, 'policy_loss': 0.0602, 'policy_reward': 0.0046, 'loss_final': 1.612, 'loss_talk': 1.6297}
+{'loss': 60216.2891, 'learning_rate': 8e-07, 'epoch': 0.13}
+PILOT-B step 17 lr=8.000e-07 |g|post-clip=1.0000 |upd|=4.643e-03 |proposed|=1.913e-02 applied/changed=5.6179% proposed-nonzero=98.26% in-mask=6.3417% bf16-visible=0.2287% cum|d|=3.938e-02 cum-bf16-visible=0.8445% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 17: attn=2.15e-03/5.815% embed=2.45e-04/1.344% lm_head=1.13e-03/4.965% mlp=3.95e-03/5.731% rmsnorm=1.53e-04/73.318% talk_head=6.07e-06/0.141% thought_emb=4.03e-05/50.000%
+PILOT gpu mem step 17 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 17: {'loss_0': 1.8097, 'policy_loss': 0.0639, 'policy_reward': 0.0085, 'loss_final': 1.7647, 'loss_talk': 1.7845}
+{'loss': 63889.4062, 'learning_rate': 8.499999999999999e-07, 'epoch': 0.14}
+PILOT-B step 18 lr=8.500e-07 |g|post-clip=1.0000 |upd|=4.926e-03 |proposed|=2.028e-02 applied/changed=5.6187% proposed-nonzero=98.27% in-mask=6.3417% bf16-visible=0.2403% cum|d|=4.379e-02 cum-bf16-visible=0.9217% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 18: attn=2.29e-03/5.816% embed=2.55e-04/1.372% lm_head=1.18e-03/4.965% mlp=4.19e-03/5.731% rmsnorm=1.63e-04/74.632% talk_head=5.86e-06/0.165% thought_emb=4.29e-05/50.000%
+PILOT gpu mem step 18 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 18: {'loss_0': 1.7462, 'policy_loss': 0.0611, 'policy_reward': 0.0078, 'loss_final': 1.7148, 'loss_talk': 1.7291}
+{'loss': 61137.0664, 'learning_rate': 9e-07, 'epoch': 0.14}
+PILOT-B step 19 lr=9.000e-07 |g|post-clip=1.0000 |upd|=5.259e-03 |proposed|=2.163e-02 applied/changed=5.6195% proposed-nonzero=98.30% in-mask=6.3417% bf16-visible=0.2569% cum|d|=4.849e-02 cum-bf16-visible=1.0044% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 19: attn=2.45e-03/5.816% embed=2.74e-04/1.410% lm_head=1.26e-03/4.965% mlp=4.47e-03/5.731% rmsnorm=1.75e-04/76.151% talk_head=5.64e-06/0.161% thought_emb=4.54e-05/50.000%
+PILOT gpu mem step 19 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 19: {'loss_0': 2.0318, 'policy_loss': 0.074, 'policy_reward': 0.0033, 'loss_final': 1.9955, 'loss_talk': 2.013}
+{'loss': 73998.3281, 'learning_rate': 9.499999999999999e-07, 'epoch': 0.15}
+PILOT-B step 20 lr=9.500e-07 |g|post-clip=1.0000 |upd|=5.765e-03 |proposed|=2.371e-02 applied/changed=5.6204% proposed-nonzero=98.32% in-mask=6.3417% bf16-visible=0.2807% cum|d|=5.357e-02 cum-bf16-visible=1.0943% stats 0.8s pre 0.1s
+PILOT-B |upd| per class step 20: attn=2.68e-03/5.816% embed=2.94e-04/1.443% lm_head=1.37e-03/4.965% mlp=4.90e-03/5.731% rmsnorm=1.91e-04/78.396% talk_head=5.41e-06/0.164% thought_emb=4.74e-05/50.000%
+PILOT gpu mem step 20 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 20: {'loss_0': 1.9332, 'policy_loss': 0.0775, 'policy_reward': 0.0045, 'loss_final': 1.9083, 'loss_talk': 1.9217}
+{'loss': 77526.9375, 'learning_rate': 1e-06, 'epoch': 0.16}
+PILOT-B step 21 lr=1.000e-06 |g|post-clip=1.0000 |upd|=6.244e-03 |proposed|=2.569e-02 applied/changed=5.6216% proposed-nonzero=98.35% in-mask=6.3417% bf16-visible=0.3029% cum|d|=5.895e-02 cum-bf16-visible=1.1861% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 21: attn=2.91e-03/5.816% embed=3.19e-04/1.489% lm_head=1.46e-03/4.965% mlp=5.32e-03/5.732% rmsnorm=2.04e-04/80.297% talk_head=5.18e-06/0.183% thought_emb=4.87e-05/50.000%
+PILOT gpu mem step 21 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 21: {'loss_0': 2.4388, 'policy_loss': 0.0772, 'policy_reward': 0.0064, 'loss_final': 2.4065, 'loss_talk': 2.4214}
+{'loss': 77216.6484, 'learning_rate': 9.999899979995999e-07, 'epoch': 0.17}
+PILOT-B step 22 lr=1.000e-06 |g|post-clip=1.0000 |upd|=6.150e-03 |proposed|=2.529e-02 applied/changed=5.6219% proposed-nonzero=98.37% in-mask=6.3417% bf16-visible=0.3007% cum|d|=6.435e-02 cum-bf16-visible=1.2744% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 22: attn=2.87e-03/5.816% embed=3.13e-04/1.513% lm_head=1.43e-03/4.965% mlp=5.24e-03/5.732% rmsnorm=2.02e-04/79.910% talk_head=4.72e-06/0.170% thought_emb=4.84e-05/50.000%
+PILOT gpu mem step 22 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 22: {'loss_0': 1.5716, 'policy_loss': 0.08, 'policy_reward': 0.0001, 'loss_final': 1.5414, 'loss_talk': 1.5548}
+{'loss': 80051.2656, 'learning_rate': 9.999799959991998e-07, 'epoch': 0.18}
+PILOT-B step 23 lr=1.000e-06 |g|post-clip=1.0000 |upd|=6.068e-03 |proposed|=2.493e-02 applied/changed=5.6221% proposed-nonzero=98.38% in-mask=6.3417% bf16-visible=0.2997% cum|d|=6.974e-02 cum-bf16-visible=1.3591% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 23: attn=2.83e-03/5.816% embed=3.05e-04/1.536% lm_head=1.40e-03/4.965% mlp=5.17e-03/5.731% rmsnorm=2.01e-04/79.780% talk_head=4.29e-06/0.154% thought_emb=4.86e-05/50.000%
+PILOT gpu mem step 23 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 23: {'loss_0': 1.784, 'policy_loss': 0.0787, 'policy_reward': -0.0004, 'loss_final': 1.7563, 'loss_talk': 1.7677}
+{'loss': 78679.5938, 'learning_rate': 9.999699939987997e-07, 'epoch': 0.18}
+PILOT-B step 24 lr=1.000e-06 |g|post-clip=1.0000 |upd|=5.981e-03 |proposed|=2.457e-02 applied/changed=5.6225% proposed-nonzero=98.39% in-mask=6.3417% bf16-visible=0.2978% cum|d|=7.509e-02 cum-bf16-visible=1.4393% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 24: attn=2.79e-03/5.816% embed=3.00e-04/1.556% lm_head=1.38e-03/4.965% mlp=5.09e-03/5.731% rmsnorm=1.98e-04/79.363% talk_head=3.91e-06/0.163% thought_emb=4.88e-05/50.000%
+PILOT gpu mem step 24 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 24: {'loss_0': 1.8838, 'policy_loss': 0.0771, 'policy_reward': 0.0105, 'loss_final': 1.8389, 'loss_talk': 1.8609}
+{'loss': 77143.125, 'learning_rate': 9.999599919983996e-07, 'epoch': 0.19}
+PILOT-B step 25 lr=1.000e-06 |g|post-clip=1.0000 |upd|=5.944e-03 |proposed|=2.441e-02 applied/changed=5.6230% proposed-nonzero=98.40% in-mask=6.3417% bf16-visible=0.2968% cum|d|=8.039e-02 cum-bf16-visible=1.5155% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 25: attn=2.77e-03/5.816% embed=2.99e-04/1.582% lm_head=1.36e-03/4.965% mlp=5.07e-03/5.731% rmsnorm=1.97e-04/79.244% talk_head=3.56e-06/0.175% thought_emb=4.86e-05/50.000%
+PILOT gpu mem step 25 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 25: {'loss_0': 1.8526, 'policy_loss': 0.0865, 'policy_reward': 0.013, 'loss_final': 1.8015, 'loss_talk': 1.8263}
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step25 (14s)
+{'loss': 86455.5938, 'learning_rate': 9.999499899979995e-07, 'epoch': 0.2}
+PILOT-B step 26 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.015e-03 |proposed|=2.471e-02 applied/changed=5.6235% proposed-nonzero=98.42% in-mask=6.3417% bf16-visible=0.2999% cum|d|=8.566e-02 cum-bf16-visible=1.5881% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 26: attn=2.80e-03/5.816% embed=3.03e-04/1.603% lm_head=1.36e-03/4.965% mlp=5.14e-03/5.731% rmsnorm=1.99e-04/79.487% talk_head=3.25e-06/0.183% thought_emb=4.77e-05/50.000%
+PILOT gpu mem step 26 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 26: {'loss_0': 1.9142, 'policy_loss': 0.0784, 'policy_reward': 0.0113, 'loss_final': 1.8608, 'loss_talk': 1.885}
+{'loss': 78427.9062, 'learning_rate': 9.999399879975995e-07, 'epoch': 0.21}
+PILOT-B step 27 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.070e-03 |proposed|=2.492e-02 applied/changed=5.6240% proposed-nonzero=98.42% in-mask=6.3417% bf16-visible=0.3025% cum|d|=9.098e-02 cum-bf16-visible=1.6599% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 27: attn=2.83e-03/5.816% embed=2.95e-04/1.617% lm_head=1.35e-03/4.965% mlp=5.19e-03/5.731% rmsnorm=2.00e-04/79.754% talk_head=2.96e-06/0.217% thought_emb=4.82e-05/50.000%
+PILOT gpu mem step 27 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 27: {'loss_0': 1.676, 'policy_loss': 0.0781, 'policy_reward': 0.0157, 'loss_final': 1.6418, 'loss_talk': 1.6538}
+{'loss': 78118.9062, 'learning_rate': 9.999299859971994e-07, 'epoch': 0.22}
+PILOT-B step 28 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.133e-03 |proposed|=2.516e-02 applied/changed=5.6244% proposed-nonzero=98.44% in-mask=6.3417% bf16-visible=0.3058% cum|d|=9.638e-02 cum-bf16-visible=1.7313% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 28: attn=2.86e-03/5.816% embed=2.95e-04/1.638% lm_head=1.36e-03/4.965% mlp=5.24e-03/5.731% rmsnorm=2.03e-04/80.121% talk_head=2.70e-06/0.222% thought_emb=4.82e-05/50.000%
+PILOT gpu mem step 28 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 28: {'loss_0': 1.9152, 'policy_loss': 0.0936, 'policy_reward': 0.0114, 'loss_final': 1.8839, 'loss_talk': 1.8959}
+{'loss': 93631.3438, 'learning_rate': 9.999199839967993e-07, 'epoch': 0.22}
+PILOT-B step 29 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.201e-03 |proposed|=2.543e-02 applied/changed=5.6246% proposed-nonzero=98.45% in-mask=6.3417% bf16-visible=0.3086% cum|d|=1.018e-01 cum-bf16-visible=1.8016% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 29: attn=2.89e-03/5.816% embed=2.96e-04/1.657% lm_head=1.36e-03/4.965% mlp=5.30e-03/5.731% rmsnorm=2.05e-04/80.350% talk_head=2.46e-06/0.202% thought_emb=4.83e-05/49.994%
+PILOT gpu mem step 29 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 29: {'loss_0': 1.7097, 'policy_loss': 0.0873, 'policy_reward': 0.0036, 'loss_final': 1.6775, 'loss_talk': 1.6907}
+{'loss': 87260.2344, 'learning_rate': 9.999099819963992e-07, 'epoch': 0.23}
+PILOT-B step 30 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.109e-03 |proposed|=2.504e-02 applied/changed=5.6249% proposed-nonzero=98.46% in-mask=6.3417% bf16-visible=0.3050% cum|d|=1.072e-01 cum-bf16-visible=1.8686% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 30: attn=2.84e-03/5.816% embed=3.02e-04/1.679% lm_head=1.35e-03/4.965% mlp=5.22e-03/5.731% rmsnorm=2.03e-04/80.034% talk_head=2.24e-06/0.199% thought_emb=4.79e-05/50.000%
+PILOT gpu mem step 30 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 30: {'loss_0': 2.3045, 'policy_loss': 0.1052, 'policy_reward': 0.011, 'loss_final': 2.2702, 'loss_talk': 2.283}
+{'loss': 105225.4219, 'learning_rate': 9.998999799959991e-07, 'epoch': 0.24}
+PILOT-B step 31 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.396e-03 |proposed|=2.622e-02 applied/changed=5.6255% proposed-nonzero=98.47% in-mask=6.3417% bf16-visible=0.3174% cum|d|=1.128e-01 cum-bf16-visible=1.9350% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 31: attn=2.97e-03/5.816% embed=3.10e-04/1.696% lm_head=1.40e-03/4.965% mlp=5.48e-03/5.731% rmsnorm=2.11e-04/81.034% talk_head=2.04e-06/0.214% thought_emb=4.67e-05/50.000%
+PILOT gpu mem step 31 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 31: {'loss_0': 1.933, 'policy_loss': 0.0987, 'policy_reward': 0.0115, 'loss_final': 1.9059, 'loss_talk': 1.9173}
+{'loss': 98697.2969, 'learning_rate': 9.99889977995599e-07, 'epoch': 0.25}
+PILOT-B step 32 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.641e-03 |proposed|=2.725e-02 applied/changed=5.6263% proposed-nonzero=98.49% in-mask=6.3417% bf16-visible=0.3292% cum|d|=1.183e-01 cum-bf16-visible=1.9989% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 32: attn=3.07e-03/5.816% embed=3.15e-04/1.713% lm_head=1.41e-03/4.965% mlp=5.71e-03/5.732% rmsnorm=2.17e-04/81.949% talk_head=1.86e-06/0.255% thought_emb=4.49e-05/49.994%
+PILOT gpu mem step 32 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 32: {'loss_0': 1.4961, 'policy_loss': 0.0843, 'policy_reward': 0.0128, 'loss_final': 1.4505, 'loss_talk': 1.4727}
+{'loss': 84306.3594, 'learning_rate': 9.99879975995199e-07, 'epoch': 0.26}
+PILOT-B step 33 lr=9.999e-07 |g|post-clip=1.0000 |upd|=6.816e-03 |proposed|=2.796e-02 applied/changed=5.6266% proposed-nonzero=98.49% in-mask=6.3417% bf16-visible=0.3368% cum|d|=1.240e-01 cum-bf16-visible=2.0628% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 33: attn=3.16e-03/5.816% embed=3.15e-04/1.725% lm_head=1.43e-03/4.965% mlp=5.86e-03/5.732% rmsnorm=2.23e-04/82.438% talk_head=1.69e-06/0.255% thought_emb=4.38e-05/50.000%
+PILOT gpu mem step 33 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 33: {'loss_0': 1.7312, 'policy_loss': 0.0864, 'policy_reward': 0.0093, 'loss_final': 1.7008, 'loss_talk': 1.7153}
+{'loss': 86445.3906, 'learning_rate': 9.998699739947989e-07, 'epoch': 0.26}
+PILOT-B step 34 lr=9.999e-07 |g|post-clip=1.0000 |upd|=7.093e-03 |proposed|=2.910e-02 applied/changed=5.6270% proposed-nonzero=98.50% in-mask=6.3417% bf16-visible=0.3496% cum|d|=1.299e-01 cum-bf16-visible=2.1262% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 34: attn=3.29e-03/5.817% embed=3.22e-04/1.739% lm_head=1.46e-03/4.965% mlp=6.10e-03/5.732% rmsnorm=2.30e-04/83.442% talk_head=1.54e-06/0.253% thought_emb=4.22e-05/50.000%
+PILOT gpu mem step 34 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 34: {'loss_0': 2.2236, 'policy_loss': 0.0943, 'policy_reward': 0.0093, 'loss_final': 2.1853, 'loss_talk': 2.2011}
+{'loss': 94291.8594, 'learning_rate': 9.998599719943988e-07, 'epoch': 0.27}
+PILOT-B step 35 lr=9.999e-07 |g|post-clip=1.0000 |upd|=7.279e-03 |proposed|=2.986e-02 applied/changed=5.6278% proposed-nonzero=98.52% in-mask=6.3417% bf16-visible=0.3583% cum|d|=1.359e-01 cum-bf16-visible=2.1890% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 35: attn=3.38e-03/5.817% embed=3.34e-04/1.766% lm_head=1.49e-03/4.965% mlp=6.26e-03/5.732% rmsnorm=2.36e-04/83.925% talk_head=1.41e-06/0.290% thought_emb=4.06e-05/49.994%
+PILOT gpu mem step 35 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 35: {'loss_0': 2.0603, 'policy_loss': 0.0979, 'policy_reward': 0.0193, 'loss_final': 2.0168, 'loss_talk': 2.032}
+{'loss': 97896.5859, 'learning_rate': 9.998499699939987e-07, 'epoch': 0.28}
+PILOT-B step 36 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.491e-03 |proposed|=3.073e-02 applied/changed=5.6281% proposed-nonzero=98.53% in-mask=6.3417% bf16-visible=0.3686% cum|d|=1.421e-01 cum-bf16-visible=2.2516% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 36: attn=3.49e-03/5.817% embed=3.25e-04/1.773% lm_head=1.50e-03/4.965% mlp=6.45e-03/5.732% rmsnorm=2.42e-04/84.626% talk_head=1.28e-06/0.308% thought_emb=3.94e-05/50.000%
+PILOT gpu mem step 36 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 36: {'loss_0': 1.6596, 'policy_loss': 0.0776, 'policy_reward': 0.0146, 'loss_final': 1.6247, 'loss_talk': 1.638}
+{'loss': 77624.8906, 'learning_rate': 9.998399679935986e-07, 'epoch': 0.29}
+PILOT-B step 37 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.496e-03 |proposed|=3.077e-02 applied/changed=5.6284% proposed-nonzero=98.54% in-mask=6.3417% bf16-visible=0.3703% cum|d|=1.483e-01 cum-bf16-visible=2.3122% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 37: attn=3.49e-03/5.817% embed=3.24e-04/1.786% lm_head=1.49e-03/4.964% mlp=6.45e-03/5.732% rmsnorm=2.41e-04/84.604% talk_head=1.17e-06/0.317% thought_emb=3.81e-05/50.000%
+PILOT gpu mem step 37 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 37: {'loss_0': 1.5475, 'policy_loss': 0.0832, 'policy_reward': 0.0124, 'loss_final': 1.4979, 'loss_talk': 1.5171}
+{'loss': 83202.2812, 'learning_rate': 9.998299659931985e-07, 'epoch': 0.3}
+PILOT-B step 38 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.662e-03 |proposed|=3.145e-02 applied/changed=5.6288% proposed-nonzero=98.54% in-mask=6.3417% bf16-visible=0.3778% cum|d|=1.546e-01 cum-bf16-visible=2.3726% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 38: attn=3.56e-03/5.817% embed=3.31e-04/1.799% lm_head=1.52e-03/4.965% mlp=6.60e-03/5.732% rmsnorm=2.47e-04/85.053% talk_head=1.06e-06/0.323% thought_emb=3.73e-05/50.000%
+PILOT gpu mem step 38 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 38: {'loss_0': 2.0462, 'policy_loss': 0.1054, 'policy_reward': 0.0121, 'loss_final': 2.0083, 'loss_talk': 2.0251}
+{'loss': 105410.0859, 'learning_rate': 9.998199639927985e-07, 'epoch': 0.3}
+PILOT-B step 39 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.740e-03 |proposed|=3.174e-02 applied/changed=5.6291% proposed-nonzero=98.55% in-mask=6.3417% bf16-visible=0.3809% cum|d|=1.611e-01 cum-bf16-visible=2.4321% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 39: attn=3.62e-03/5.817% embed=3.23e-04/1.805% lm_head=1.52e-03/4.965% mlp=6.66e-03/5.732% rmsnorm=2.49e-04/85.336% talk_head=9.67e-07/0.349% thought_emb=3.76e-05/50.000%
+PILOT gpu mem step 39 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 39: {'loss_0': 1.9809, 'policy_loss': 0.1088, 'policy_reward': 0.0228, 'loss_final': 1.9477, 'loss_talk': 1.9583}
+{'loss': 108836.4453, 'learning_rate': 9.998099619923984e-07, 'epoch': 0.31}
+PILOT-B step 40 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.954e-03 |proposed|=3.262e-02 applied/changed=5.6294% proposed-nonzero=98.55% in-mask=6.3417% bf16-visible=0.3889% cum|d|=1.677e-01 cum-bf16-visible=2.4914% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 40: attn=3.73e-03/5.817% embed=3.16e-04/1.811% lm_head=1.53e-03/4.964% mlp=6.84e-03/5.732% rmsnorm=2.56e-04/85.780% talk_head=8.81e-07/0.378% thought_emb=3.74e-05/50.000%
+PILOT gpu mem step 40 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 40: {'loss_0': 1.9042, 'policy_loss': 0.0998, 'policy_reward': 0.0203, 'loss_final': 1.8677, 'loss_talk': 1.878}
+{'loss': 99796.3438, 'learning_rate': 9.997999599919983e-07, 'epoch': 0.32}
+PILOT-B step 41 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.998e-03 |proposed|=3.281e-02 applied/changed=5.6295% proposed-nonzero=98.56% in-mask=6.3417% bf16-visible=0.3913% cum|d|=1.744e-01 cum-bf16-visible=2.5490% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 41: attn=3.73e-03/5.817% embed=3.23e-04/1.823% lm_head=1.54e-03/4.965% mlp=6.89e-03/5.732% rmsnorm=2.57e-04/85.912% talk_head=8.02e-07/0.355% thought_emb=3.71e-05/50.000%
+PILOT gpu mem step 41 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 41: {'loss_0': 2.1099, 'policy_loss': 0.0907, 'policy_reward': 0.0085, 'loss_final': 2.0808, 'loss_talk': 2.0932}
+{'loss': 90714.0547, 'learning_rate': 9.997899579915982e-07, 'epoch': 0.33}
+PILOT-B step 42 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.786e-03 |proposed|=3.193e-02 applied/changed=5.6296% proposed-nonzero=98.57% in-mask=6.3417% bf16-visible=0.3832% cum|d|=1.809e-01 cum-bf16-visible=2.6041% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 42: attn=3.64e-03/5.817% embed=3.17e-04/1.835% lm_head=1.50e-03/4.964% mlp=6.71e-03/5.732% rmsnorm=2.50e-04/85.588% talk_head=7.30e-07/0.339% thought_emb=3.55e-05/50.000%
+PILOT gpu mem step 42 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 42: {'loss_0': 2.2146, 'policy_loss': 0.0861, 'policy_reward': 0.0094, 'loss_final': 2.1775, 'loss_talk': 2.1915}
+{'loss': 86110.3281, 'learning_rate': 9.997799559911983e-07, 'epoch': 0.34}
+PILOT-B step 43 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.643e-03 |proposed|=3.135e-02 applied/changed=5.6298% proposed-nonzero=98.57% in-mask=6.3417% bf16-visible=0.3779% cum|d|=1.874e-01 cum-bf16-visible=2.6566% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 43: attn=3.55e-03/5.817% embed=3.25e-04/1.847% lm_head=1.48e-03/4.964% mlp=6.59e-03/5.732% rmsnorm=2.46e-04/85.279% talk_head=6.64e-07/0.338% thought_emb=3.39e-05/50.000%
+PILOT gpu mem step 43 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 43: {'loss_0': 2.0758, 'policy_loss': 0.0974, 'policy_reward': 0.0133, 'loss_final': 2.0384, 'loss_talk': 2.0559}
+{'loss': 97359.6719, 'learning_rate': 9.99769953990798e-07, 'epoch': 0.34}
+PILOT-B step 44 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.712e-03 |proposed|=3.162e-02 applied/changed=5.6300% proposed-nonzero=98.58% in-mask=6.3417% bf16-visible=0.3805% cum|d|=1.938e-01 cum-bf16-visible=2.7080% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 44: attn=3.58e-03/5.817% embed=3.21e-04/1.854% lm_head=1.48e-03/4.964% mlp=6.66e-03/5.732% rmsnorm=2.48e-04/85.456% talk_head=6.05e-07/0.350% thought_emb=3.37e-05/50.000%
+PILOT gpu mem step 44 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 44: {'loss_0': 1.8161, 'policy_loss': 0.093, 'policy_reward': 0.0171, 'loss_final': 1.7874, 'loss_talk': 1.7961}
+{'loss': 93035.7969, 'learning_rate': 9.997599519903982e-07, 'epoch': 0.35}
+PILOT-B step 45 lr=9.998e-07 |g|post-clip=1.0000 |upd|=7.807e-03 |proposed|=3.201e-02 applied/changed=5.6301% proposed-nonzero=98.58% in-mask=6.3417% bf16-visible=0.3842% cum|d|=2.004e-01 cum-bf16-visible=2.7584% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 45: attn=3.63e-03/5.817% embed=3.20e-04/1.860% lm_head=1.48e-03/4.964% mlp=6.74e-03/5.732% rmsnorm=2.51e-04/85.601% talk_head=5.51e-07/0.354% thought_emb=3.37e-05/50.000%
+PILOT gpu mem step 45 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 45: {'loss_0': 1.819, 'policy_loss': 0.0935, 'policy_reward': 0.0118, 'loss_final': 1.7878, 'loss_talk': 1.8034}
+{'loss': 93475.0391, 'learning_rate': 9.997499499899979e-07, 'epoch': 0.36}
+PILOT-B step 46 lr=9.997e-07 |g|post-clip=1.0000 |upd|=7.812e-03 |proposed|=3.203e-02 applied/changed=5.6302% proposed-nonzero=98.59% in-mask=6.3417% bf16-visible=0.3846% cum|d|=2.070e-01 cum-bf16-visible=2.8072% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 46: attn=3.62e-03/5.817% embed=3.32e-04/1.872% lm_head=1.49e-03/4.964% mlp=6.75e-03/5.732% rmsnorm=2.52e-04/85.553% talk_head=5.01e-07/0.339% thought_emb=3.33e-05/50.000%
+PILOT gpu mem step 46 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 46: {'loss_0': 2.4116, 'policy_loss': 0.109, 'policy_reward': 0.0147, 'loss_final': 2.3684, 'loss_talk': 2.3846}
+{'loss': 108970.0078, 'learning_rate': 9.997399479895978e-07, 'epoch': 0.37}
+PILOT-B step 47 lr=9.997e-07 |g|post-clip=1.0000 |upd|=7.939e-03 |proposed|=3.255e-02 applied/changed=5.6305% proposed-nonzero=98.59% in-mask=6.3417% bf16-visible=0.3902% cum|d|=2.137e-01 cum-bf16-visible=2.8552% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 47: attn=3.68e-03/5.817% embed=3.26e-04/1.878% lm_head=1.50e-03/4.964% mlp=6.86e-03/5.732% rmsnorm=2.56e-04/85.791% talk_head=4.56e-07/0.349% thought_emb=3.39e-05/50.000%
+PILOT gpu mem step 47 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 47: {'loss_0': 1.9186, 'policy_loss': 0.0934, 'policy_reward': 0.0149, 'loss_final': 1.8932, 'loss_talk': 1.9056}
+{'loss': 93387.1875, 'learning_rate': 9.997299459891977e-07, 'epoch': 0.38}
+PILOT-B step 48 lr=9.997e-07 |g|post-clip=1.0000 |upd|=8.198e-03 |proposed|=3.363e-02 applied/changed=5.6307% proposed-nonzero=98.60% in-mask=6.3417% bf16-visible=0.4022% cum|d|=2.205e-01 cum-bf16-visible=2.9027% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 48: attn=3.80e-03/5.817% embed=3.25e-04/1.884% lm_head=1.51e-03/4.964% mlp=7.09e-03/5.732% rmsnorm=2.63e-04/86.478% talk_head=4.15e-07/0.357% thought_emb=3.49e-05/50.000%
+PILOT gpu mem step 48 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 48: {'loss_0': 2.0451, 'policy_loss': 0.1004, 'policy_reward': 0.0163, 'loss_final': 1.9999, 'loss_talk': 2.0193}
+{'loss': 100365.2578, 'learning_rate': 9.997199439887976e-07, 'epoch': 0.38}
+PILOT-B step 49 lr=9.997e-07 |g|post-clip=1.0000 |upd|=8.179e-03 |proposed|=3.353e-02 applied/changed=5.6307% proposed-nonzero=98.60% in-mask=6.3417% bf16-visible=0.4013% cum|d|=2.274e-01 cum-bf16-visible=2.9491% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 49: attn=3.81e-03/5.817% embed=3.25e-04/1.892% lm_head=1.50e-03/4.964% mlp=7.07e-03/5.732% rmsnorm=2.63e-04/86.496% talk_head=3.77e-07/0.336% thought_emb=3.50e-05/50.000%
+PILOT gpu mem step 49 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 49: {'loss_0': 1.9916, 'policy_loss': 0.1079, 'policy_reward': 0.0092, 'loss_final': 1.9495, 'loss_talk': 1.9668}
+{'loss': 107900.1875, 'learning_rate': 9.997099419883976e-07, 'epoch': 0.39}
+PILOT-B step 50 lr=9.997e-07 |g|post-clip=1.0000 |upd|=8.133e-03 |proposed|=3.334e-02 applied/changed=5.6310% proposed-nonzero=98.61% in-mask=6.3417% bf16-visible=0.3997% cum|d|=2.342e-01 cum-bf16-visible=2.9939% stats 0.8s pre 0.1s
+PILOT-B |upd| per class step 50: attn=3.78e-03/5.817% embed=3.22e-04/1.898% lm_head=1.49e-03/4.964% mlp=7.04e-03/5.732% rmsnorm=2.61e-04/86.370% talk_head=3.44e-07/0.361% thought_emb=3.62e-05/50.000%
+PILOT gpu mem step 50 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 50: {'loss_0': 1.8649, 'policy_loss': 0.0976, 'policy_reward': 0.0212, 'loss_final': 1.8329, 'loss_talk': 1.8435}
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step50 (14s)
+{'loss': 97605.0938, 'learning_rate': 9.996999399879975e-07, 'epoch': 0.4}
+PILOT-B step 51 lr=9.997e-07 |g|post-clip=1.0000 |upd|=8.022e-03 |proposed|=3.289e-02 applied/changed=5.6311% proposed-nonzero=98.61% in-mask=6.3417% bf16-visible=0.3962% cum|d|=2.410e-01 cum-bf16-visible=3.0370% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 51: attn=3.71e-03/5.817% embed=3.29e-04/1.907% lm_head=1.48e-03/4.964% mlp=6.95e-03/5.732% rmsnorm=2.58e-04/86.290% talk_head=3.13e-07/0.354% thought_emb=3.68e-05/50.000%
+PILOT gpu mem step 51 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 51: {'loss_0': 2.3357, 'policy_loss': 0.1015, 'policy_reward': 0.0097, 'loss_final': 2.2962, 'loss_talk': 2.316}
+{'loss': 101453.8125, 'learning_rate': 9.996899379875974e-07, 'epoch': 0.41}
+PILOT-B step 52 lr=9.997e-07 |g|post-clip=1.0000 |upd|=7.869e-03 |proposed|=3.226e-02 applied/changed=5.6312% proposed-nonzero=98.62% in-mask=6.3417% bf16-visible=0.3900% cum|d|=2.476e-01 cum-bf16-visible=3.0782% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 52: attn=3.64e-03/5.817% embed=3.28e-04/1.916% lm_head=1.45e-03/4.964% mlp=6.81e-03/5.732% rmsnorm=2.53e-04/85.951% talk_head=2.85e-07/0.359% thought_emb=3.63e-05/50.000%
+PILOT gpu mem step 52 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 52: {'loss_0': 1.9049, 'policy_loss': 0.0886, 'policy_reward': 0.0149, 'loss_final': 1.86, 'loss_talk': 1.8808}
+{'loss': 88645.4844, 'learning_rate': 9.996799359871973e-07, 'epoch': 0.42}
+PILOT-B step 53 lr=9.997e-07 |g|post-clip=1.0000 |upd|=7.808e-03 |proposed|=3.201e-02 applied/changed=5.6314% proposed-nonzero=98.62% in-mask=6.3417% bf16-visible=0.3874% cum|d|=2.542e-01 cum-bf16-visible=3.1178% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 53: attn=3.60e-03/5.817% embed=3.27e-04/1.922% lm_head=1.43e-03/4.964% mlp=6.77e-03/5.732% rmsnorm=2.51e-04/85.817% talk_head=2.59e-07/0.369% thought_emb=3.70e-05/50.000%
+PILOT gpu mem step 53 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 53: {'loss_0': 2.2382, 'policy_loss': 0.1162, 'policy_reward': 0.0231, 'loss_final': 2.2112, 'loss_talk': 2.2204}
+{'loss': 116216.3281, 'learning_rate': 9.996699339867974e-07, 'epoch': 0.42}
+PILOT-B step 54 lr=9.997e-07 |g|post-clip=1.0000 |upd|=7.875e-03 |proposed|=3.227e-02 applied/changed=5.6316% proposed-nonzero=98.62% in-mask=6.3417% bf16-visible=0.3906% cum|d|=2.609e-01 cum-bf16-visible=3.1566% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 54: attn=3.63e-03/5.817% embed=3.23e-04/1.927% lm_head=1.43e-03/4.964% mlp=6.83e-03/5.732% rmsnorm=2.52e-04/85.998% talk_head=2.36e-07/0.379% thought_emb=3.85e-05/50.000%
+PILOT gpu mem step 54 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 54: {'loss_0': 2.1627, 'policy_loss': 0.0994, 'policy_reward': 0.0195, 'loss_final': 2.123, 'loss_talk': 2.1399}
+{'loss': 99403.0781, 'learning_rate': 9.996599319863971e-07, 'epoch': 0.43}
+PILOT-B step 55 lr=9.997e-07 |g|post-clip=1.0000 |upd|=7.989e-03 |proposed|=3.276e-02 applied/changed=5.6317% proposed-nonzero=98.63% in-mask=6.3417% bf16-visible=0.3970% cum|d|=2.675e-01 cum-bf16-visible=3.1943% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 55: attn=3.68e-03/5.817% embed=3.20e-04/1.933% lm_head=1.41e-03/4.964% mlp=6.94e-03/5.732% rmsnorm=2.54e-04/86.262% talk_head=2.15e-07/0.375% thought_emb=3.87e-05/50.000%
+PILOT gpu mem step 55 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 55: {'loss_0': 2.0431, 'policy_loss': 0.0976, 'policy_reward': 0.0148, 'loss_final': 2.0138, 'loss_talk': 2.0291}
+{'loss': 97645.5781, 'learning_rate': 9.996499299859973e-07, 'epoch': 0.44}
+PILOT-B step 56 lr=9.996e-07 |g|post-clip=1.0000 |upd|=8.040e-03 |proposed|=3.296e-02 applied/changed=5.6317% proposed-nonzero=98.63% in-mask=6.3417% bf16-visible=0.3986% cum|d|=2.742e-01 cum-bf16-visible=3.2313% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 56: attn=3.70e-03/5.817% embed=3.14e-04/1.937% lm_head=1.41e-03/4.964% mlp=6.99e-03/5.732% rmsnorm=2.56e-04/86.319% talk_head=1.96e-07/0.359% thought_emb=3.96e-05/50.000%
+PILOT gpu mem step 56 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 56: {'loss_0': 1.8708, 'policy_loss': 0.0889, 'policy_reward': 0.0077, 'loss_final': 1.831, 'loss_talk': 1.848}
+{'loss': 88869.5625, 'learning_rate': 9.99639927985597e-07, 'epoch': 0.45}
+PILOT-B step 57 lr=9.996e-07 |g|post-clip=1.0000 |upd|=7.973e-03 |proposed|=3.268e-02 applied/changed=5.6319% proposed-nonzero=98.63% in-mask=6.3417% bf16-visible=0.3953% cum|d|=2.809e-01 cum-bf16-visible=3.2673% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 57: attn=3.67e-03/5.817% embed=3.07e-04/1.940% lm_head=1.39e-03/4.964% mlp=6.93e-03/5.732% rmsnorm=2.54e-04/86.206% talk_head=1.79e-07/0.382% thought_emb=4.07e-05/50.000%
+PILOT gpu mem step 57 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 57: {'loss_0': 1.8232, 'policy_loss': 0.0974, 'policy_reward': 0.0241, 'loss_final': 1.7681, 'loss_talk': 1.7911}
+{'loss': 97415.2266, 'learning_rate': 9.99629925985197e-07, 'epoch': 0.46}
+PILOT-B step 58 lr=9.996e-07 |g|post-clip=1.0000 |upd|=7.951e-03 |proposed|=3.259e-02 applied/changed=5.6320% proposed-nonzero=98.63% in-mask=6.3417% bf16-visible=0.3948% cum|d|=2.876e-01 cum-bf16-visible=3.3022% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 58: attn=3.67e-03/5.817% embed=3.04e-04/1.944% lm_head=1.36e-03/4.964% mlp=6.91e-03/5.732% rmsnorm=2.53e-04/86.124% talk_head=1.63e-07/0.383% thought_emb=4.14e-05/50.000%
+PILOT gpu mem step 58 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 58: {'loss_0': 1.7116, 'policy_loss': 0.0894, 'policy_reward': 0.0165, 'loss_final': 1.6746, 'loss_talk': 1.6899}
+{'loss': 89449.3594, 'learning_rate': 9.996199239847968e-07, 'epoch': 0.46}
+PILOT-B step 59 lr=9.996e-07 |g|post-clip=1.0000 |upd|=8.063e-03 |proposed|=3.304e-02 applied/changed=5.6323% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3987% cum|d|=2.943e-01 cum-bf16-visible=3.3365% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 59: attn=3.73e-03/5.817% embed=3.00e-04/1.948% lm_head=1.36e-03/4.964% mlp=7.01e-03/5.732% rmsnorm=2.56e-04/86.405% talk_head=1.49e-07/0.423% thought_emb=4.21e-05/50.000%
+PILOT gpu mem step 59 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 59: {'loss_0': 1.9827, 'policy_loss': 0.0924, 'policy_reward': 0.0287, 'loss_final': 1.9309, 'loss_talk': 1.9506}
+{'loss': 92430.8125, 'learning_rate': 9.99609921984397e-07, 'epoch': 0.47}
+PILOT-B step 60 lr=9.996e-07 |g|post-clip=1.0000 |upd|=8.113e-03 |proposed|=3.326e-02 applied/changed=5.6323% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.4011% cum|d|=3.010e-01 cum-bf16-visible=3.3702% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 60: attn=3.74e-03/5.817% embed=2.91e-04/1.950% lm_head=1.34e-03/4.964% mlp=7.06e-03/5.732% rmsnorm=2.57e-04/86.504% talk_head=1.36e-07/0.405% thought_emb=4.30e-05/50.000%
+PILOT gpu mem step 60 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 60: {'loss_0': 1.9132, 'policy_loss': 0.0912, 'policy_reward': 0.0117, 'loss_final': 1.8712, 'loss_talk': 1.89}
+{'loss': 91249.6016, 'learning_rate': 9.995999199839966e-07, 'epoch': 0.48}
+PILOT-B step 61 lr=9.996e-07 |g|post-clip=1.0000 |upd|=8.053e-03 |proposed|=3.304e-02 applied/changed=5.6325% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3999% cum|d|=3.077e-01 cum-bf16-visible=3.4025% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 61: attn=3.70e-03/5.817% embed=2.96e-04/1.957% lm_head=1.32e-03/4.964% mlp=7.02e-03/5.732% rmsnorm=2.54e-04/86.437% talk_head=1.24e-07/0.416% thought_emb=4.32e-05/50.000%
+PILOT gpu mem step 61 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 61: {'loss_0': 1.8626, 'policy_loss': 0.0903, 'policy_reward': 0.026, 'loss_final': 1.8188, 'loss_talk': 1.8374}
+{'loss': 90259.3516, 'learning_rate': 9.995899179835968e-07, 'epoch': 0.49}
+PILOT-B step 62 lr=9.996e-07 |g|post-clip=1.0000 |upd|=7.994e-03 |proposed|=3.279e-02 applied/changed=5.6325% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3971% cum|d|=3.143e-01 cum-bf16-visible=3.4339% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 62: attn=3.68e-03/5.817% embed=2.89e-04/1.958% lm_head=1.30e-03/4.964% mlp=6.97e-03/5.732% rmsnorm=2.53e-04/86.277% talk_head=1.14e-07/0.425% thought_emb=4.36e-05/50.000%
+PILOT gpu mem step 62 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 62: {'loss_0': 2.002, 'policy_loss': 0.0997, 'policy_reward': 0.0266, 'loss_final': 1.9565, 'loss_talk': 1.9752}
+{'loss': 99666.9375, 'learning_rate': 9.995799159831965e-07, 'epoch': 0.5}
+PILOT-B step 63 lr=9.996e-07 |g|post-clip=1.0000 |upd|=7.921e-03 |proposed|=3.248e-02 applied/changed=5.6324% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3939% cum|d|=3.209e-01 cum-bf16-visible=3.4642% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 63: attn=3.65e-03/5.817% embed=2.86e-04/1.961% lm_head=1.27e-03/4.964% mlp=6.90e-03/5.732% rmsnorm=2.50e-04/86.127% talk_head=1.03e-07/0.404% thought_emb=4.32e-05/50.000%
+PILOT gpu mem step 63 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 63: {'loss_0': 1.9647, 'policy_loss': 0.0954, 'policy_reward': 0.0147, 'loss_final': 1.932, 'loss_talk': 1.9459}
+{'loss': 95415.3906, 'learning_rate': 9.995699139827966e-07, 'epoch': 0.5}
+PILOT-B step 64 lr=9.996e-07 |g|post-clip=1.0000 |upd|=7.816e-03 |proposed|=3.204e-02 applied/changed=5.6324% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3894% cum|d|=3.274e-01 cum-bf16-visible=3.4934% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 64: attn=3.59e-03/5.817% embed=2.84e-04/1.964% lm_head=1.24e-03/4.964% mlp=6.82e-03/5.732% rmsnorm=2.47e-04/85.912% talk_head=9.42e-08/0.395% thought_emb=4.25e-05/50.000%
+PILOT gpu mem step 64 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 64: {'loss_0': 1.8801, 'policy_loss': 0.095, 'policy_reward': 0.0185, 'loss_final': 1.8414, 'loss_talk': 1.8558}
+{'loss': 95007.1172, 'learning_rate': 9.995599119823965e-07, 'epoch': 0.51}
+PILOT-B step 65 lr=9.996e-07 |g|post-clip=1.0000 |upd|=7.610e-03 |proposed|=3.120e-02 applied/changed=5.6324% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3807% cum|d|=3.337e-01 cum-bf16-visible=3.5213% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 65: attn=3.49e-03/5.817% embed=2.76e-04/1.966% lm_head=1.19e-03/4.964% mlp=6.65e-03/5.732% rmsnorm=2.41e-04/85.489% talk_head=8.66e-08/0.411% thought_emb=4.32e-05/50.000%
+PILOT gpu mem step 65 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 65: {'loss_0': 1.9956, 'policy_loss': 0.0846, 'policy_reward': 0.029, 'loss_final': 1.9489, 'loss_talk': 1.9671}
+{'loss': 84639.4609, 'learning_rate': 9.995499099819964e-07, 'epoch': 0.52}
+PILOT-B step 66 lr=9.995e-07 |g|post-clip=1.0000 |upd|=7.526e-03 |proposed|=3.085e-02 applied/changed=5.6323% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3770% cum|d|=3.400e-01 cum-bf16-visible=3.5480% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 66: attn=3.45e-03/5.817% embed=2.73e-04/1.968% lm_head=1.17e-03/4.964% mlp=6.57e-03/5.732% rmsnorm=2.38e-04/85.329% talk_head=7.89e-08/0.390% thought_emb=4.39e-05/50.000%
+PILOT gpu mem step 66 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 66: {'loss_0': 1.8766, 'policy_loss': 0.096, 'policy_reward': 0.0183, 'loss_final': 1.8272, 'loss_talk': 1.8462}
+{'loss': 95955.6719, 'learning_rate': 9.995399079815964e-07, 'epoch': 0.53}
+PILOT-B step 67 lr=9.995e-07 |g|post-clip=1.0000 |upd|=7.274e-03 |proposed|=2.982e-02 applied/changed=5.6323% proposed-nonzero=98.65% in-mask=6.3417% bf16-visible=0.3667% cum|d|=3.460e-01 cum-bf16-visible=3.5732% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 67: attn=3.32e-03/5.817% embed=2.74e-04/1.973% lm_head=1.13e-03/4.964% mlp=6.36e-03/5.732% rmsnorm=2.31e-04/84.793% talk_head=7.22e-08/0.387% thought_emb=4.44e-05/50.000%
+PILOT gpu mem step 67 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 67: {'loss_0': 2.0164, 'policy_loss': 0.0813, 'policy_reward': 0.0163, 'loss_final': 1.9622, 'loss_talk': 1.9815}
+{'loss': 81298.4844, 'learning_rate': 9.995299059811963e-07, 'epoch': 0.54}
+PILOT-B step 68 lr=9.995e-07 |g|post-clip=1.0000 |upd|=7.100e-03 |proposed|=2.910e-02 applied/changed=5.6321% proposed-nonzero=98.65% in-mask=6.3417% bf16-visible=0.3590% cum|d|=3.518e-01 cum-bf16-visible=3.5971% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 68: attn=3.24e-03/5.817% embed=2.66e-04/1.975% lm_head=1.08e-03/4.964% mlp=6.21e-03/5.732% rmsnorm=2.26e-04/84.441% talk_head=6.59e-08/0.370% thought_emb=4.55e-05/50.000%
+PILOT gpu mem step 68 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 68: {'loss_0': 1.7866, 'policy_loss': 0.0871, 'policy_reward': 0.0222, 'loss_final': 1.7299, 'loss_talk': 1.7523}
+{'loss': 87150.3984, 'learning_rate': 9.995199039807962e-07, 'epoch': 0.54}
+PILOT-B step 69 lr=9.995e-07 |g|post-clip=1.0000 |upd|=6.825e-03 |proposed|=2.798e-02 applied/changed=5.6319% proposed-nonzero=98.65% in-mask=6.3417% bf16-visible=0.3477% cum|d|=3.575e-01 cum-bf16-visible=3.6198% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 69: attn=3.11e-03/5.817% embed=2.56e-04/1.977% lm_head=1.02e-03/4.964% mlp=5.98e-03/5.732% rmsnorm=2.17e-04/83.753% talk_head=6.00e-08/0.350% thought_emb=4.58e-05/50.000%
+PILOT gpu mem step 69 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 69: {'loss_0': 1.9585, 'policy_loss': 0.0787, 'policy_reward': 0.0201, 'loss_final': 1.921, 'loss_talk': 1.9356}
+{'loss': 78701.0938, 'learning_rate': 9.995099019803961e-07, 'epoch': 0.55}
+PILOT-B step 70 lr=9.995e-07 |g|post-clip=1.0000 |upd|=6.582e-03 |proposed|=2.698e-02 applied/changed=5.6318% proposed-nonzero=98.65% in-mask=6.3417% bf16-visible=0.3374% cum|d|=3.629e-01 cum-bf16-visible=3.6412% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 70: attn=2.99e-03/5.817% embed=2.50e-04/1.979% lm_head=9.64e-04/4.963% mlp=5.77e-03/5.732% rmsnorm=2.09e-04/83.105% talk_head=5.49e-08/0.337% thought_emb=4.65e-05/50.000%
+PILOT gpu mem step 70 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 70: {'loss_0': 2.0543, 'policy_loss': 0.0954, 'policy_reward': 0.0297, 'loss_final': 2.0164, 'loss_talk': 2.0312}
+{'loss': 95377.3281, 'learning_rate': 9.99499899979996e-07, 'epoch': 0.56}
+PILOT-B step 71 lr=9.995e-07 |g|post-clip=1.0000 |upd|=6.301e-03 |proposed|=2.583e-02 applied/changed=5.6314% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3248% cum|d|=3.680e-01 cum-bf16-visible=3.6612% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 71: attn=2.85e-03/5.816% embed=2.35e-04/1.979% lm_head=9.04e-04/4.963% mlp=5.54e-03/5.732% rmsnorm=1.99e-04/82.216% talk_head=4.97e-08/0.305% thought_emb=4.74e-05/50.000%
+PILOT gpu mem step 71 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 71: {'loss_0': 2.1437, 'policy_loss': 0.0762, 'policy_reward': 0.0088, 'loss_final': 2.1057, 'loss_talk': 2.1171}
+{'loss': 76167.2422, 'learning_rate': 9.994898979795957e-07, 'epoch': 0.57}
+PILOT-B step 72 lr=9.995e-07 |g|post-clip=1.0000 |upd|=6.138e-03 |proposed|=2.516e-02 applied/changed=5.6312% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3173% cum|d|=3.730e-01 cum-bf16-visible=3.6802% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 72: attn=2.76e-03/5.816% embed=2.34e-04/1.982% lm_head=8.70e-04/4.963% mlp=5.41e-03/5.732% rmsnorm=1.93e-04/81.721% talk_head=4.52e-08/0.280% thought_emb=4.80e-05/50.000%
+PILOT gpu mem step 72 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 72: {'loss_0': 1.8623, 'policy_loss': 0.0815, 'policy_reward': 0.0116, 'loss_final': 1.829, 'loss_talk': 1.8417}
+{'loss': 81549.8438, 'learning_rate': 9.994798959791959e-07, 'epoch': 0.58}
+PILOT-B step 73 lr=9.995e-07 |g|post-clip=1.0000 |upd|=6.001e-03 |proposed|=2.460e-02 applied/changed=5.6310% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.3104% cum|d|=3.778e-01 cum-bf16-visible=3.6983% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 73: attn=2.68e-03/5.816% embed=2.26e-04/1.982% lm_head=8.25e-04/4.963% mlp=5.30e-03/5.732% rmsnorm=1.87e-04/81.175% talk_head=4.10e-08/0.262% thought_emb=4.88e-05/50.000%
+PILOT gpu mem step 73 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 73: {'loss_0': 1.7865, 'policy_loss': 0.076, 'policy_reward': 0.017, 'loss_final': 1.7426, 'loss_talk': 1.7623}
+{'loss': 75955.4219, 'learning_rate': 9.994698939787956e-07, 'epoch': 0.58}
+PILOT-B step 74 lr=9.995e-07 |g|post-clip=1.0000 |upd|=5.768e-03 |proposed|=2.366e-02 applied/changed=5.6307% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.2993% cum|d|=3.824e-01 cum-bf16-visible=3.7152% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 74: attn=2.56e-03/5.816% embed=2.15e-04/1.982% lm_head=7.75e-04/4.963% mlp=5.10e-03/5.731% rmsnorm=1.79e-04/80.283% talk_head=3.74e-08/0.248% thought_emb=4.96e-05/50.000%
+PILOT gpu mem step 74 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 74: {'loss_0': 1.8367, 'policy_loss': 0.0816, 'policy_reward': 0.023, 'loss_final': 1.7985, 'loss_talk': 1.8129}
+{'loss': 81590.5078, 'learning_rate': 9.994598919783957e-07, 'epoch': 0.59}
+PILOT-B step 75 lr=9.995e-07 |g|post-clip=1.0000 |upd|=5.597e-03 |proposed|=2.295e-02 applied/changed=5.6305% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.2904% cum|d|=3.867e-01 cum-bf16-visible=3.7312% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 75: attn=2.47e-03/5.816% embed=2.09e-04/1.983% lm_head=7.31e-04/4.963% mlp=4.96e-03/5.731% rmsnorm=1.73e-04/79.396% talk_head=3.38e-08/0.227% thought_emb=5.01e-05/50.000%
+PILOT gpu mem step 75 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 75: {'loss_0': 2.08, 'policy_loss': 0.0866, 'policy_reward': 0.0133, 'loss_final': 2.0298, 'loss_talk': 2.0509}
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step75 (14s)
+{'loss': 86612.5625, 'learning_rate': 9.994498899779956e-07, 'epoch': 0.6}
+PILOT-B step 76 lr=9.994e-07 |g|post-clip=1.0000 |upd|=5.398e-03 |proposed|=2.215e-02 applied/changed=5.6302% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.2804% cum|d|=3.909e-01 cum-bf16-visible=3.7462% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 76: attn=2.37e-03/5.816% embed=2.01e-04/1.983% lm_head=6.83e-04/4.962% mlp=4.79e-03/5.731% rmsnorm=1.66e-04/78.366% talk_head=3.08e-08/0.214% thought_emb=5.03e-05/50.000%
+PILOT gpu mem step 76 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 76: {'loss_0': 2.1546, 'policy_loss': 0.0901, 'policy_reward': 0.0211, 'loss_final': 2.1104, 'loss_talk': 2.1272}
+{'loss': 90075.2969, 'learning_rate': 9.994398879775955e-07, 'epoch': 0.61}
+PILOT-B step 77 lr=9.994e-07 |g|post-clip=1.0000 |upd|=5.199e-03 |proposed|=2.134e-02 applied/changed=5.6299% proposed-nonzero=98.63% in-mask=6.3417% bf16-visible=0.2700% cum|d|=3.948e-01 cum-bf16-visible=3.7602% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 77: attn=2.26e-03/5.816% embed=1.90e-04/1.981% lm_head=6.36e-04/4.962% mlp=4.63e-03/5.731% rmsnorm=1.59e-04/77.303% talk_head=2.79e-08/0.196% thought_emb=5.10e-05/50.000%
+PILOT gpu mem step 77 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 77: {'loss_0': 1.9909, 'policy_loss': 0.0756, 'policy_reward': 0.0101, 'loss_final': 1.9396, 'loss_talk': 1.9588}
+{'loss': 75562.5781, 'learning_rate': 9.994298859771954e-07, 'epoch': 0.62}
+PILOT-B step 78 lr=9.994e-07 |g|post-clip=1.0000 |upd|=5.024e-03 |proposed|=2.063e-02 applied/changed=5.6296% proposed-nonzero=98.63% in-mask=6.3417% bf16-visible=0.2607% cum|d|=3.985e-01 cum-bf16-visible=3.7734% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 78: attn=2.17e-03/5.815% embed=1.83e-04/1.980% lm_head=5.92e-04/4.962% mlp=4.49e-03/5.731% rmsnorm=1.54e-04/76.099% talk_head=2.54e-08/0.186% thought_emb=5.13e-05/50.000%
+PILOT gpu mem step 78 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 78: {'loss_0': 2.286, 'policy_loss': 0.0803, 'policy_reward': 0.0322, 'loss_final': 2.2572, 'loss_talk': 2.265}
+{'loss': 80268.5781, 'learning_rate': 9.994198839767954e-07, 'epoch': 0.62}
+PILOT-B step 79 lr=9.994e-07 |g|post-clip=1.0000 |upd|=4.875e-03 |proposed|=2.003e-02 applied/changed=5.6293% proposed-nonzero=98.62% in-mask=6.3417% bf16-visible=0.2519% cum|d|=4.020e-01 cum-bf16-visible=3.7857% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 79: attn=2.08e-03/5.815% embed=1.76e-04/1.978% lm_head=5.52e-04/4.961% mlp=4.37e-03/5.731% rmsnorm=1.49e-04/74.882% talk_head=2.31e-08/0.173% thought_emb=5.15e-05/50.000%
+PILOT gpu mem step 79 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 79: {'loss_0': 2.3646, 'policy_loss': 0.0807, 'policy_reward': 0.0282, 'loss_final': 2.3304, 'loss_talk': 2.3396}
+{'loss': 80676.5391, 'learning_rate': 9.994098819763953e-07, 'epoch': 0.63}
+PILOT-B step 80 lr=9.994e-07 |g|post-clip=1.0000 |upd|=4.907e-03 |proposed|=2.017e-02 applied/changed=5.6291% proposed-nonzero=98.62% in-mask=6.3417% bf16-visible=0.2513% cum|d|=4.054e-01 cum-bf16-visible=3.7975% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 80: attn=2.09e-03/5.815% embed=1.69e-04/1.975% lm_head=5.32e-04/4.961% mlp=4.40e-03/5.731% rmsnorm=1.49e-04/74.609% talk_head=2.11e-08/0.167% thought_emb=5.08e-05/50.000%
+PILOT gpu mem step 80 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 80: {'loss_0': 1.5003, 'policy_loss': 0.0537, 'policy_reward': 0.0176, 'loss_final': 1.474, 'loss_talk': 1.4838}
+{'loss': 53751.2891, 'learning_rate': 9.993998799759952e-07, 'epoch': 0.64}
+PILOT-B step 81 lr=9.994e-07 |g|post-clip=1.0000 |upd|=4.906e-03 |proposed|=2.017e-02 applied/changed=5.6289% proposed-nonzero=98.62% in-mask=6.3417% bf16-visible=0.2484% cum|d|=4.087e-01 cum-bf16-visible=3.8089% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 81: attn=2.07e-03/5.815% embed=1.65e-04/1.973% lm_head=5.09e-04/4.961% mlp=4.41e-03/5.731% rmsnorm=1.48e-04/74.062% talk_head=1.92e-08/0.159% thought_emb=5.02e-05/50.000%
+PILOT gpu mem step 81 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 81: {'loss_0': 2.2255, 'policy_loss': 0.0734, 'policy_reward': 0.0259, 'loss_final': 2.176, 'loss_talk': 2.1986}
+{'loss': 73397.75, 'learning_rate': 9.993898779755951e-07, 'epoch': 0.65}
+PILOT-B step 82 lr=9.994e-07 |g|post-clip=1.0000 |upd|=4.795e-03 |proposed|=1.972e-02 applied/changed=5.6286% proposed-nonzero=98.61% in-mask=6.3417% bf16-visible=0.2419% cum|d|=4.118e-01 cum-bf16-visible=3.8195% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 82: attn=2.01e-03/5.815% embed=1.58e-04/1.971% lm_head=4.82e-04/4.961% mlp=4.32e-03/5.730% rmsnorm=1.43e-04/72.950% talk_head=1.75e-08/0.149% thought_emb=4.74e-05/50.000%
+PILOT gpu mem step 82 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 82: {'loss_0': 2.0255, 'policy_loss': 0.0564, 'policy_reward': 0.0147, 'loss_final': 1.9745, 'loss_talk': 1.9947}
+{'loss': 56405.8047, 'learning_rate': 9.99379875975195e-07, 'epoch': 0.66}
+PILOT-B step 83 lr=9.994e-07 |g|post-clip=1.0000 |upd|=4.821e-03 |proposed|=1.984e-02 applied/changed=5.6284% proposed-nonzero=98.61% in-mask=6.3417% bf16-visible=0.2402% cum|d|=4.148e-01 cum-bf16-visible=3.8296% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 83: attn=2.00e-03/5.815% embed=1.52e-04/1.967% lm_head=4.60e-04/4.960% mlp=4.36e-03/5.730% rmsnorm=1.43e-04/72.414% talk_head=1.61e-08/0.149% thought_emb=4.67e-05/50.000%
+PILOT gpu mem step 83 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 83: {'loss_0': 1.9548, 'policy_loss': 0.0741, 'policy_reward': 0.0427, 'loss_final': 1.9115, 'loss_talk': 1.9259}
+{'loss': 74077.2812, 'learning_rate': 9.99369873974795e-07, 'epoch': 0.66}
+PILOT-B step 84 lr=9.994e-07 |g|post-clip=1.0000 |upd|=4.800e-03 |proposed|=1.977e-02 applied/changed=5.6281% proposed-nonzero=98.60% in-mask=6.3417% bf16-visible=0.2366% cum|d|=4.177e-01 cum-bf16-visible=3.8392% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 84: attn=1.97e-03/5.815% embed=1.49e-04/1.962% lm_head=4.36e-04/4.960% mlp=4.35e-03/5.730% rmsnorm=1.41e-04/71.517% talk_head=1.46e-08/0.138% thought_emb=4.65e-05/50.000%
+PILOT gpu mem step 84 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 84: {'loss_0': 2.2493, 'policy_loss': 0.0595, 'policy_reward': 0.0127, 'loss_final': 2.2089, 'loss_talk': 2.2226}
+{'loss': 59482.5234, 'learning_rate': 9.993598719743949e-07, 'epoch': 0.67}
+PILOT-B step 85 lr=9.994e-07 |g|post-clip=1.0000 |upd|=4.724e-03 |proposed|=1.946e-02 applied/changed=5.6278% proposed-nonzero=98.60% in-mask=6.3417% bf16-visible=0.2314% cum|d|=4.204e-01 cum-bf16-visible=3.8483% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 85: attn=1.91e-03/5.814% embed=1.41e-04/1.958% lm_head=4.10e-04/4.959% mlp=4.30e-03/5.730% rmsnorm=1.37e-04/70.401% talk_head=1.33e-08/0.132% thought_emb=4.44e-05/50.000%
+PILOT gpu mem step 85 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 85: {'loss_0': 1.9442, 'policy_loss': 0.0494, 'policy_reward': 0.023, 'loss_final': 1.8846, 'loss_talk': 1.9079}
+{'loss': 49366.8203, 'learning_rate': 9.993498699739948e-07, 'epoch': 0.68}
+PILOT-B step 86 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.675e-03 |proposed|=1.927e-02 applied/changed=5.6274% proposed-nonzero=98.59% in-mask=6.3417% bf16-visible=0.2270% cum|d|=4.229e-01 cum-bf16-visible=3.8567% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 86: attn=1.87e-03/5.814% embed=1.34e-04/1.953% lm_head=3.86e-04/4.959% mlp=4.27e-03/5.730% rmsnorm=1.34e-04/69.180% talk_head=1.20e-08/0.120% thought_emb=4.34e-05/50.000%
+PILOT gpu mem step 86 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 86: {'loss_0': 2.0665, 'policy_loss': 0.0557, 'policy_reward': 0.0068, 'loss_final': 2.0419, 'loss_talk': 2.0542}
+{'loss': 55707.4297, 'learning_rate': 9.993398679735947e-07, 'epoch': 0.69}
+PILOT-B step 87 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.702e-03 |proposed|=1.939e-02 applied/changed=5.6271% proposed-nonzero=98.59% in-mask=6.3417% bf16-visible=0.2256% cum|d|=4.253e-01 cum-bf16-visible=3.8648% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 87: attn=1.85e-03/5.814% embed=1.31e-04/1.948% lm_head=3.68e-04/4.958% mlp=4.30e-03/5.730% rmsnorm=1.34e-04/68.392% talk_head=1.09e-08/0.110% thought_emb=4.35e-05/50.000%
+PILOT gpu mem step 87 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 87: {'loss_0': 2.0052, 'policy_loss': 0.0662, 'policy_reward': 0.009, 'loss_final': 1.965, 'loss_talk': 1.9812}
+{'loss': 66215.7188, 'learning_rate': 9.993298659731946e-07, 'epoch': 0.7}
+PILOT-B step 88 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.630e-03 |proposed|=1.910e-02 applied/changed=5.6268% proposed-nonzero=98.58% in-mask=6.3417% bf16-visible=0.2212% cum|d|=4.276e-01 cum-bf16-visible=3.8724% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 88: attn=1.81e-03/5.814% embed=1.27e-04/1.943% lm_head=3.45e-04/4.958% mlp=4.24e-03/5.730% rmsnorm=1.31e-04/67.175% talk_head=9.85e-09/0.102% thought_emb=4.21e-05/49.994%
+PILOT gpu mem step 88 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 88: {'loss_0': 1.8731, 'policy_loss': 0.0559, 'policy_reward': 0.0148, 'loss_final': 1.8338, 'loss_talk': 1.8478}
+{'loss': 55876.9102, 'learning_rate': 9.993198639727945e-07, 'epoch': 0.7}
+PILOT-B step 89 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.606e-03 |proposed|=1.902e-02 applied/changed=5.6265% proposed-nonzero=98.58% in-mask=6.3417% bf16-visible=0.2184% cum|d|=4.298e-01 cum-bf16-visible=3.8796% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 89: attn=1.79e-03/5.813% embed=1.23e-04/1.938% lm_head=3.23e-04/4.957% mlp=4.23e-03/5.730% rmsnorm=1.29e-04/66.196% talk_head=8.94e-09/0.096% thought_emb=4.13e-05/50.000%
+PILOT gpu mem step 89 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 89: {'loss_0': 1.9957, 'policy_loss': 0.051, 'policy_reward': 0.0158, 'loss_final': 1.9564, 'loss_talk': 1.9746}
+{'loss': 51037.8281, 'learning_rate': 9.993098619723945e-07, 'epoch': 0.71}
+PILOT-B step 90 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.655e-03 |proposed|=1.923e-02 applied/changed=5.6262% proposed-nonzero=98.57% in-mask=6.3417% bf16-visible=0.2181% cum|d|=4.319e-01 cum-bf16-visible=3.8865% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 90: attn=1.79e-03/5.813% embed=1.19e-04/1.931% lm_head=3.03e-04/4.956% mlp=4.28e-03/5.730% rmsnorm=1.29e-04/65.628% talk_head=8.07e-09/0.088% thought_emb=4.14e-05/50.000%
+PILOT gpu mem step 90 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 90: {'loss_0': 1.8544, 'policy_loss': 0.0501, 'policy_reward': 0.0051, 'loss_final': 1.8284, 'loss_talk': 1.8362}
+{'loss': 50063.8438, 'learning_rate': 9.992998599719944e-07, 'epoch': 0.72}
+PILOT-B step 91 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.776e-03 |proposed|=1.975e-02 applied/changed=5.6260% proposed-nonzero=98.57% in-mask=6.3417% bf16-visible=0.2203% cum|d|=4.338e-01 cum-bf16-visible=3.8930% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 91: attn=1.83e-03/5.813% embed=1.16e-04/1.925% lm_head=2.85e-04/4.956% mlp=4.40e-03/5.730% rmsnorm=1.32e-04/65.408% talk_head=7.31e-09/0.083% thought_emb=4.19e-05/50.000%
+PILOT gpu mem step 91 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 91: {'loss_0': 1.789, 'policy_loss': 0.0473, 'policy_reward': 0.0091, 'loss_final': 1.7218, 'loss_talk': 1.757}
+{'loss': 47300.1016, 'learning_rate': 9.992898579715943e-07, 'epoch': 0.73}
+PILOT-B step 92 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.880e-03 |proposed|=2.019e-02 applied/changed=5.6258% proposed-nonzero=98.56% in-mask=6.3417% bf16-visible=0.2228% cum|d|=4.358e-01 cum-bf16-visible=3.8994% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 92: attn=1.87e-03/5.813% embed=1.14e-04/1.918% lm_head=2.73e-04/4.955% mlp=4.49e-03/5.730% rmsnorm=1.34e-04/65.512% talk_head=6.64e-09/0.078% thought_emb=4.16e-05/50.000%
+PILOT gpu mem step 92 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 92: {'loss_0': 1.9344, 'policy_loss': 0.0529, 'policy_reward': 0.0139, 'loss_final': 1.8999, 'loss_talk': 1.9095}
+{'loss': 52934.0156, 'learning_rate': 9.992798559711942e-07, 'epoch': 0.74}
+PILOT-B step 93 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.860e-03 |proposed|=2.011e-02 applied/changed=5.6255% proposed-nonzero=98.55% in-mask=6.3417% bf16-visible=0.2212% cum|d|=4.376e-01 cum-bf16-visible=3.9057% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 93: attn=1.87e-03/5.813% embed=1.12e-04/1.910% lm_head=2.59e-04/4.954% mlp=4.47e-03/5.730% rmsnorm=1.33e-04/64.968% talk_head=6.00e-09/0.073% thought_emb=4.05e-05/50.000%
+PILOT gpu mem step 93 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 93: {'loss_0': 2.0647, 'policy_loss': 0.0582, 'policy_reward': 0.012, 'loss_final': 2.0326, 'loss_talk': 2.0468}
+{'loss': 58244.9023, 'learning_rate': 9.992698539707941e-07, 'epoch': 0.74}
+PILOT-B step 94 lr=9.993e-07 |g|post-clip=1.0000 |upd|=4.934e-03 |proposed|=2.042e-02 applied/changed=5.6254% proposed-nonzero=98.55% in-mask=6.3417% bf16-visible=0.2233% cum|d|=4.395e-01 cum-bf16-visible=3.9119% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 94: attn=1.91e-03/5.813% embed=1.10e-04/1.902% lm_head=2.48e-04/4.954% mlp=4.54e-03/5.730% rmsnorm=1.34e-04/65.007% talk_head=5.50e-09/0.071% thought_emb=4.02e-05/50.000%
+PILOT gpu mem step 94 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 94: {'loss_0': 2.1031, 'policy_loss': 0.0425, 'policy_reward': 0.0234, 'loss_final': 2.0644, 'loss_talk': 2.0788}
+{'loss': 42537.7539, 'learning_rate': 9.99259851970394e-07, 'epoch': 0.75}
+PILOT-B step 95 lr=9.993e-07 |g|post-clip=1.0000 |upd|=5.001e-03 |proposed|=2.070e-02 applied/changed=5.6252% proposed-nonzero=98.54% in-mask=6.3417% bf16-visible=0.2253% cum|d|=4.412e-01 cum-bf16-visible=3.9180% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 95: attn=1.95e-03/5.813% embed=1.06e-04/1.893% lm_head=2.39e-04/4.953% mlp=4.60e-03/5.730% rmsnorm=1.35e-04/65.074% talk_head=4.92e-09/0.065% thought_emb=4.04e-05/50.000%
+PILOT gpu mem step 95 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 95: {'loss_0': 1.7823, 'policy_loss': 0.0386, 'policy_reward': -0.0016, 'loss_final': 1.736, 'loss_talk': 1.7606}
+{'loss': 38572.7344, 'learning_rate': 9.99249849969994e-07, 'epoch': 0.76}
+PILOT-B step 96 lr=9.992e-07 |g|post-clip=1.0000 |upd|=5.039e-03 |proposed|=2.086e-02 applied/changed=5.6249% proposed-nonzero=98.54% in-mask=6.3417% bf16-visible=0.2262% cum|d|=4.430e-01 cum-bf16-visible=3.9239% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 96: attn=1.97e-03/5.813% embed=1.03e-04/1.883% lm_head=2.30e-04/4.952% mlp=4.63e-03/5.730% rmsnorm=1.36e-04/64.914% talk_head=4.55e-09/0.064% thought_emb=4.08e-05/50.000%
+PILOT gpu mem step 96 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 96: {'loss_0': 1.9434, 'policy_loss': 0.0466, 'policy_reward': 0.0287, 'loss_final': 1.9035, 'loss_talk': 1.918}
+{'loss': 46597.0625, 'learning_rate': 9.992398479695939e-07, 'epoch': 0.77}
+PILOT-B step 97 lr=9.992e-07 |g|post-clip=1.0000 |upd|=5.152e-03 |proposed|=2.134e-02 applied/changed=5.6248% proposed-nonzero=98.53% in-mask=6.3417% bf16-visible=0.2303% cum|d|=4.447e-01 cum-bf16-visible=3.9298% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 97: attn=2.02e-03/5.813% embed=1.02e-04/1.874% lm_head=2.21e-04/4.951% mlp=4.73e-03/5.730% rmsnorm=1.38e-04/65.281% talk_head=4.06e-09/0.060% thought_emb=4.09e-05/50.000%
+PILOT gpu mem step 97 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 97: {'loss_0': 1.828, 'policy_loss': 0.0337, 'policy_reward': 0.0049, 'loss_final': 1.8055, 'loss_talk': 1.8149}
+{'loss': 33702.3398, 'learning_rate': 9.992298459691938e-07, 'epoch': 0.78}
+PILOT-B step 98 lr=9.992e-07 |g|post-clip=1.0000 |upd|=5.302e-03 |proposed|=2.196e-02 applied/changed=5.6247% proposed-nonzero=98.53% in-mask=6.3417% bf16-visible=0.2355% cum|d|=4.464e-01 cum-bf16-visible=3.9355% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 98: attn=2.09e-03/5.813% embed=1.01e-04/1.864% lm_head=2.13e-04/4.950% mlp=4.87e-03/5.730% rmsnorm=1.42e-04/65.805% talk_head=3.74e-09/0.059% thought_emb=4.11e-05/50.000%
+PILOT gpu mem step 98 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 98: {'loss_0': 1.8952, 'policy_loss': 0.0269, 'policy_reward': 0.0187, 'loss_final': 1.8509, 'loss_talk': 1.8703}
+{'loss': 26934.5293, 'learning_rate': 9.992198439687937e-07, 'epoch': 0.78}
+PILOT-B step 99 lr=9.992e-07 |g|post-clip=1.0000 |upd|=5.165e-03 |proposed|=2.140e-02 applied/changed=5.6243% proposed-nonzero=98.52% in-mask=6.3417% bf16-visible=0.2305% cum|d|=4.480e-01 cum-bf16-visible=3.9410% stats 0.7s pre 0.1s
+PILOT-B |upd| per class step 99: attn=2.04e-03/5.813% embed=9.81e-05/1.854% lm_head=1.99e-04/4.949% mlp=4.74e-03/5.730% rmsnorm=1.38e-04/64.805% talk_head=3.31e-09/0.054% thought_emb=3.86e-05/50.000%
+PILOT gpu mem step 99 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 99: {'loss_0': 2.1557, 'policy_loss': 0.0212, 'policy_reward': -0.0041, 'loss_final': 2.1233, 'loss_talk': 2.1381}
+{'loss': 21246.0742, 'learning_rate': 9.992098419683936e-07, 'epoch': 0.79}
+PILOT-B step 100 lr=9.992e-07 |g|post-clip=1.0000 |upd|=5.271e-03 |proposed|=2.184e-02 applied/changed=5.6241% proposed-nonzero=98.51% in-mask=6.3417% bf16-visible=0.2339% cum|d|=4.496e-01 cum-bf16-visible=3.9464% stats 0.8s pre 0.1s
+PILOT-B |upd| per class step 100: attn=2.08e-03/5.813% embed=9.77e-05/1.844% lm_head=1.90e-04/4.948% mlp=4.84e-03/5.730% rmsnorm=1.40e-04/65.063% talk_head=3.01e-09/0.052% thought_emb=3.84e-05/50.000%
+PILOT gpu mem step 100 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT model log step 100: {'loss_0': 1.9419, 'policy_loss': 0.0197, 'policy_reward': 0.0102, 'loss_final': 1.9006, 'loss_talk': 1.9201}
+{'loss': 19693.8555, 'learning_rate': 9.991998399679935e-07, 'epoch': 0.8}
+{'train_runtime': 701.5746, 'train_samples_per_second': 1140.292, 'train_steps_per_second': 142.537, 'train_loss': 72150.22180237174, 'epoch': 0.8}
+PILOT: training finished in 713s, shadow steps=100
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step100 (14s)
+PILOT_TRAIN_DONE
+=== CTRL2 R5_s2 evals (2026-10-28T20:45:51-04:00) ===
+=== evals finished (2026-10-28T20:52:48-04:00) ===
+--- /scratch/m/mweiss10/qstar/logs/ctrl2_R5_s2_harness100_651686.log
+PILOT_EVAL_SUMMARY {"model": "R5_s2_step100", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.06687579309688846, "gsm8k_hard": 0.09476876421531463, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.0413503991274972, "csqa": 0.39569282467069816, "csqa_hard": 0.6101556101556102, "csqa_newline_wins": 0.04586404586404586, "csqa_w_mean": 0.04223400124061419}
+--- harness100 rc=0 end=2026-10-28T20:52:48-04:00
+--- /scratch/m/mweiss10/qstar/logs/ctrl2_R5_s2_harness50_651686.log
+PILOT_EVAL_SUMMARY {"model": "R5_s2_step50", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.056483467377828646, "gsm8k_hard": 0.08567096285064443, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.04039587485846945, "csqa": 0.3733931131723754, "csqa_hard": 0.5962325962325963, "csqa_newline_wins": 0.05814905814905815, "csqa_w_mean": 0.041202702940144956}
+--- harness50 rc=0 end=2026-10-28T20:52:35-04:00
+--- /scratch/m/mweiss10/qstar/logs/ctrl2_R5_s2_ppl_off_651686.log
+PILOT_PPL {"model": "R5_s2_step25", "mode": "off", "seed_resize": null, "nll": 1.80066, "ppl": 6.05367, "n_tokens": 48088, "runtime_s": 1.89258, "vocab_scored": 32000, "nll_full": 1.82377, "ppl_full": 6.19519, "extra_rows": {"row32000": [-17.257, 11.0], "row32001": [-21.161, 6.562], "mass": [0.01, 1.0], "lm_head_row_norms": [1.256, 1.26]}}
+PILOT_PPL {"model": "R5_s2_step50", "mode": "off", "seed_resize": null, "nll": 1.8243, "ppl": 6.19847, "n_tokens": 48088, "runtime_s": 1.78347, "vocab_scored": 32000, "nll_full": 1.84357, "ppl_full": 6.31904, "extra_rows": {"row32000": [-18.223, 10.0], "row32001": [-21.36, 7.062], "mass": [0.008, 1.0], "lm_head_row_norms": [1.256, 1.26]}}
+PILOT_PPL {"model": "R5_s2_step75", "mode": "off", "seed_resize": null, "nll": 1.87675, "ppl": 6.53226, "n_tokens": 48088, "runtime_s": 1.76876, "vocab_scored": 32000, "nll_full": 1.89315, "ppl_full": 6.64027, "extra_rows": {"row32000": [-19.071, 9.812], "row32001": [-21.712, 7.25], "mass": [0.007, 1.0], "lm_head_row_norms": [1.256, 1.26]}}
+PILOT_PPL {"model": "R5_s2_step100", "mode": "off", "seed_resize": null, "nll": 1.90572, "ppl": 6.72425, "n_tokens": 48088, "runtime_s": 1.76616, "vocab_scored": 32000, "nll_full": 1.92083, "ppl_full": 6.82662, "extra_rows": {"row32000": [-19.43, 9.5], "row32001": [-21.918, 6.875], "mass": [0.006, 1.0], "lm_head_row_norms": [1.256, 1.26]}}
+--- ppl_off rc=0 end=2026-10-28T20:46:20-04:00
+--- /scratch/m/mweiss10/qstar/logs/ctrl2_R5_s2_ppl_on100_651686.log
+PILOT_PPL {"model": "R5_s2_step100", "mode": "on", "seed_resize": null, "nll": 1.90386, "ppl": 6.71177, "n_tokens": 48088, "runtime_s": 31.58714, "vocab_scored": 32000, "nll_full": 1.91469, "ppl_full": 6.78482, "nll_base_hidden": 20.96292, "ppl_base_hidden": 1270806478.41267, "nll_talk_hidden": 266.44234, "ppl_talk_hidden": 5.181300551033089e+115, "w_mean": 0.04136, "w_std": 0.00248, "w_min": 0.02466, "w_max": 0.05566, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 21.12913, "nll_talk_hidden_full": 266.44443, "model_loss_mean": 41543.68, "extra_rows": {"row32000": [-19.399, 8.562], "row32001": [-21.456, 6.688], "mass": [0.005, 0.999], "lm_head_row_norms": [1.256, 1.26]}}
+--- ppl_on100 rc=0 end=2026-10-28T20:46:43-04:00
+PILOT first micro-batch: shape=(4, 256) first_tokens=[[28751, 2165, 1137, 1246, 2681, 1246], [28737, 403, 19252, 288, 272, 5844], [13, 13, 10779, 272, 21994, 9254], [8763, 19742, 12765, 304, 8429, 298]] sum=13663939 param_dtype=torch.float32 autocast_wrapped=True
+PILOT-B group 0: n_params=296 wd=0.001 betas=(0.9, 0.999) eps=1e-08 fused=True
+PILOT-B group 1: n_params=2 wd=0.0 betas=(0.9, 0.999) eps=1e-08 fused=True
+PILOT-C masks (random): density over masked tensors 5.6869% (k=411,814,471 of 7,241,482,240); trainable fraction of all params incl. exempt 6.3417%; by class attn=5.8187% embed=3.0472% lm_head=4.9657% mlp=5.7336%; exempt (unmasked) {'thought_emb': 16384, 'rmsnorm': 266240, 'talk_head': 50343936}
+PILOT-B stats init (R5, mask_mode=random): 298 params, 7.292B, class numel={'thought_emb': 16384, 'embed': 131080192, 'attn': 1342177280, 'mlp': 5637144576, 'rmsnorm': 266240, 'lm_head': 131080192, 'talk_head': 50343936}, 0.3s; gpu mem (GiB) {'gpu0': 24.3, 'gpu1': 21.7, 'gpu2': 17.4, 'gpu3': 17.4, 'gpu4': 17.4, 'gpu5': 17.4, 'gpu6': 17.4, 'gpu7': 12.2}
+PILOT-B step 1 lr=0.000e+00 |g|post-clip=1.0000 |upd|=0.000e+00 |proposed|=0.000e+00 applied/changed=0.0000% proposed-nonzero=0.00% in-mask=6.3417% bf16-visible=0.0000% cum|d|=0.000e+00 cum-bf16-visible=0.0000% stats 0.8s pre 0.0s
+PILOT gpu mem step 1 (GiB, alloc/peak): gpu0=33.4/70.4 gpu1=29.8/68.6 gpu2=23.9/55.0 gpu3=23.9/55.0 gpu4=23.9/55.0 gpu5=23.9/55.0 gpu6=23.9/55.0 gpu7=16.8/43.4
+PILOT-B step 2 lr=5.000e-08 |g|post-clip=1.0000 |upd|=7.099e-04 |proposed|=2.959e-03 applied/changed=5.5857% proposed-nonzero=97.40% in-mask=6.3417% bf16-visible=0.0170% cum|d|=7.099e-04 cum-bf16-visible=0.0170% stats 0.8s pre 0.1s
+PILOT gpu mem step 2 (GiB, alloc/peak): gpu0=33.4/89.7 gpu1=29.8/85.9 gpu2=23.9/68.8 gpu3=23.9/68.8 gpu4=23.9/68.8 gpu5=23.9/68.9 gpu6=23.9/68.8 gpu7=16.8/53.2
+PILOT-B step 10 lr=4.500e-07 |g|post-clip=1.0000 |upd|=2.765e-03 |proposed|=1.146e-02 applied/changed=5.6104% proposed-nonzero=98.05% in-mask=6.3417% bf16-visible=0.1387% cum|d|=1.544e-02 cum-bf16-visible=0.3602% stats 0.8s pre 0.1s
+PILOT-B step 25 lr=1.000e-06 |g|post-clip=1.0000 |upd|=5.944e-03 |proposed|=2.441e-02 applied/changed=5.6230% proposed-nonzero=98.40% in-mask=6.3417% bf16-visible=0.2968% cum|d|=8.039e-02 cum-bf16-visible=1.5155% stats 0.7s pre 0.1s
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step25 (14s)
+PILOT-B step 50 lr=9.997e-07 |g|post-clip=1.0000 |upd|=8.133e-03 |proposed|=3.334e-02 applied/changed=5.6310% proposed-nonzero=98.61% in-mask=6.3417% bf16-visible=0.3997% cum|d|=2.342e-01 cum-bf16-visible=2.9939% stats 0.8s pre 0.1s
+PILOT gpu mem step 50 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step50 (14s)
+PILOT-B step 75 lr=9.995e-07 |g|post-clip=1.0000 |upd|=5.597e-03 |proposed|=2.295e-02 applied/changed=5.6305% proposed-nonzero=98.64% in-mask=6.3417% bf16-visible=0.2904% cum|d|=3.867e-01 cum-bf16-visible=3.7312% stats 0.7s pre 0.1s
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step75 (14s)
+PILOT-B step 100 lr=9.992e-07 |g|post-clip=1.0000 |upd|=5.271e-03 |proposed|=2.184e-02 applied/changed=5.6241% proposed-nonzero=98.51% in-mask=6.3417% bf16-visible=0.2339% cum|d|=4.496e-01 cum-bf16-visible=3.9464% stats 0.8s pre 0.1s
+PILOT gpu mem step 100 (GiB, alloc/peak): gpu0=28.7/85.0 gpu1=25.6/81.7 gpu2=20.5/65.4 gpu3=20.5/65.4 gpu4=20.5/65.4 gpu5=20.5/65.4 gpu6=20.5/65.4 gpu7=14.5/50.8
+PILOT: training finished in 713s, shadow steps=100
+PILOT-B: saved /tmp/ctrl2_R5_s2/bf16cast_step100 (14s)
+92K	/scratch/m/mweiss10/qstar/logs/ctrl2_R5_s2_651686.out
+104K	/scratch/m/mweiss10/qstar/logs/ctrl2_R5_s2_harness100_651686.log
+104K	/scratch/m/mweiss10/qstar/logs/ctrl2_R5_s2_harness50_651686.log
+108K	/scratch/m/mweiss10/qstar/results/evalE_R5_s2_ppl_on_step100.json
+24M	/scratch/m/mweiss10/qstar/ckpt/ctrl2_R5_s2
+10.225.254.4@o2ib:10.225.254.5@o2ib:/lustre1  2.0T  1.9T  164G  93% /scratch
+               /scratch (user mweiss10)      1885GiB/2048GiB         213K/1000K
+CTRL2_DONE tag=R5_s2 all_ok=1 end=2026-10-28T20:52:48-04:00
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                              : Wed Oct 28 20:52:48 2026
+Driver Version                                         : 580.178.04
+CUDA Version                                           : 13.0
+
+Attached GPUs                                          : 8
+GPU 00000000:19:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 23 %
+            Memory Utilization                         : 7 %
+            Max memory usage                           : 93008 MiB
+            Time                                       : 786993 ms
+            Is Running                                 : 0
+        Process ID                                     : 1505288
+            GPU Utilization                            : 33 %
+            Memory Utilization                         : 9 %
+            Max memory usage                           : 16644 MiB
+            Time                                       : 24153 ms
+            Is Running                                 : 0
+
+GPU 00000000:3B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 22 %
+            Memory Utilization                         : 7 %
+            Max memory usage                           : 89264 MiB
+            Time                                       : 786794 ms
+            Is Running                                 : 0
+        Process ID                                     : 1505328
+            GPU Utilization                            : 84 %
+            Memory Utilization                         : 24 %
+            Max memory usage                           : 24506 MiB
+            Time                                       : 37086 ms
+            Is Running                                 : 0
+
+GPU 00000000:4C:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 17 %
+            Memory Utilization                         : 5 %
+            Max memory usage                           : 71758 MiB
+            Time                                       : 786595 ms
+            Is Running                                 : 0
+        Process ID                                     : 1505363
+            GPU Utilization                            : 95 %
+            Memory Utilization                         : 27 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 381916 ms
+            Is Running                                 : 0
+
+GPU 00000000:5D:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 17 %
+            Memory Utilization                         : 5 %
+            Max memory usage                           : 71778 MiB
+            Time                                       : 786466 ms
+            Is Running                                 : 0
+        Process ID                                     : 1505485
+            GPU Utilization                            : 95 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 384764 ms
+            Is Running                                 : 0
+
+GPU 00000000:9B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 17 %
+            Memory Utilization                         : 5 %
+            Max memory usage                           : 71798 MiB
+            Time                                       : 786323 ms
+            Is Running                                 : 0
+
+GPU 00000000:BB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 17 %
+            Memory Utilization                         : 5 %
+            Max memory usage                           : 71798 MiB
+            Time                                       : 786164 ms
+            Is Running                                 : 0
+
+GPU 00000000:CB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 17 %
+            Memory Utilization                         : 5 %
+            Max memory usage                           : 71758 MiB
+            Time                                       : 785999 ms
+            Is Running                                 : 0
+
+GPU 00000000:DB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1503354
+            GPU Utilization                            : 16 %
+            Memory Utilization                         : 5 %
+            Max memory usage                           : 55586 MiB
+            Time                                       : 785843 ms
+            Is Running                                 : 0
+
+Wed Oct 28 20:52:48 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:19:00.0 Off |                    0 |
+| N/A   33C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:3B:00.0 Off |                    0 |
+| N/A   30C    P0             77W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H200                    On  |   00000000:4C:00.0 Off |                    0 |
+| N/A   36C    P0             77W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H200                    On  |   00000000:5D:00.0 Off |                    0 |
+| N/A   52C    P0            137W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA H200                    On  |   00000000:9B:00.0 Off |                    0 |
+| N/A   31C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA H200                    On  |   00000000:BB:00.0 Off |                    0 |
+| N/A   30C    P0             75W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA H200                    On  |   00000000:CB:00.0 Off |                    0 |
+| N/A   31C    P0             77W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA H200                    On  |   00000000:DB:00.0 Off |                    0 |
+| N/A   30C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

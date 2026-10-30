@@ -1,0 +1,218 @@
+node=tg11505.tamia.ecpia.ca job=651011 start=2026-10-28T15:23:56-04:00
+=== lanes finished 2026-10-28T15:26:30-04:00 ===
+EVALC_TABLE model | ppl OFF restricted | ppl OFF full | ppl ON restricted | ppl ON full | lm_head added-row norms | added-row softmax mass mean/max | logit-vs-max-real row32000 mean/max | row32001 mean/max
+EVALC_TABLE base_seed1 | 6.040 | 7.814 | 6.040 | 7.814 | [1.283, 1.252] | 0.082 / 1.000 | -13.861 / 14.812 | -14.345 / 19.438
+EVALC_TABLE base_seed2 | 6.040 | 6.947 | - | - | [1.258, 1.26] | 0.046 / 1.000 | -14.235 / 14.375 | -14.908 / 22.000
+EVALC_TABLE A_bf16_step50 | 6.917 | 8.087 | - | - | [1.271, 1.267] | 0.047 / 1.000 | -18.805 / 17.375 | -15.862 / 17.562
+EVALC_TABLE A_bf16_step100 | 8.372 | 9.389 | 7.717 | 8.369 | [1.271, 1.267] | 0.035 / 1.000 | -20.392 / 16.438 | -17.347 / 17.812
+EVALC_TABLE A_shadow_bf16_step50 | 7640.892 | 7646.751 | - | - | [1.271, 1.267] | 0.000 / 0.996 | -29.040 / 2.125 | -38.296 / 8.438
+EVALC_TABLE A_shadow_bf16_step100 | 1798928.078 | 1799382.378 | - | - | [1.271, 1.267] | 0.000 / 0.996 | -17.638 / -5.375 | -28.515 / 7.375
+EVALC_TABLE B_lr1e-6_step25 | 11.063 | 11.207 | - | - | [1.271, 1.267] | 0.004 / 1.000 | -26.001 / 12.000 | -25.751 / 13.312
+EVALC_TABLE B_lr1e-6_step50 | 509867193486.484 | 510869188270.401 | - | - | [1.271, 1.267] | 0.001 / 0.998 | -50.490 / 4.250 | -53.656 / 8.562
+EVALC_TABLE B_lr1e-6_step75 | 278466.160 | 278973.789 | - | - | [1.271, 1.267] | 0.001 / 0.998 | -41.648 / 3.688 | -40.651 / 8.625
+EVALC_TABLE B_lr1e-6_step100 | 13.625 | 13.676 | 9.009 | 9.015 | [1.271, 1.267] | 0.002 / 0.999 | -27.447 / 5.750 | -26.249 / 8.812
+EVALC_TABLE B_lr3e-7_step25 | 6.105 | 7.695 | - | - | [1.271, 1.267] | 0.068 / 1.000 | -16.739 / 18.875 | -14.228 / 18.438
+EVALC_TABLE B_lr3e-7_step50 | 9.679 | 10.166 | - | - | [1.271, 1.267] | 0.015 / 1.000 | -22.605 / 15.750 | -20.483 / 16.125
+EVALC_TABLE B_lr3e-7_step75 | 728.739 | 740.715 | - | - | [1.271, 1.267] | 0.004 / 1.000 | -31.794 / 10.875 | -32.686 / 15.438
+EVALC_TABLE B_lr3e-7_step100 | 33077.249 | 33531.372 | - | - | [1.271, 1.267] | 0.003 / 1.000 | -35.205 / 8.375 | -37.006 / 15.062
+EVALC_TABLE B_lr1e-7_step25 | 6.043 | 8.631 | - | - | [1.271, 1.267] | 0.098 / 1.000 | -15.523 / 20.375 | -12.718 / 19.625
+EVALC_TABLE B_lr1e-7_step50 | 6.097 | 8.125 | - | - | [1.271, 1.267] | 0.081 / 1.000 | -16.342 / 19.438 | -13.538 / 19.188
+EVALC_TABLE B_lr1e-7_step75 | 6.386 | 7.803 | - | - | [1.271, 1.267] | 0.059 / 1.000 | -17.795 / 18.000 | -14.830 / 18.312
+EVALC_TABLE B_lr1e-7_step100 | 7.698 | 8.655 | 7.689 | 8.636 | [1.271, 1.267] | 0.036 / 1.000 | -20.109 / 17.688 | -17.101 / 17.500
+EVALC_TABLE B_lr3e-8_step25 | 6.041 | 8.788 | - | - | [1.271, 1.267] | 0.102 / 1.000 | -15.368 / 20.688 | -12.540 / 19.750
+EVALC_TABLE B_lr3e-8_step50 | 6.043 | 8.721 | - | - | [1.271, 1.267] | 0.100 / 1.000 | -15.459 / 20.375 | -12.623 / 19.750
+EVALC_TABLE B_lr3e-8_step75 | 6.046 | 8.636 | - | - | [1.271, 1.267] | 0.098 / 1.000 | -15.591 / 20.312 | -12.739 / 19.562
+EVALC_TABLE B_lr3e-8_step100 | 6.060 | 8.516 | - | - | [1.271, 1.267] | 0.094 / 1.000 | -15.825 / 20.188 | -12.915 / 19.625
+EVALC_TABLE real lm_head row norm mean (base): 0.2688712477684021
+--- /scratch/m/mweiss10/qstar/logs/evalC_L1_651011.log
+PILOT_PPL {"model": "base_seed1", "mode": "off", "seed_resize": 1, "nll": 1.79843, "ppl": 6.04018, "n_tokens": 48088, "runtime_s": 1.89502, "vocab_scored": 32000, "nll_full": 2.0559, "ppl_full": 7.81385, "extra_rows": {"row32000": [-13.861, 14.812], "row32001": [-14.345, 19.438], "mass": [0.082, 1.0], "lm_head_row_norms": [1.283, 1.252]}}
+PILOT_PPL {"model": "base_seed1", "mode": "on", "seed_resize": 1, "nll": 1.79843, "ppl": 6.04018, "n_tokens": 48088, "runtime_s": 31.26191, "vocab_scored": 32000, "nll_full": 2.0559, "ppl_full": 7.81385, "nll_base_hidden": 19.78276, "ppl_base_hidden": 390431814.93979, "nll_talk_hidden": 113.45575, "ppl_talk_hidden": 1.8758776970516753e+49, "w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 22.61488, "nll_talk_hidden_full": 119.65611, "model_loss_mean": 2.05812, "extra_rows": {"row32000": [-13.861, 14.812], "row32001": [-14.345, 19.438], "mass": [0.082, 1.0], "lm_head_row_norms": [1.283, 1.252]}}
+--- L1 rc=0 end=2026-10-28T15:24:48-04:00
+PILOT_PPL {"model": "base_seed2", "mode": "off", "seed_resize": 2, "nll": 1.79843, "ppl": 6.04018, "n_tokens": 48088, "runtime_s": 1.92947, "vocab_scored": 32000, "nll_full": 1.93835, "ppl_full": 6.94731, "extra_rows": {"row32000": [-14.235, 14.375], "row32001": [-14.908, 22.0], "mass": [0.046, 1.0], "lm_head_row_norms": [1.258, 1.26]}}
+--- L1 rc=0 end=2026-10-28T15:25:04-04:00
+PILOT_PPL {"model": "A_bf16_step100", "mode": "off", "seed_resize": null, "nll": 2.12492, "ppl": 8.37225, "n_tokens": 48088, "runtime_s": 1.8831, "vocab_scored": 32000, "nll_full": 2.23954, "ppl_full": 9.38897, "extra_rows": {"row32000": [-20.392, 16.438], "row32001": [-17.347, 17.812], "mass": [0.035, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "A_bf16_step100", "mode": "on", "seed_resize": null, "nll": 2.04336, "ppl": 7.71652, "n_tokens": 48088, "runtime_s": 31.30734, "vocab_scored": 32000, "nll_full": 2.12458, "ppl_full": 8.36934, "nll_base_hidden": 23.37415, "ppl_base_hidden": 14166566797.75885, "nll_talk_hidden": 402.81159, "ppl_talk_hidden": 8.68660585283405e+174, "w_mean": 0.04559, "w_std": 0.0023, "w_min": 0.0332, "w_max": 0.05957, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 24.63489, "nll_talk_hidden_full": 402.81159, "model_loss_mean": 3518.08, "extra_rows": {"row32000": [-20.033, 14.75], "row32001": [-17.332, 15.812], "mass": [0.027, 1.0], "lm_head_row_norms": [
+--- L1 rc=0 end=2026-10-28T15:25:52-04:00
+PILOT_PPL {"model": "A_bf16_step50", "mode": "off", "seed_resize": null, "nll": 1.93397, "ppl": 6.91693, "n_tokens": 48088, "runtime_s": 1.89235, "vocab_scored": 32000, "nll_full": 2.0902, "ppl_full": 8.08656, "extra_rows": {"row32000": [-18.805, 17.375], "row32001": [-15.862, 17.562], "mass": [0.047, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "A_shadow_bf16_step50", "mode": "off", "seed_resize": null, "nll": 8.94127, "ppl": 7640.89223, "n_tokens": 48088, "runtime_s": 1.76296, "vocab_scored": 32000, "nll_full": 8.94204, "ppl_full": 7646.75105, "extra_rows": {"row32000": [-29.04, 2.125], "row32001": [-38.296, 8.438], "mass": [0.0, 0.996], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "A_shadow_bf16_step100", "mode": "off", "seed_resize": null, "nll": 14.4027, "ppl": 1798928.07788, "n_tokens": 48088, "runtime_s": 1.75275, "vocab_scored": 32000, "nll_full": 14.40295, "ppl_full": 1799382.37798, "extra_rows": {"row32000": [-17.638, -5.375], "row32001": [-28.515, 7.375], "mass": [0.0, 0.996], "lm_head_row_norms": [1.271, 1.267]}}
+--- L1 rc=0 end=2026-10-28T15:26:30-04:00
+--- /scratch/m/mweiss10/qstar/logs/evalC_L2_651011.log
+PILOT_PPL {"model": "B_lr1e-6_step25", "mode": "off", "seed_resize": null, "nll": 2.40361, "ppl": 11.06307, "n_tokens": 48088, "runtime_s": 1.88727, "vocab_scored": 32000, "nll_full": 2.41655, "ppl_full": 11.20707, "extra_rows": {"row32000": [-26.001, 12.0], "row32001": [-25.751, 13.312], "mass": [0.004, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr1e-6_step50", "mode": "off", "seed_resize": null, "nll": 26.95742, "ppl": 509867193486.4842, "n_tokens": 48088, "runtime_s": 1.76242, "vocab_scored": 32000, "nll_full": 26.95938, "ppl_full": 510869188270.40063, "extra_rows": {"row32000": [-50.49, 4.25], "row32001": [-53.656, 8.562], "mass": [0.001, 0.998], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr1e-6_step75", "mode": "off", "seed_resize": null, "nll": 12.53705, "ppl": 278466.15993, "n_tokens": 48088, "runtime_s": 1.75882, "vocab_scored": 32000, "nll_full": 12.53887, "ppl_full": 278973.78875, "extra_rows": {"row32000": [-41.648, 3.688], "row32001": [-40.651, 8.625], "mass": [0.001, 0.998], "lm_head_row_norms": [1.271, 1.267]}}
+--- L2 rc=0 end=2026-10-28T15:24:47-04:00
+PILOT_PPL {"model": "B_lr1e-6_step100", "mode": "off", "seed_resize": null, "nll": 2.6119, "ppl": 13.62485, "n_tokens": 48088, "runtime_s": 1.89424, "vocab_scored": 32000, "nll_full": 2.61563, "ppl_full": 13.67589, "extra_rows": {"row32000": [-27.447, 5.75], "row32001": [-26.249, 8.812], "mass": [0.002, 0.999], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr1e-6_step100", "mode": "on", "seed_resize": null, "nll": 2.19827, "ppl": 9.00938, "n_tokens": 48088, "runtime_s": 31.21516, "vocab_scored": 32000, "nll_full": 2.1989, "ppl_full": 9.01513, "nll_base_hidden": 28.73085, "ppl_base_hidden": 3003638248966.6323, "nll_talk_hidden": 419.34874, "ppl_talk_hidden": 1.3208232611683828e+182, "w_mean": 0.29979, "w_std": 0.01568, "w_min": 0.2207, "w_max": 0.37695, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 28.77198, "nll_talk_hidden_full": 419.34874, "model_loss_mean": 5294.08, "extra_rows": {"row32000": [-19.729, 3.188], "row32001": [-21.079, 5.656], "mass": [0.001, 0.881], "lm_head_row_nor
+--- L2 rc=0 end=2026-10-28T15:25:35-04:00
+--- /scratch/m/mweiss10/qstar/logs/evalC_L3_651011.log
+PILOT_PPL {"model": "B_lr3e-7_step25", "mode": "off", "seed_resize": null, "nll": 1.80909, "ppl": 6.10491, "n_tokens": 48088, "runtime_s": 1.87207, "vocab_scored": 32000, "nll_full": 2.04057, "ppl_full": 7.69498, "extra_rows": {"row32000": [-16.739, 18.875], "row32001": [-14.228, 18.438], "mass": [0.068, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr3e-7_step50", "mode": "off", "seed_resize": null, "nll": 2.26995, "ppl": 9.67896, "n_tokens": 48088, "runtime_s": 1.74315, "vocab_scored": 32000, "nll_full": 2.31908, "ppl_full": 10.16635, "extra_rows": {"row32000": [-22.605, 15.75], "row32001": [-20.483, 16.125], "mass": [0.015, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr3e-7_step75", "mode": "off", "seed_resize": null, "nll": 6.59132, "ppl": 728.73903, "n_tokens": 48088, "runtime_s": 1.74216, "vocab_scored": 32000, "nll_full": 6.60762, "ppl_full": 740.71514, "extra_rows": {"row32000": [-31.794, 10.875], "row32001": [-32.686, 15.438], "mass": [0.004, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr3e-7_step100", "mode": "off", "seed_resize": null, "nll": 10.4066, "ppl": 33077.24888, "n_tokens": 48088, "runtime_s": 1.73508, "vocab_scored": 32000, "nll_full": 10.42024, "ppl_full": 33531.37236, "extra_rows": {"row32000": [-35.205, 8.375], "row32001": [-37.006, 15.062], "mass": [0.003, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr3e-8_step25", "mode": "off", "seed_resize": null, "nll": 1.79855, "ppl": 6.04088, "n_tokens": 48088, "runtime_s": 1.73543, "vocab_scored": 32000, "nll_full": 2.17335, "ppl_full": 8.78766, "extra_rows": {"row32000": [-15.368, 20.688], "row32001": [-12.54, 19.75], "mass": [0.102, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr3e-8_step50", "mode": "off", "seed_resize": null, "nll": 1.79889, "ppl": 6.04293, "n_tokens": 48088, "runtime_s": 1.73536, "vocab_scored": 32000, "nll_full": 2.16573, "ppl_full": 8.72093, "extra_rows": {"row32000": [-15.459, 20.375], "row32001": [-12.623, 19.75], "mass": [0.1, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr3e-8_step75", "mode": "off", "seed_resize": null, "nll": 1.79943, "ppl": 6.04623, "n_tokens": 48088, "runtime_s": 1.74457, "vocab_scored": 32000, "nll_full": 2.15591, "ppl_full": 8.63572, "extra_rows": {"row32000": [-15.591, 20.312], "row32001": [-12.739, 19.562], "mass": [0.098, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr3e-8_step100", "mode": "off", "seed_resize": null, "nll": 1.80166, "ppl": 6.05967, "n_tokens": 48088, "runtime_s": 1.73421, "vocab_scored": 32000, "nll_full": 2.14195, "ppl_full": 8.51601, "extra_rows": {"row32000": [-15.825, 20.188], "row32001": [-12.915, 19.625], "mass": [0.094, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+--- L3 rc=0 end=2026-10-28T15:26:01-04:00
+--- /scratch/m/mweiss10/qstar/logs/evalC_L4_651011.log
+PILOT_PPL {"model": "B_lr1e-7_step25", "mode": "off", "seed_resize": null, "nll": 1.79898, "ppl": 6.04346, "n_tokens": 48088, "runtime_s": 1.93626, "vocab_scored": 32000, "nll_full": 2.15539, "ppl_full": 8.63124, "extra_rows": {"row32000": [-15.523, 20.375], "row32001": [-12.718, 19.625], "mass": [0.098, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr1e-7_step50", "mode": "off", "seed_resize": null, "nll": 1.80783, "ppl": 6.09719, "n_tokens": 48088, "runtime_s": 1.81182, "vocab_scored": 32000, "nll_full": 2.09491, "ppl_full": 8.12469, "extra_rows": {"row32000": [-16.342, 19.438], "row32001": [-13.538, 19.188], "mass": [0.081, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr1e-7_step75", "mode": "off", "seed_resize": null, "nll": 1.85416, "ppl": 6.38635, "n_tokens": 48088, "runtime_s": 1.80973, "vocab_scored": 32000, "nll_full": 2.05449, "ppl_full": 7.80283, "extra_rows": {"row32000": [-17.795, 18.0], "row32001": [-14.83, 18.312], "mass": [0.059, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+--- L4 rc=0 end=2026-10-28T15:25:03-04:00
+PILOT_PPL {"model": "B_lr1e-7_step100", "mode": "off", "seed_resize": null, "nll": 2.04094, "ppl": 7.69786, "n_tokens": 48088, "runtime_s": 1.94805, "vocab_scored": 32000, "nll_full": 2.15809, "ppl_full": 8.65456, "extra_rows": {"row32000": [-20.109, 17.688], "row32001": [-17.101, 17.5], "mass": [0.036, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "B_lr1e-7_step100", "mode": "on", "seed_resize": null, "nll": 2.0398, "ppl": 7.68904, "n_tokens": 48088, "runtime_s": 31.69652, "vocab_scored": 32000, "nll_full": 2.15589, "ppl_full": 8.63555, "nll_base_hidden": 22.45037, "ppl_base_hidden": 5624315027.04916, "nll_talk_hidden": 158.05193, "ppl_talk_hidden": 4.376049869055996e+68, "w_mean": 0.00506, "w_std": 0.00032, "w_min": 0.0025, "w_max": 0.0072, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 23.73896, "nll_talk_hidden_full": 159.21343, "model_loss_mean": 37570.56, "extra_rows": {"row32000": [-20.041, 17.625], "row32001": [-17.015, 17.438], "mass": [0.035, 1.0], "lm_head_row_norms":
+--- L4 rc=0 end=2026-10-28T15:25:52-04:00
+EVALC_DONE end=2026-10-28T15:26:30-04:00
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                              : Wed Oct 28 15:26:30 2026
+Driver Version                                         : 580.178.04
+CUDA Version                                           : 13.0
+
+Attached GPUs                                          : 8
+GPU 00000000:19:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2143688
+            GPU Utilization                            : 71 %
+            Memory Utilization                         : 20 %
+            Max memory usage                           : 24546 MiB
+            Time                                       : 46112 ms
+            Is Running                                 : 0
+        Process ID                                     : 2143918
+            GPU Utilization                            : 16 %
+            Memory Utilization                         : 4 %
+            Max memory usage                           : 16624 MiB
+            Time                                       : 12797 ms
+            Is Running                                 : 0
+        Process ID                                     : 2143996
+            GPU Utilization                            : 74 %
+            Memory Utilization                         : 21 %
+            Max memory usage                           : 24666 MiB
+            Time                                       : 44373 ms
+            Is Running                                 : 0
+        Process ID                                     : 2144159
+            GPU Utilization                            : 17 %
+            Memory Utilization                         : 4 %
+            Max memory usage                           : 16644 MiB
+            Time                                       : 34493 ms
+            Is Running                                 : 0
+
+GPU 00000000:3B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2143738
+            GPU Utilization                            : 17 %
+            Memory Utilization                         : 4 %
+            Max memory usage                           : 16644 MiB
+            Time                                       : 35814 ms
+            Is Running                                 : 0
+        Process ID                                     : 2143906
+            GPU Utilization                            : 72 %
+            Memory Utilization                         : 21 %
+            Max memory usage                           : 24666 MiB
+            Time                                       : 44706 ms
+            Is Running                                 : 0
+
+GPU 00000000:4C:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2143780
+            GPU Utilization                            : 16 %
+            Memory Utilization                         : 4 %
+            Max memory usage                           : 16684 MiB
+            Time                                       : 99942 ms
+            Is Running                                 : 0
+
+GPU 00000000:5D:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2143846
+            GPU Utilization                            : 18 %
+            Memory Utilization                         : 4 %
+            Max memory usage                           : 16644 MiB
+            Time                                       : 31865 ms
+            Is Running                                 : 0
+        Process ID                                     : 2143982
+            GPU Utilization                            : 73 %
+            Memory Utilization                         : 20 %
+            Max memory usage                           : 24666 MiB
+            Time                                       : 45305 ms
+            Is Running                                 : 0
+
+GPU 00000000:9B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes                                : None
+
+GPU 00000000:BB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes                                : None
+
+GPU 00000000:CB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes                                : None
+
+GPU 00000000:DB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes                                : None
+
+Wed Oct 28 15:26:31 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:19:00.0 Off |                    0 |
+| N/A   49C    P0            133W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:3B:00.0 Off |                    0 |
+| N/A   35C    P0             76W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H200                    On  |   00000000:4C:00.0 Off |                    0 |
+| N/A   33C    P0             76W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H200                    On  |   00000000:5D:00.0 Off |                    0 |
+| N/A   40C    P0             80W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA H200                    On  |   00000000:9B:00.0 Off |                    0 |
+| N/A   34C    P0             77W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA H200                    On  |   00000000:BB:00.0 Off |                    0 |
+| N/A   32C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA H200                    On  |   00000000:CB:00.0 Off |                    0 |
+| N/A   33C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA H200                    On  |   00000000:DB:00.0 Off |                    0 |
+| N/A   31C    P0             77W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

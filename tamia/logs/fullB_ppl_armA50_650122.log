@@ -1,0 +1,33 @@
+--- ppl_armA50 start=2026-10-28T11:03:03-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Traceback (most recent call last):
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/utils/hub.py", line 385, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/scratch/m/mweiss10/qstar/ckpt/full/bf16_step50'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/m/mweiss10/qstar/scripts/pilot_ppl.py", line 119, in <module>
+    model = load_model(path, dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/scripts/pilot_ppl.py", line 56, in load_model
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 488, in from_pretrained
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/utils/hub.py", line 450, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: '/scratch/m/mweiss10/qstar/ckpt/full/bf16_step50'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+--- ppl_armA50 rc=1 end=2026-10-28T11:03:06-04:00

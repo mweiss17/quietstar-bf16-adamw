@@ -1,0 +1,28 @@
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  80%|████████  | 8/10 [00:01<00:00,  7.47it/s]Fetching 10 files:  80%|████████  | 8/10 [00:19<00:04,  2.50s/it]Fetching 10 files:  90%|█████████ | 9/10 [02:06<00:14, 14.03s/it]Fetching 10 files: 100%|██████████| 10/10 [03:25<00:00, 20.59s/it]Fetching 10 files: 100%|██████████| 10/10 [03:25<00:00, 20.59s/it]
+model snapshot: /scratch/m/mweiss10/qstar/hf_home/hub/models--mistralai--Mistral-7B-v0.1/snapshots/27d67f1b5f57dc0953326b2601d68371d40ea8da files: ['config.json', 'generation_config.json', 'model-00001-of-00002.safetensors', 'model-00002-of-00002.safetensors', 'model.safetensors.index.json', 'pytorch_model.bin.index.json', 'special_tokens_map.json', 'tokenizer.json', 'tokenizer.model', 'tokenizer_config.json'] (206s)
+Downloading readme: 0.00B [00:00, ?B/s]Downloading readme: 7.93kB [00:00, 8.85MB/s]
+Downloading data:   0%|          | 0.00/2.31M [00:00<?, ?B/s]Downloading data: 100%|██████████| 2.31M/2.31M [00:00<00:00, 5.68MB/s]Downloading data: 100%|██████████| 2.31M/2.31M [00:00<00:00, 5.61MB/s]
+Downloading data:   0%|          | 0.00/419k [00:00<?, ?B/s]Downloading data: 100%|██████████| 419k/419k [00:00<00:00, 2.77MB/s]Downloading data: 100%|██████████| 419k/419k [00:00<00:00, 2.75MB/s]
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 7473/7473 [00:00<00:00, 30629.99 examples/s]Generating train split: 100%|██████████| 7473/7473 [00:00<00:00, 28872.52 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1319/1319 [00:00<00:00, 150936.81 examples/s]
+gsm8k test rows: 1319
+Downloading readme: 0.00B [00:00, ?B/s]Downloading readme: 7.39kB [00:00, 11.1MB/s]
+Downloading data:   0%|          | 0.00/1.25M [00:00<?, ?B/s]Downloading data: 100%|██████████| 1.25M/1.25M [00:00<00:00, 4.28MB/s]Downloading data: 100%|██████████| 1.25M/1.25M [00:00<00:00, 4.25MB/s]
+Downloading data:   0%|          | 0.00/160k [00:00<?, ?B/s]Downloading data: 100%|██████████| 160k/160k [00:00<00:00, 585kB/s]Downloading data: 100%|██████████| 160k/160k [00:00<00:00, 582kB/s]
+Downloading data:   0%|          | 0.00/151k [00:00<?, ?B/s]Downloading data: 100%|██████████| 151k/151k [00:00<00:00, 1.18MB/s]Downloading data: 100%|██████████| 151k/151k [00:00<00:00, 1.17MB/s]
+Generating train split:   0%|          | 0/9741 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 9741/9741 [00:00<00:00, 434863.34 examples/s]
+Generating validation split:   0%|          | 0/1221 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 1221/1221 [00:00<00:00, 145933.52 examples/s]
+Generating test split:   0%|          | 0/1140 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1140/1140 [00:00<00:00, 27187.27 examples/s]
+csqa validation rows: 1221
+Downloading readme: 0.00B [00:00, ?B/s]Downloading readme: 4.80kB [00:00, 7.65MB/s]
+Resolving data files:   0%|          | 0/114 [00:00<?, ?it/s]Resolving data files:  56%|█████▌    | 64/114 [00:00<00:00, 96.39it/s]Resolving data files:  70%|███████   | 80/114 [00:00<00:00, 104.15it/s]Resolving data files:  85%|████████▌ | 97/114 [00:00<00:00, 125.04it/s]Resolving data files:  96%|█████████▋| 110/114 [00:00<00:00, 141.25it/s]Resolving data files: 100%|██████████| 114/114 [00:00<00:00, 126.82it/s]
+Saving the dataset (0/1 shards):   0%|          | 0/1000 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 1000/1000 [00:00<00:00, 66487.60 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 1000/1000 [00:00<00:00, 64896.16 examples/s]
+saved owm subset
+Dataset({
+    features: ['url', 'text', 'date', 'metadata'],
+    num_rows: 1000
+})
+row0 url: https://telescoper.wordpress.com/2010/11/23/bayes-and-hi-theorem/
+row0 text[:120]: 'Bayes and his\xa0Theorem\n\nMy earlier post on Bayesian probability seems to have generated quite a lot of readers, so this l'
+row999 url: https://firas.moosvi.com/oer/physics_bank/content/public/004.Kinematics%281D%29/Velocity/Velocity_From_Graph/Velocity_From_Graph.html
+PREP_DATA_DONE (227s)

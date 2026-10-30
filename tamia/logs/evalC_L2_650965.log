@@ -1,0 +1,32 @@
+--- L2 start=2026-10-28T15:13:44-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.98s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.98s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.89s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.91s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded B_lr1e-6_step25 (/scratch/m/mweiss10/qstar/ckpt/fullB/bf16cast_step25, torch.bfloat16) in 12s; gpu mem 14.1 GiB
+Traceback (most recent call last):
+  File "/scratch/m/mweiss10/qstar/scripts/pilot_ppl.py", line 175, in <module>
+    extra_row_stats(out.logits, m[:, :-1] * (targets[b:b + args.batch] != -100).to(m.device), xacc)
+  File "/scratch/m/mweiss10/qstar/scripts/pilot_ppl.py", line 106, in extra_row_stats
+    rel = (lg[..., r] - real_max)[valid]
+          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+IndexError: The shape of the mask [8, 255] at index 1 does not match the shape of the indexed tensor [8, 256] at index 1
+--- L2 rc=1 end=2026-10-28T15:14:01-04:00
+--- L2 start=2026-10-28T15:14:01-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.26s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.10s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  2.99s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.04s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded B_lr1e-6_step100 (/scratch/m/mweiss10/qstar/ckpt/fullB/bf16cast_step100, torch.bfloat16) in 13s; gpu mem 14.1 GiB
+Traceback (most recent call last):
+  File "/scratch/m/mweiss10/qstar/scripts/pilot_ppl.py", line 175, in <module>
+    extra_row_stats(out.logits, m[:, :-1] * (targets[b:b + args.batch] != -100).to(m.device), xacc)
+  File "/scratch/m/mweiss10/qstar/scripts/pilot_ppl.py", line 106, in extra_row_stats
+    rel = (lg[..., r] - real_max)[valid]
+          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+IndexError: The shape of the mask [8, 255] at index 1 does not match the shape of the indexed tensor [8, 256] at index 1
+--- L2 rc=1 end=2026-10-28T15:14:17-04:00

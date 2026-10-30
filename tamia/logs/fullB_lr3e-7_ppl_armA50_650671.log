@@ -1,0 +1,16 @@
+--- ppl_armA50 start=2026-10-28T14:19:35-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.93s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:03,  3.01s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.89s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.91s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded A_bf16_step50 (/scratch/m/mweiss10/qstar/ckpt/full/step50/bf16_step50, torch.bfloat16) in 12s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "A_bf16_step50", "mode": "off", "nll": 2.0902, "ppl": 8.08656, "n_tokens": 48088, "runtime_s": 1.85932}
+PILOT_PPL {"model": "A_bf16_step50", "mode": "on", "nll": 2.04778, "ppl": 7.75069, "n_tokens": 48088, "runtime_s": 30.65281, "nll_base_hidden": 22.99224, "ppl_base_hidden": 9669451978.52093, "nll_talk_hidden": 144.59452, "ppl_talk_hidden": 6.260380056878286e+62, "w_mean": 0.0471, "w_std": 0.00321, "w_min": 0.02173, "w_max": 0.06836, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "model_loss_mean": 267673.6}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.95s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.91s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.85s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.87s/it]
+PILOT_PPL loaded A_shadow_bf16_step50 (/scratch/m/mweiss10/qstar/ckpt/full/step50/shadow_bf16_step50, torch.bfloat16) in 9s; gpu mem 17.2 GiB
+PILOT_PPL {"model": "A_shadow_bf16_step50", "mode": "off", "nll": 8.94204, "ppl": 7646.75105, "n_tokens": 48088, "runtime_s": 1.74601}
+PILOT_PPL {"model": "A_shadow_bf16_step50", "mode": "on", "nll": 8.84609, "ppl": 6947.14646, "n_tokens": 48088, "runtime_s": 30.76589, "nll_base_hidden": 98.3624, "ppl_base_hidden": 5.226927392610307e+42, "nll_talk_hidden": 255.83858, "ppl_talk_hidden": 1.2861205564243732e+111, "w_mean": 0.04518, "w_std": 0.00139, "w_min": 0.02893, "w_max": 0.05908, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "model_loss_mean": 247275.52}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalB_ppl_armA_step50.json
+--- ppl_armA50 rc=0 end=2026-10-28T14:21:04-04:00

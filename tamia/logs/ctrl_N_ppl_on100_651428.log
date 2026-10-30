@@ -1,0 +1,11 @@
+--- ppl_on100 start=2026-10-28T17:37:12-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.22s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:04<00:02,  2.23s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.18s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.19s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded N_step100 (/scratch/m/mweiss10/qstar/ckpt/ctrl_N/bf16cast_step100, torch.bfloat16) in 10s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "N_step100", "mode": "on", "seed_resize": null, "nll": 2.18756, "ppl": 8.91346, "n_tokens": 48088, "runtime_s": 31.72017, "vocab_scored": 32000, "nll_full": 2.20677, "ppl_full": 9.08628, "nll_base_hidden": 26.9699, "ppl_base_hidden": 516273205684.0138, "nll_talk_hidden": 430.26182, "ppl_talk_hidden": 7.24990379821727e+186, "w_mean": 0.11471, "w_std": 0.00653, "w_min": 0.08008, "w_max": 0.15918, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 27.50336, "nll_talk_hidden_full": 430.26182, "model_loss_mean": 5687.04, "extra_rows": {"row32000": [-21.194, 10.562], "row32001": [-19.822, 13.125], "mass": [0.008, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalD_N_ppl_on_step100.json
+--- ppl_on100 rc=0 end=2026-10-28T17:37:57-04:00

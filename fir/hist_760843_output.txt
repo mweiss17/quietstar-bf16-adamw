@@ -1,0 +1,49 @@
+RUNNING 0:01 fc30651
+RUNNING 1:02 fc30651
+RUNNING 2:03 fc30651
+RUNNING 3:04 fc30651
+RUNNING 4:05 fc30651
+RUNNING 5:06 fc30651
+RUNNING 6:07 fc30651
+RUNNING 7:08 fc30651
+RUNNING 8:09 fc30651
+RUNNING 9:09 fc30651
+RUNNING 10:10 fc30651
+--
+job gone
+COMPLETED|00:10:12|
+====
+created virtual environment CPython3.11.5.final.0-64 in 7155ms
+  creator CPython3Posix(dest=/localscratch/mweiss10.760843.0/env, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/mweiss10/.local/share/virtualenv)
+    added seed packages: pip==26.2.1, setuptools==84.0.0+computecanada, wheel==0.48.0
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+/localscratch/mweiss10.760843.0/env/lib/python3.11/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 9 files:  11%|█         | 1/9 [00:01<00:10,  1.32s/it]Fetching 9 files:  78%|███████▊  | 7/9 [00:01<00:00,  5.93it/s]Fetching 9 files:  78%|███████▊  | 7/9 [00:19<00:00,  5.93it/s]Fetching 9 files:  89%|████████▉ | 8/9 [00:57<00:09,  9.92s/it]Fetching 9 files: 100%|██████████| 9/9 [02:02<00:00, 21.08s/it]Fetching 9 files: 100%|██████████| 9/9 [02:02<00:00, 13.63s/it]
+lm_head.weight 131072000 {'lr1e-06': 0.0951, 'lr2e-06': 0.1886, 'lr5e-06': 0.3661, 'lr1e-05': 0.6567, 'lr2e-05': 0.9366, 'lr5e-05': 0.9991, 'lr0.0001': 1.0, 'lr0.0003': 1.0}
+{
+ "model": "mistralai/Mistral-7B-v0.1",
+ "total_params": 7241732096,
+ "frac_of_weights_that_can_move": {
+  "lr=1e-06 |d|=1*lr": 0.13193573972830933,
+  "lr=1e-06 |d|=0.3*lr": 0.0346120467696462,
+  "lr=2e-06 |d|=1*lr": 0.2575190033652413,
+  "lr=2e-06 |d|=0.3*lr": 0.06729339604666866,
+  "lr=5e-06 |d|=1*lr": 0.48385761687254775,
+  "lr=5e-06 |d|=0.3*lr": 0.13193573972830933,
+  "lr=1e-05 |d|=1*lr": 0.7953894349642618,
+  "lr=1e-05 |d|=0.3*lr": 0.2575190033652413,
+  "lr=2e-05 |d|=1*lr": 0.9824198515890528,
+  "lr=2e-05 |d|=0.3*lr": 0.48385761687254775,
+  "lr=5e-05 |d|=1*lr": 0.9996557298769203,
+  "lr=5e-05 |d|=0.3*lr": 0.7953894349642618,
+  "lr=0.0001 |d|=1*lr": 0.9999516165476221,
+  "lr=0.0001 |d|=0.3*lr": 0.9824198515890528,
+  "lr=0.0003 |d|=1*lr": 0.9999639271383507,
+  "lr=0.0003 |d|=0.3*lr": 0.9999516165476221
+ }
+}
+
+[exited with code 0]

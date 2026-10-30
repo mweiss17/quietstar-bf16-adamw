@@ -1,0 +1,183 @@
+892446b
+downloading uv 0.13.6 x86_64-unknown-linux-gnu
+installing to /scratch/m/mweiss10/qstar/bin
+  uv
+  uvx
+everything's installed!
+
+To add /scratch/m/mweiss10/qstar/bin to your PATH, either restart your shell or run:
+
+    source /scratch/m/mweiss10/qstar/bin/env (sh, bash, zsh)
+    source /scratch/m/mweiss10/qstar/bin/env.fish (fish)
+WARN: The following commands are shadowed by other commands in your PATH: uv uvx
+uv 0.13.6 (x86_64-unknown-linux-gnu)
+Downloading cpython-3.11.18-linux-x86_64-gnu (download) (29.2MiB)
+ Downloaded cpython-3.11.18-linux-x86_64-gnu (download)
+Installed Python 3.11.18 in 5.53s
+ + cpython-3.11.18-linux-x86_64-gnu (python3.11)
+Using CPython 3.11.18
+Creating virtual environment at: env
+Activate with: source env/bin/activate
+Python 3.11.18
+Using Python 3.11.18 environment at: env
+Resolved 22 packages in 1.01s
+Downloading nvidia-nvjitlink-cu12 (37.9MiB)
+Downloading nvidia-cusolver-cu12 (118.4MiB)
+Downloading nvidia-cublas-cu12 (391.6MiB)
+Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)
+Downloading nvidia-curand-cu12 (53.9MiB)
+Downloading torch (744.8MiB)
+Downloading nvidia-cufft-cu12 (116.0MiB)
+Downloading nvidia-cusparse-cu12 (186.9MiB)
+Downloading nvidia-cuda-cupti-cu12 (13.5MiB)
+Downloading nvidia-nccl-cu12 (168.1MiB)
+Downloading nvidia-cudnn-cu12 (697.8MiB)
+Downloading triton (160.3MiB)
+Downloading networkx (2.0MiB)
+Downloading sympy (6.0MiB)
+ Downloaded networkx
+ Downloaded nvidia-cuda-cupti-cu12
+ Downloaded nvidia-cuda-nvrtc-cu12
+ Downloaded nvidia-nvjitlink-cu12
+ Downloaded sympy
+ Downloaded nvidia-curand-cu12
+ Downloaded triton
+ Downloaded nvidia-cusolver-cu12
+ Downloaded nvidia-cufft-cu12
+ Downloaded nvidia-nccl-cu12
+ Downloaded nvidia-cusparse-cu12
+ Downloaded nvidia-cublas-cu12
+ Downloaded nvidia-cudnn-cu12
+ Downloaded torch
+Prepared 22 packages in 1m 51s
+Installed 22 packages in 3.96s
+ + filelock==3.32.3
+ + fsspec==2026.7.0
+ + jinja2==3.1.6
+ + markupsafe==3.0.3
+ + mpmath==1.3.0
+ + networkx==3.6.1
+ + nvidia-cublas-cu12==12.1.3.1
+ + nvidia-cuda-cupti-cu12==12.1.105
+ + nvidia-cuda-nvrtc-cu12==12.1.105
+ + nvidia-cuda-runtime-cu12==12.1.105
+ + nvidia-cudnn-cu12==8.9.2.26
+ + nvidia-cufft-cu12==11.0.2.54
+ + nvidia-curand-cu12==10.3.2.106
+ + nvidia-cusolver-cu12==11.4.5.107
+ + nvidia-cusparse-cu12==12.1.0.106
+ + nvidia-nccl-cu12==2.20.5
+ + nvidia-nvjitlink-cu12==12.9.86
+ + nvidia-nvtx-cu12==12.1.105
+ + sympy==1.14.0
+ + torch==2.3.1+cu121
+ + triton==2.3.1
+ + typing-extensions==4.16.0
+Using Python 3.11.18 environment at: env
+Resolved 91 packages in 2.39s
+Downloading pyarrow (36.2MiB)
+Downloading matplotlib (9.4MiB)
+Downloading aiohttp (1.8MiB)
+Downloading reportlab (1.9MiB)
+Downloading transformers (8.0MiB)
+Downloading numpy (17.4MiB)
+Downloading pydantic-core (2.1MiB)
+Downloading pandas (10.6MiB)
+Downloading pillow (6.8MiB)
+Downloading wandb (19.4MiB)
+Downloading tokenizers (3.4MiB)
+Downloading sentencepiece (1.3MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading fonttools (5.2MiB)
+ Downloaded sentencepiece
+ Downloaded kiwisolver
+ Downloaded aiohttp
+ Downloaded pydantic-core
+ Downloaded reportlab
+ Downloaded tokenizers
+ Downloaded pillow
+ Downloaded fonttools
+ Downloaded matplotlib
+ Downloaded numpy
+ Downloaded transformers
+ Downloaded wandb
+ Downloaded pandas
+ Downloaded pyarrow
+Prepared 70 packages in 20.82s
+Uninstalled 1 package in 63ms
+Installed 70 packages in 4.92s
+ + accelerate==0.27.2
+ + aiohappyeyeballs==2.7.1
+ + aiohttp==3.14.5
+ + aiosignal==1.4.0
+ + annotated-types==0.8.0
+ + anyio==4.15.1
+ + attrs==26.1.0
+ + certifi==2026.10.23
+ + charset-normalizer==3.5.2
+ + click==8.5.0
+ + contourpy==1.3.3
+ + cwevals==0.0.1b1
+ + cycler==0.12.1
+ + datasets==2.16.1
+ + dill==0.3.7
+ + distro==1.9.0
+ + fonttools==4.68.0
+ + frozenlist==1.8.0
+ - fsspec==2026.7.0
+ + fsspec==2023.10.0
+ + googleapis-common-protos==1.76.0
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + huggingface-hub==0.25.2
+ + idna==3.20
+ + kiwisolver==1.5.1
+ + matplotlib==3.11.2
+ + multidict==7.2.1
+ + multiprocess==0.70.15
+ + numpy==1.26.4
+ + opentelemetry-api==1.45.1
+ + opentelemetry-exporter-http-transport==0.66b1
+ + opentelemetry-exporter-otlp-common==0.66b1
+ + opentelemetry-exporter-otlp-proto-common==1.45.1
+ + opentelemetry-exporter-otlp-proto-http==1.45.1
+ + opentelemetry-proto==1.45.1
+ + opentelemetry-sdk==1.45.1
+ + opentelemetry-semantic-conventions==0.66b1
+ + packaging==26.3
+ + pandas==3.0.6
+ + pillow==13.0.0
+ + platformdirs==4.13.6
+ + propcache==0.5.4
+ + protobuf==7.36.2
+ + psutil==7.2.2
+ + pyarrow==14.0.2
+ + pyarrow-hotfix==0.7
+ + pydantic==2.14.1
+ + pydantic-core==2.50.1
+ + pyparsing==3.3.3
+ + python-dateutil==3.0.0
+ + pyyaml==6.0.3
+ + regex==2026.9.29
+ + reportlab==5.1.0
+ + requests==2.34.2
+ + safetensors==0.8.0
+ + seaborn==0.13.2
+ + sentencepiece==0.2.2
+ + six==1.17.0
+ + sniffio==1.3.1
+ + termcolor==3.3.0
+ + tokenizers==0.15.2
+ + tqdm==4.70.1
+ + transformers==4.37.0
+ + typing-inspection==0.4.4
+ + tzdata==2026.5
+ + urllib3==2.8.0
+ + wandb==0.31.0
+ + xxhash==4.0.2
+ + yarl==1.25.1
+versions 2.3.1+cu121 4.37.0 2.16.1 0.27.2 0.25.2 1.26.4
+mistral patched: True
+cuda built: 12.1
+ENV_SETUP_DONE

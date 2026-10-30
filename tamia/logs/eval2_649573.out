@@ -1,0 +1,251 @@
+node=tg11506.tamia.ecpia.ca job=649573 start=2026-10-28T03:31:11-04:00
+index, name, memory.total [MiB]
+0, NVIDIA H200, 143771 MiB
+1, NVIDIA H200, 143771 MiB
+2, NVIDIA H200, 143771 MiB
+3, NVIDIA H200, 143771 MiB
+4, NVIDIA H200, 143771 MiB
+5, NVIDIA H200, 143771 MiB
+6, NVIDIA H200, 143771 MiB
+7, NVIDIA H200, 143771 MiB
+cancelled sibling job 649574
+=== all lanes finished 2026-10-28T04:20:51-04:00 ===
+--- lane A
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+PILOT_PPL loaded base (base, torch.bfloat16) in 15s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "base", "mode": "off", "nll": 1.84166, "ppl": 6.30698, "n_tokens": 48088, "runtime_s": 2.26061}
+PILOT_PPL {"model": "base", "mode": "on", "nll": 1.84166, "ppl": 6.30698, "n_tokens": 48088, "runtime_s": 30.64689, "nll_base_hidden": 20.25823, "ppl_base_hidden": 628113936.63413, "nll_talk_hidden": 113.93801, "ppl_talk_hidden": 3.038418790127431e+49, "w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "model_loss_mean": 1.84406}
+PILOT_PPL loaded bf16_step100 (/scratch/m/mweiss10/qstar/ckpt/full/bf16_step100, torch.bfloat16) in 8s; gpu mem 17.2 GiB
+PILOT_PPL {"model": "bf16_step100", "mode": "off", "nll": 2.23954, "ppl": 9.38897, "n_tokens": 48088, "runtime_s": 1.72908}
+PILOT_PPL {"model": "bf16_step100", "mode": "on", "nll": 2.12458, "ppl": 8.36934, "n_tokens": 48088, "runtime_s": 30.82594, "nll_base_hidden": 24.63489, "ppl_base_hidden": 49980045884.09978, "nll_talk_hidden": 402.81159, "ppl_talk_hidden": 8.68660585283405e+174, "w_mean": 0.04559, "w_std": 0.0023, "w_min": 0.0332, "w_max": 0.05957, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "model_loss_mean": 3518.08}
+PILOT_PPL loaded shadow_bf16_step100 (/scratch/m/mweiss10/qstar/ckpt/full/shadow_bf16_step100, torch.bfloat16) in 8s; gpu mem 17.2 GiB
+PILOT_PPL {"model": "shadow_bf16_step100", "mode": "off", "nll": 14.40295, "ppl": 1799382.37798, "n_tokens": 48088, "runtime_s": 1.73423}
+PILOT_PPL {"model": "shadow_bf16_step100", "mode": "on", "nll": 14.496, "ppl": 1974847.53441, "n_tokens": 48088, "runtime_s": 30.85955, "nll_base_hidden": 158.43249, "ppl_base_hidden": 6.402625389982285e+68, "nll_talk_hidden": 169.31899, "ppl_talk_hidden": 3.422183487971617e+73, "w_mean": 0.0428, "w_std": 0.00113, "w_min": 0.04126, "w_max": 0.05371, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "model_loss_mean": 31434.24}
+PILOT_PPL loaded shadow_fp32_step100 (/scratch/m/mweiss10/qstar/ckpt/full/shadow_fp32_step100, torch.float32) in 15s; gpu mem 31.3 GiB
+PILOT_PPL {"model": "shadow_fp32_step100", "mode": "off", "nll": 14.40744, "ppl": 1807470.40685, "n_tokens": 48088, "runtime_s": 15.03187}
+PILOT_PPL {"model": "shadow_fp32_step100", "mode": "on", "nll": 14.50571, "ppl": 1994111.32215, "n_tokens": 48088, "runtime_s": 209.14077, "nll_base_hidden": 158.48183, "ppl_base_hidden": 6.726407124751363e+68, "nll_talk_hidden": 169.81551, "ppl_talk_hidden": 5.6226028829230164e+73, "w_mean": 0.04279, "w_std": 0.00112, "w_min": 0.04113, "w_max": 0.05386, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "model_loss_mean": 28203.94727}
+--- ppl rc=0 end=2026-10-28T03:37:32-04:00
+PILOT eval shadow_interp0.3_fp32 gsm8k diag: {"loss": 691.4592895507812, "accuracy": 0.07091712929866327, "hard_accuracy": 0.06823351023502654, "n_items": 1319, "soft_median": 3.305305830343956e-06, "soft_p90": 0.22470346110844908, "soft_frac_lt_1e-3": 0.7005307050796058, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 636, "28750:'2'": 216, "28770:'3'": 141, "28781:'4'": 107, "28784:'6'": 71, "28782:'5'": 58, "28783:'8'": 44, "28774:'9'": 24, "28787:'7'": 20, "13:'\\n'": 2}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 0.6247217640935607, "first_pos_p_true_mean": 0.2567923852078903, "first_pos_p_newline_mean": 0.0015163003026875197, "first_pos_fullvocab_top1_hist": {"28740:'1'": 636, "28750:'2'": 216, "28770:'3'": 141, "28781:'4'": 107, "28784:'6'": 71, "28782:'5'": 58, "28783:'8'": 44, "28774:'9'": 24, "28787:'7'": 20, "13:'\\n'": 2}, "first_pos_fullvocab_top1_prob_mean": 0.7584168358127462, "runtime": 1340.7321, "samples_per_second": 0.984, "steps_per_second": 0.123, "mixing_w": {"w_mean": 0.046914649984149535, "w_std": 0.0010447926633399287, "w_min": 0.03705252707004547, "w_max": 0.05622892454266548, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval shadow_interp0.3_fp32 csqa diag: {"loss": 659.843994140625, "accuracy": 0.3317319597157595, "hard_accuracy": 0.3488943488943489, "n_items": 1221, "soft_median": 0.08032716810703278, "soft_p90": 0.9872544407844543, "soft_frac_lt_1e-3": 0.2727272727272727, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"330:'A'": 409, "13:'\\n'": 391, "334:'C'": 183, "384:'D'": 102, "365:'B'": 98, "413:'E'": 38}, "first_pos_newline_wins_frac": 0.3202293202293202, "first_pos_entropy_mean_nats": 0.4435504532782205, "first_pos_p_true_mean": 0.3333966920469478, "first_pos_p_newline_mean": 0.3251341186402509, "first_pos_fullvocab_top1_hist": {"325:'('": 887, "13:'\\n'": 177, "415:'The'": 111, "334:'C'": 17, "330:'A'": 14, "365:'B'": 7, "413:'E'": 4, "28743:'C'": 2, "384:'D'": 1, "28705:''": 1}, "first_pos_fullvocab_top1_prob_mean": 0.9196169851859659, "runtime": 1240.4405, "samples_per_second": 0.984, "steps_per_second": 0.123, "mixing_w": {"w_mean": 0.047849619795086576, "w_std": 0.0012103353990348905, "w_min": 0.037106774747371674, "w_max": 0.057848427444696426, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "shadow_interp0.3_fp32", "dtype": "fp32", "zero_talk_head": false, "limit": 0, "gsm8k": 0.07091712929866327, "gsm8k_hard": 0.06823351023502654, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.046914649984149535, "csqa": 0.3317319597157595, "csqa_hard": 0.3488943488943489, "csqa_newline_wins": 0.3202293202293202, "csqa_w_mean": 0.047849619795086576}
+=== harness shadow_interp0.3_fp32 rc=0 end=2026-10-28T04:20:51-04:00
+--- lane B
+PILOT eval base gsm8k diag: {"loss": 1.929930329322815, "accuracy": 0.049563458529692565, "hard_accuracy": 0.08642911296436695, "n_items": 1319, "soft_median": 0.01808341550744541, "soft_p90": 0.12331487386055073, "soft_frac_lt_1e-3": 0.09401061410159212, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 959, "28750:'2'": 145, "28770:'3'": 75, "28781:'4'": 58, "28782:'5'": 27, "28784:'6'": 21, "28783:'8'": 16, "28787:'7'": 8, "28774:'9'": 7, "13:'\\n'": 2, "28734:'0'": 1}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 1.7875892842376295, "first_pos_p_true_mean": 0.2160625785982506, "first_pos_p_newline_mean": 0.0015276171736287047, "first_pos_fullvocab_top1_hist": {"28740:'1'": 913, "28750:'2'": 156, "28770:'3'": 75, "28781:'4'": 61, "28782:'5'": 29, "28784:'6'": 21, "32001:''": 19, "28783:'8'": 17, "429:'$'": 10, "28787:'7'": 7, "28774:'9'": 7, "11182:'degrees'": 1, "13:'\\n'": 1, "28734:'0'": 1, "15093:'Frances'": 1}, "first_pos_fullvocab_top1_prob_mean": 0.3472026620136147, "runtime": 195.0968, "samples_per_second": 6.761, "steps_per_second": 0.846, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval base csqa diag: {"loss": 2.7486307621002197, "accuracy": 0.3571515641397677, "hard_accuracy": 0.5847665847665847, "n_items": 1221, "soft_median": 0.3166161637697833, "soft_p90": 0.6921465211264497, "soft_frac_lt_1e-3": 0.0, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"334:'C'": 303, "384:'D'": 292, "365:'B'": 269, "330:'A'": 153, "413:'E'": 125, "13:'\\n'": 79}, "first_pos_newline_wins_frac": 0.0647010647010647, "first_pos_entropy_mean_nats": 1.4272549115762079, "first_pos_p_true_mean": 0.3588941457847638, "first_pos_p_newline_mean": 0.16454821006439926, "first_pos_fullvocab_top1_hist": {"325:'('": 588, "334:'C'": 154, "384:'D'": 133, "365:'B'": 106, "32001:''": 86, "413:'E'": 61, "415:'The'": 40, "330:'A'": 32, "13:'\\n'": 8, "28705:''": 3, "1682:'All'": 3, "3885:'State'": 1, "2645:'Ob'": 1, "20339:'Alabama'": 1, "5783:'England'": 1}, "first_pos_fullvocab_top1_prob_mean": 0.24225397279044963, "runtime": 179.4409, "samples_per_second": 6.804, "steps_per_second": 0.853, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "base", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.049563458529692565, "gsm8k_hard": 0.08642911296436695, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.0, "csqa": 0.3571515641397677, "csqa_hard": 0.5847665847665847, "csqa_newline_wins": 0.0647010647010647, "csqa_w_mean": 0.0}
+=== harness base rc=0 end=2026-10-28T03:37:56-04:00
+--- lane C
+PILOT eval bf16_step100 gsm8k diag: {"loss": 1102.0469970703125, "accuracy": 0.07750987066618109, "hard_accuracy": 0.10462471569370735, "n_items": 1319, "soft_median": 0.019921695506884333, "soft_p90": 0.20984141143614504, "soft_frac_lt_1e-3": 0.16755117513267628, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 830, "28750:'2'": 150, "28770:'3'": 123, "28781:'4'": 91, "28782:'5'": 34, "28784:'6'": 32, "28783:'8'": 26, "28787:'7'": 20, "28774:'9'": 11, "13:'\\n'": 2}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 1.4631632406835058, "first_pos_p_true_mean": 0.2535798438983626, "first_pos_p_newline_mean": 0.0015228945383482261, "first_pos_fullvocab_top1_hist": {"28740:'1'": 796, "28750:'2'": 176, "28770:'3'": 123, "28781:'4'": 97, "28782:'5'": 34, "28784:'6'": 31, "28783:'8'": 28, "28787:'7'": 20, "28774:'9'": 12, "13:'\\n'": 2}, "first_pos_fullvocab_top1_prob_mean": 0.4713686975806649, "runtime": 195.0888, "samples_per_second": 6.761, "steps_per_second": 0.846, "mixing_w": {"w_mean": 0.04532033687735895, "w_std": 0.001540547028855805, "w_min": 0.031982421875, "w_max": 0.0546875, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval bf16_step100 csqa diag: {"loss": 1206.69287109375, "accuracy": 0.4424858872174364, "hard_accuracy": 0.6191646191646192, "n_items": 1221, "soft_median": 0.42068892524712354, "soft_p90": 0.8426145534629192, "soft_frac_lt_1e-3": 0.000819000819000819, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"330:'A'": 284, "334:'C'": 283, "365:'B'": 266, "384:'D'": 225, "413:'E'": 126, "13:'\\n'": 37}, "first_pos_newline_wins_frac": 0.030303030303030304, "first_pos_entropy_mean_nats": 1.1955792658598476, "first_pos_p_true_mean": 0.44257710921705107, "first_pos_p_newline_mean": 0.1002931318392277, "first_pos_fullvocab_top1_hist": {"325:'('": 813, "334:'C'": 131, "365:'B'": 89, "384:'D'": 66, "413:'E'": 53, "330:'A'": 41, "415:'The'": 15, "13:'\\n'": 13}, "first_pos_fullvocab_top1_prob_mean": 0.46213538021874306, "runtime": 178.9743, "samples_per_second": 6.822, "steps_per_second": 0.855, "mixing_w": {"w_mean": 0.046469326429698664, "w_std": 0.0018382990605436747, "w_min": 0.033447265625, "w_max": 0.055908203125, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "bf16_step100", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.07750987066618109, "gsm8k_hard": 0.10462471569370735, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.04532033687735895, "csqa": 0.4424858872174364, "csqa_hard": 0.6191646191646192, "csqa_newline_wins": 0.030303030303030304, "csqa_w_mean": 0.046469326429698664}
+=== harness bf16_step100 rc=0 end=2026-10-28T03:38:11-04:00
+--- lane D
+PILOT eval shadow_bf16_step100 gsm8k diag: {"loss": 8301.8291015625, "accuracy": 0.0026240640708720883, "hard_accuracy": 0.001516300227445034, "n_items": 1319, "soft_median": 2.2315655199086977e-09, "soft_p90": 2.2797209102767835e-05, "soft_frac_lt_1e-3": 0.9757391963608795, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"13:'\\n'": 1319}, "first_pos_newline_wins_frac": 1.0, "first_pos_entropy_mean_nats": 0.3083056275837801, "first_pos_p_true_mean": 0.02802732170410093, "first_pos_p_newline_mean": 0.9062872019294901, "first_pos_fullvocab_top1_hist": {"13:'\\n'": 1318, "28705:''": 1}, "first_pos_fullvocab_top1_prob_mean": 0.708873689391584, "runtime": 196.9536, "samples_per_second": 6.697, "steps_per_second": 0.838, "mixing_w": {"w_mean": 0.04356633833845032, "w_std": 0.000722211146927016, "w_min": 0.040283203125, "w_max": 0.048583984375, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval shadow_bf16_step100 csqa diag: {"loss": 5653.90966796875, "accuracy": 1.337511041776869e-06, "hard_accuracy": 0.0, "n_items": 1221, "soft_median": 7.934369742785294e-07, "soft_p90": 3.1875256329521847e-06, "soft_frac_lt_1e-3": 1.0, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"13:'\\n'": 1221}, "first_pos_newline_wins_frac": 1.0, "first_pos_entropy_mean_nats": 9.399351288612557e-05, "first_pos_p_true_mean": 1.3375261443618752e-06, "first_pos_p_newline_mean": 0.9999933071940966, "first_pos_fullvocab_top1_hist": {"13:'\\n'": 1221}, "first_pos_fullvocab_top1_prob_mean": 0.8185942415397217, "runtime": 180.3849, "samples_per_second": 6.769, "steps_per_second": 0.848, "mixing_w": {"w_mean": 0.04424713653957539, "w_std": 0.0007660487906232012, "w_min": 0.04150390625, "w_max": 0.048583984375, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "shadow_bf16_step100", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.0026240640708720883, "gsm8k_hard": 0.001516300227445034, "gsm8k_newline_wins": 1.0, "gsm8k_w_mean": 0.04356633833845032, "csqa": 1.337511041776869e-06, "csqa_hard": 0.0, "csqa_newline_wins": 1.0, "csqa_w_mean": 0.04424713653957539}
+=== harness shadow_bf16_step100 rc=0 end=2026-10-28T03:38:29-04:00
+--- lane E
+PILOT eval bf16_step50 gsm8k diag: {"loss": 82108.265625, "accuracy": 0.06618796878522869, "hard_accuracy": 0.0932524639878696, "n_items": 1319, "soft_median": 0.022100061985473454, "soft_p90": 0.17366423179308654, "soft_frac_lt_1e-3": 0.11827141774071266, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 930, "28750:'2'": 150, "28770:'3'": 95, "28781:'4'": 65, "28782:'5'": 23, "28784:'6'": 21, "28787:'7'": 13, "28783:'8'": 13, "28774:'9'": 7, "13:'\\n'": 2}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 1.5732199359117491, "first_pos_p_true_mean": 0.24487071865638244, "first_pos_p_newline_mean": 0.0015442654111453068, "first_pos_fullvocab_top1_hist": {"28740:'1'": 897, "28750:'2'": 176, "28770:'3'": 99, "28781:'4'": 64, "28782:'5'": 24, "28784:'6'": 24, "28783:'8'": 14, "28787:'7'": 12, "28774:'9'": 7, "28723:'.'": 1, "13:'\\n'": 1}, "first_pos_fullvocab_top1_prob_mean": 0.4363230483411558, "runtime": 195.0967, "samples_per_second": 6.761, "steps_per_second": 0.846, "mixing_w": {"w_mean": 0.04564382390879329, "w_std": 0.0019082855778762792, "w_min": 0.0274658203125, "w_max": 0.0615234375, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval bf16_step50 csqa diag: {"loss": 116937.28125, "accuracy": 0.40816721749731705, "hard_accuracy": 0.6158886158886159, "n_items": 1221, "soft_median": 0.37566037747272496, "soft_p90": 0.7756036272456583, "soft_frac_lt_1e-3": 0.0, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"334:'C'": 293, "365:'B'": 262, "384:'D'": 260, "330:'A'": 241, "413:'E'": 123, "13:'\\n'": 42}, "first_pos_newline_wins_frac": 0.0343980343980344, "first_pos_entropy_mean_nats": 1.2897414140384964, "first_pos_p_true_mean": 0.40848912409660054, "first_pos_p_newline_mean": 0.14112628163292357, "first_pos_fullvocab_top1_hist": {"325:'('": 940, "334:'C'": 97, "365:'B'": 64, "384:'D'": 55, "413:'E'": 33, "330:'A'": 21, "415:'The'": 6, "13:'\\n'": 5}, "first_pos_fullvocab_top1_prob_mean": 0.41299487740181545, "runtime": 180.0239, "samples_per_second": 6.782, "steps_per_second": 0.85, "mixing_w": {"w_mean": 0.046706250947440034, "w_std": 0.002425558470491625, "w_min": 0.02685546875, "w_max": 0.06298828125, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "bf16_step50", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.06618796878522869, "gsm8k_hard": 0.0932524639878696, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.04564382390879329, "csqa": 0.40816721749731705, "csqa_hard": 0.6158886158886159, "csqa_newline_wins": 0.0343980343980344, "csqa_w_mean": 0.046706250947440034}
+=== harness bf16_step50 rc=0 end=2026-10-28T03:38:41-04:00
+PILOT eval shadow_bf16_step50 gsm8k diag: {"loss": 71651.6640625, "accuracy": 0.021489808735512393, "hard_accuracy": 0.02047005307050796, "n_items": 1319, "soft_median": 1.0059753030589036e-09, "soft_p90": 0.0012788306671827898, "soft_frac_lt_1e-3": 0.8968915845337376, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 424, "28750:'2'": 297, "28770:'3'": 161, "28782:'5'": 137, "28781:'4'": 129, "28784:'6'": 95, "28783:'8'": 39, "28787:'7'": 18, "28774:'9'": 17, "13:'\\n'": 2}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 0.2806050109880469, "first_pos_p_true_mean": 0.1709051526886306, "first_pos_p_newline_mean": 0.0015163563127028284, "first_pos_fullvocab_top1_hist": {"28740:'1'": 422, "28750:'2'": 299, "28770:'3'": 161, "28782:'5'": 137, "28781:'4'": 129, "28784:'6'": 95, "28783:'8'": 39, "28787:'7'": 18, "28774:'9'": 17, "13:'\\n'": 2}, "first_pos_fullvocab_top1_prob_mean": 0.8915587266643803, "runtime": 196.8698, "samples_per_second": 6.7, "steps_per_second": 0.838, "mixing_w": {"w_mean": 0.04488771723734699, "w_std": 0.0010562266010082952, "w_min": 0.039306640625, "w_max": 0.05126953125, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval shadow_bf16_step50 csqa diag: {"loss": 43823.8046875, "accuracy": 0.07192629439362264, "hard_accuracy": 0.07207207207207207, "n_items": 1221, "soft_median": 0.002470061182975769, "soft_p90": 0.21448352904003443, "soft_frac_lt_1e-3": 0.3939393939393939, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"13:'\\n'": 695, "330:'A'": 516, "334:'C'": 7, "384:'D'": 2, "365:'B'": 1}, "first_pos_newline_wins_frac": 0.5692055692055692, "first_pos_entropy_mean_nats": 0.30877579041439046, "first_pos_p_true_mean": 0.09039719410688603, "first_pos_p_newline_mean": 0.5514254060388614, "first_pos_fullvocab_top1_hist": {"325:'('": 805, "415:'The'": 350, "330:'A'": 35, "13:'\\n'": 12, "28705:''": 9, "560:'In'": 7, "1684:'When'": 2, "1047:'If'": 1}, "first_pos_fullvocab_top1_prob_mean": 0.9258927941305303, "runtime": 180.5159, "samples_per_second": 6.764, "steps_per_second": 0.848, "mixing_w": {"w_mean": 0.04538037577954224, "w_std": 0.0010820661968268057, "w_min": 0.036865234375, "w_max": 0.052490234375, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "shadow_bf16_step50", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.021489808735512393, "gsm8k_hard": 0.02047005307050796, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.04488771723734699, "csqa": 0.07192629439362264, "csqa_hard": 0.07207207207207207, "csqa_newline_wins": 0.5692055692055692, "csqa_w_mean": 0.04538037577954224}
+=== harness shadow_bf16_step50 rc=0 end=2026-10-28T03:45:13-04:00
+PILOT eval bf16_step100_w0 gsm8k diag: {"loss": 2.306375503540039, "accuracy": 0.07884557482918561, "hard_accuracy": 0.10310841546626232, "n_items": 1319, "soft_median": 0.017508516391043782, "soft_p90": 0.2155042671770726, "soft_frac_lt_1e-3": 0.177407126611069, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 847, "28750:'2'": 169, "28770:'3'": 114, "28781:'4'": 80, "28782:'5'": 29, "28784:'6'": 29, "28783:'8'": 20, "28787:'7'": 18, "28774:'9'": 11, "13:'\\n'": 2}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 1.3885290576648577, "first_pos_p_true_mean": 0.26181286108656726, "first_pos_p_newline_mean": 0.0015216629316009667, "first_pos_fullvocab_top1_hist": {"28740:'1'": 821, "28750:'2'": 190, "28770:'3'": 115, "28781:'4'": 81, "28782:'5'": 30, "28784:'6'": 28, "28783:'8'": 21, "28787:'7'": 20, "28774:'9'": 11, "13:'\\n'": 2}, "first_pos_fullvocab_top1_prob_mean": 0.49853895963306544, "runtime": 195.8467, "samples_per_second": 6.735, "steps_per_second": 0.842, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval bf16_step100_w0 csqa diag: {"loss": 3.4471487998962402, "accuracy": 0.4451185764849407, "hard_accuracy": 0.6167076167076168, "n_items": 1221, "soft_median": 0.42054076965310117, "soft_p90": 0.8499960290165802, "soft_frac_lt_1e-3": 0.001638001638001638, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"334:'C'": 288, "330:'A'": 280, "365:'B'": 261, "384:'D'": 225, "413:'E'": 125, "13:'\\n'": 42}, "first_pos_newline_wins_frac": 0.0343980343980344, "first_pos_entropy_mean_nats": 1.172224280350429, "first_pos_p_true_mean": 0.44517116714607396, "first_pos_p_newline_mean": 0.1082846797605325, "first_pos_fullvocab_top1_hist": {"325:'('": 903, "334:'C'": 104, "365:'B'": 71, "384:'D'": 47, "413:'E'": 44, "330:'A'": 32, "13:'\\n'": 11, "415:'The'": 9}, "first_pos_fullvocab_top1_prob_mean": 0.5040685492264672, "runtime": 179.0138, "samples_per_second": 6.821, "steps_per_second": 0.855, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "bf16_step100_w0", "dtype": "bf16", "zero_talk_head": true, "limit": 0, "gsm8k": 0.07884557482918561, "gsm8k_hard": 0.10310841546626232, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.0, "csqa": 0.4451185764849407, "csqa_hard": 0.6167076167076168, "csqa_newline_wins": 0.0343980343980344, "csqa_w_mean": 0.0}
+=== harness bf16_step100_w0 rc=0 end=2026-10-28T03:51:41-04:00
+--- lane F
+PILOT_INTERP {"from_dir": "/scratch/m/mweiss10/qstar/ckpt/full/shadow_bf16_step100", "alpha": 0.3, "out_dtype": "bf16", "n_interp_keys": 291, "verbatim_keys": ["end_embedding", "start_embedding", "talk_head.0.0.bias", "talk_head.0.0.weight", "talk_head.0.2.bias", "talk_head.0.2.weight", "talk_head.0.4.weight"], "n_coords_interp": 7241748480, "frac_out_ne_base": 0.38785138723845874, "frac_out_ne_shadow": 0.6855551613966023, "seconds": 60.56839370727539}
+PILOT_INTERP {"from_dir": "/scratch/m/mweiss10/qstar/ckpt/full/shadow_fp32_step100", "alpha": 0.3, "out_dtype": "fp32", "n_interp_keys": 291, "verbatim_keys": ["end_embedding", "start_embedding", "talk_head.0.0.bias", "talk_head.0.0.weight", "talk_head.0.2.bias", "talk_head.0.2.weight", "talk_head.0.4.weight"], "n_coords_interp": 7241748480, "frac_out_ne_base": 0.9934872794698333, "frac_out_ne_shadow": 0.9935043956400982, "seconds": 59.16562461853027}
+PILOT eval shadow_interp0.3 gsm8k diag: {"loss": 625.4586791992188, "accuracy": 0.07395359214422577, "hard_accuracy": 0.0758150113722517, "n_items": 1319, "soft_median": 8.956990283075987e-06, "soft_p90": 0.2196514046607696, "soft_frac_lt_1e-3": 0.6724791508718726, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 637, "28750:'2'": 223, "28770:'3'": 135, "28781:'4'": 104, "28784:'6'": 72, "28782:'5'": 57, "28783:'8'": 44, "28774:'9'": 23, "28787:'7'": 22, "13:'\\n'": 2}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 0.6593793002090441, "first_pos_p_true_mean": 0.2593102840642924, "first_pos_p_newline_mean": 0.0015163002938273933, "first_pos_fullvocab_top1_hist": {"28740:'1'": 622, "28750:'2'": 233, "28770:'3'": 136, "28781:'4'": 107, "28784:'6'": 72, "28782:'5'": 58, "28783:'8'": 44, "28774:'9'": 24, "28787:'7'": 21, "13:'\\n'": 2}, "first_pos_fullvocab_top1_prob_mean": 0.7450782566097357, "runtime": 194.6093, "samples_per_second": 6.778, "steps_per_second": 0.848, "mixing_w": {"w_mean": 0.04686060680726204, "w_std": 0.0010253084271179564, "w_min": 0.03662109375, "w_max": 0.056396484375, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval shadow_interp0.3 csqa diag: {"loss": 599.1809692382812, "accuracy": 0.3644091956087484, "hard_accuracy": 0.3882063882063882, "n_items": 1221, "soft_median": 0.13553015887737274, "soft_p90": 0.987640917301178, "soft_frac_lt_1e-3": 0.22276822276822278, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"330:'A'": 435, "13:'\\n'": 317, "334:'C'": 196, "384:'D'": 116, "365:'B'": 115, "413:'E'": 42}, "first_pos_newline_wins_frac": 0.2596232596232596, "first_pos_entropy_mean_nats": 0.48051244246013297, "first_pos_p_true_mean": 0.36554993331462227, "first_pos_p_newline_mean": 0.25935468317006555, "first_pos_fullvocab_top1_hist": {"325:'('": 905, "13:'\\n'": 140, "415:'The'": 109, "334:'C'": 25, "330:'A'": 20, "365:'B'": 10, "413:'E'": 6, "384:'D'": 3, "28757:'D'": 1, "28705:''": 1, "28743:'C'": 1}, "first_pos_fullvocab_top1_prob_mean": 0.9068054342128444, "runtime": 179.3043, "samples_per_second": 6.81, "steps_per_second": 0.853, "mixing_w": {"w_mean": 0.04774665150867127, "w_std": 0.0012102268213615992, "w_min": 0.037109375, "w_max": 0.0576171875, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "shadow_interp0.3", "dtype": "bf16", "zero_talk_head": false, "limit": 0, "gsm8k": 0.07395359214422577, "gsm8k_hard": 0.0758150113722517, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.04686060680726204, "csqa": 0.3644091956087484, "csqa_hard": 0.3882063882063882, "csqa_newline_wins": 0.2596232596232596, "csqa_w_mean": 0.04774665150867127}
+=== harness shadow_interp0.3 rc=0 end=2026-10-28T03:40:59-04:00
+PILOT eval shadow_bf16_step100_w0 gsm8k diag: {"loss": 14.836618423461914, "accuracy": 0.0026318732397045213, "hard_accuracy": 0.001516300227445034, "n_items": 1319, "soft_median": 3.284528697989716e-09, "soft_p90": 2.7224971913172294e-05, "soft_frac_lt_1e-3": 0.9734647460197119, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"13:'\\n'": 1319}, "first_pos_newline_wins_frac": 1.0, "first_pos_entropy_mean_nats": 0.31294618530215346, "first_pos_p_true_mean": 0.02849847567487838, "first_pos_p_newline_mean": 0.9045112836623029, "first_pos_fullvocab_top1_hist": {"13:'\\n'": 1319}, "first_pos_fullvocab_top1_prob_mean": 0.7189543646036242, "runtime": 194.8617, "samples_per_second": 6.769, "steps_per_second": 0.847, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval shadow_bf16_step100_w0 csqa diag: {"loss": 16.129863739013672, "accuracy": 1.5083996060383743e-06, "hard_accuracy": 0.0, "n_items": 1221, "soft_median": 9.132166302494406e-07, "soft_p90": 3.611937669413946e-06, "soft_frac_lt_1e-3": 1.0, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"13:'\\n'": 1221}, "first_pos_newline_wins_frac": 1.0, "first_pos_entropy_mean_nats": 0.000105103762361501, "first_pos_p_true_mean": 1.5084188683148227e-06, "first_pos_p_newline_mean": 0.9999924531049361, "first_pos_fullvocab_top1_hist": {"13:'\\n'": 1221}, "first_pos_fullvocab_top1_prob_mean": 0.8301387175801782, "runtime": 178.9086, "samples_per_second": 6.825, "steps_per_second": 0.855, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "shadow_bf16_step100_w0", "dtype": "bf16", "zero_talk_head": true, "limit": 0, "gsm8k": 0.0026318732397045213, "gsm8k_hard": 0.001516300227445034, "gsm8k_newline_wins": 1.0, "gsm8k_w_mean": 0.0, "csqa": 1.5083996060383743e-06, "csqa_hard": 0.0, "csqa_newline_wins": 1.0, "csqa_w_mean": 0.0}
+=== harness shadow_bf16_step100_w0 rc=0 end=2026-10-28T03:47:25-04:00
+--- lane G
+PILOT eval shadow_fp32_step100_fp32 gsm8k diag: {"loss": 7256.73388671875, "accuracy": 0.002604408020668334, "hard_accuracy": 0.001516300227445034, "n_items": 1319, "soft_median": 2.1388219672380553e-09, "soft_p90": 2.3518572493624814e-05, "soft_frac_lt_1e-3": 0.9757391963608795, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"13:'\\n'": 1319}, "first_pos_newline_wins_frac": 1.0, "first_pos_entropy_mean_nats": 0.3064401716116475, "first_pos_p_true_mean": 0.02783634162335031, "first_pos_p_newline_mean": 0.9069620265573873, "first_pos_fullvocab_top1_hist": {"13:'\\n'": 1318, "28705:''": 1}, "first_pos_fullvocab_top1_prob_mean": 0.7083860930422078, "runtime": 1336.5566, "samples_per_second": 0.987, "steps_per_second": 0.123, "mixing_w": {"w_mean": 0.043550310031609675, "w_std": 0.0007160389986611677, "w_min": 0.040358442813158035, "w_max": 0.048533644527196884, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval shadow_fp32_step100_fp32 csqa diag: {"loss": 4494.29931640625, "accuracy": 1.3545662949136343e-06, "hard_accuracy": 0.0, "n_items": 1221, "soft_median": 8.008750951909579e-07, "soft_p90": 3.2507042468817287e-06, "soft_frac_lt_1e-3": 1.0, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"13:'\\n'": 1221}, "first_pos_newline_wins_frac": 1.0, "first_pos_entropy_mean_nats": 9.498642686950445e-05, "first_pos_p_true_mean": 1.3545817774617257e-06, "first_pos_p_newline_mean": 0.9999932322123322, "first_pos_fullvocab_top1_hist": {"13:'\\n'": 1221}, "first_pos_fullvocab_top1_prob_mean": 0.8157068144353246, "runtime": 1236.0555, "samples_per_second": 0.988, "steps_per_second": 0.124, "mixing_w": {"w_mean": 0.04421797380662357, "w_std": 0.0007579118983549289, "w_min": 0.04147198796272278, "w_max": 0.04853066802024841, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "shadow_fp32_step100_fp32", "dtype": "fp32", "zero_talk_head": false, "limit": 0, "gsm8k": 0.002604408020668334, "gsm8k_hard": 0.001516300227445034, "gsm8k_newline_wins": 1.0, "gsm8k_w_mean": 0.043550310031609675, "csqa": 1.3545662949136343e-06, "csqa_hard": 0.0, "csqa_newline_wins": 1.0, "csqa_w_mean": 0.04421797380662357}
+=== harness shadow_fp32_step100_fp32 rc=0 end=2026-10-28T04:15:58-04:00
+--- lane H
+PILOT eval base_fp32 gsm8k diag: {"loss": 1.9264318943023682, "accuracy": 0.04977229382466159, "hard_accuracy": 0.08794541319181198, "n_items": 1319, "soft_median": 0.018056011173136495, "soft_p90": 0.12188637292315428, "soft_frac_lt_1e-3": 0.09476876421531463, "first_pos_n": 1319, "first_pos_restricted_argmax_hist": {"28740:'1'": 947, "28750:'2'": 146, "28770:'3'": 82, "28781:'4'": 60, "28782:'5'": 28, "28784:'6'": 22, "28783:'8'": 16, "28787:'7'": 8, "28774:'9'": 7, "13:'\\n'": 2, "28734:'0'": 1}, "first_pos_newline_wins_frac": 0.001516300227445034, "first_pos_entropy_mean_nats": 1.7863950086383318, "first_pos_p_true_mean": 0.21616814328781933, "first_pos_p_newline_mean": 0.0015248653573475917, "first_pos_fullvocab_top1_hist": {"28740:'1'": 922, "28750:'2'": 142, "28770:'3'": 81, "28781:'4'": 60, "28782:'5'": 28, "28784:'6'": 22, "32001:''": 20, "28783:'8'": 16, "429:'$'": 9, "28787:'7'": 8, "28774:'9'": 7, "11182:'degrees'": 1, "13:'\\n'": 1, "28734:'0'": 1, "15093:'Frances'": 1}, "first_pos_fullvocab_top1_prob_mean": 0.34760436320524674, "runtime": 1343.9695, "samples_per_second": 0.981, "steps_per_second": 0.123, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3714304}}
+PILOT eval base_fp32 csqa diag: {"loss": 2.75034761428833, "accuracy": 0.35780550560395186, "hard_accuracy": 0.5798525798525799, "n_items": 1221, "soft_median": 0.31522628519566886, "soft_p90": 0.6946381537726154, "soft_frac_lt_1e-3": 0.0, "first_pos_n": 1221, "first_pos_restricted_argmax_hist": {"334:'C'": 299, "384:'D'": 297, "365:'B'": 266, "330:'A'": 152, "413:'E'": 124, "13:'\\n'": 83}, "first_pos_newline_wins_frac": 0.06797706797706797, "first_pos_entropy_mean_nats": 1.426767198449759, "first_pos_p_true_mean": 0.35953472111962226, "first_pos_p_newline_mean": 0.16299266411475136, "first_pos_fullvocab_top1_hist": {"325:'('": 583, "334:'C'": 155, "384:'D'": 133, "365:'B'": 109, "32001:''": 87, "413:'E'": 63, "415:'The'": 37, "330:'A'": 33, "13:'\\n'": 8, "1682:'All'": 3, "28705:''": 2, "3885:'State'": 1, "2645:'Ob'": 1, "20339:'Alabama'": 1, "5783:'England'": 1}, "first_pos_fullvocab_top1_prob_mean": 0.243124537742896, "runtime": 1243.4996, "samples_per_second": 0.982, "steps_per_second": 0.123, "mixing_w": {"w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 3438336}}
+PILOT_EVAL_SUMMARY {"model": "base_fp32", "dtype": "fp32", "zero_talk_head": false, "limit": 0, "gsm8k": 0.04977229382466159, "gsm8k_hard": 0.08794541319181198, "gsm8k_newline_wins": 0.001516300227445034, "gsm8k_w_mean": 0.0, "csqa": 0.35780550560395186, "csqa_hard": 0.5798525798525799, "csqa_newline_wins": 0.06797706797706797, "csqa_w_mean": 0.0}
+=== harness base_fp32 rc=0 end=2026-10-28T04:16:19-04:00
+EVAL2_DONE end=2026-10-28T04:20:52-04:00
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                              : Wed Oct 28 04:20:52 2026
+Driver Version                                         : 580.178.04
+CUDA Version                                           : 13.0
+
+Attached GPUs                                          : 8
+GPU 00000000:19:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1343464
+            GPU Utilization                            : 87 %
+            Memory Utilization                         : 11 %
+            Max memory usage                           : 49124 MiB
+            Time                                       : 366850 ms
+            Is Running                                 : 0
+        Process ID                                     : 1344925
+            GPU Utilization                            : 98 %
+            Memory Utilization                         : 7 %
+            Max memory usage                           : 40866 MiB
+            Time                                       : 2598258 ms
+            Is Running                                 : 0
+
+GPU 00000000:3B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1343503
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21070 MiB
+            Time                                       : 387562 ms
+            Is Running                                 : 0
+
+GPU 00000000:4C:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1343624
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 387311 ms
+            Is Running                                 : 0
+
+GPU 00000000:5D:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1343741
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 390936 ms
+            Is Running                                 : 0
+
+GPU 00000000:9B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1343854
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 388201 ms
+            Is Running                                 : 0
+        Process ID                                     : 1345137
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 390305 ms
+            Is Running                                 : 0
+        Process ID                                     : 1346706
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 386019 ms
+            Is Running                                 : 0
+
+GPU 00000000:BB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1344447
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 384731 ms
+            Is Running                                 : 0
+        Process ID                                     : 1346075
+            GPU Utilization                            : 94 %
+            Memory Utilization                         : 26 %
+            Max memory usage                           : 21050 MiB
+            Time                                       : 384665 ms
+            Is Running                                 : 0
+
+GPU 00000000:CB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1344019
+            GPU Utilization                            : 98 %
+            Memory Utilization                         : 7 %
+            Max memory usage                           : 40866 MiB
+            Time                                       : 2595032 ms
+            Is Running                                 : 0
+
+GPU 00000000:DB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 1344130
+            GPU Utilization                            : 99 %
+            Memory Utilization                         : 7 %
+            Max memory usage                           : 40728 MiB
+            Time                                       : 2600731 ms
+            Is Running                                 : 0
+
+Wed Oct 28 04:20:52 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:19:00.0 Off |                    0 |
+| N/A   54C    P0            140W /  700W |       0MiB / 143771MiB |     23%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:3B:00.0 Off |                    0 |
+| N/A   31C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H200                    On  |   00000000:4C:00.0 Off |                    0 |
+| N/A   30C    P0             76W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H200                    On  |   00000000:5D:00.0 Off |                    0 |
+| N/A   33C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA H200                    On  |   00000000:9B:00.0 Off |                    0 |
+| N/A   33C    P0             79W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA H200                    On  |   00000000:BB:00.0 Off |                    0 |
+| N/A   32C    P0             76W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA H200                    On  |   00000000:CB:00.0 Off |                    0 |
+| N/A   33C    P0             77W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA H200                    On  |   00000000:DB:00.0 Off |                    0 |
+| N/A   31C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

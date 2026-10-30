@@ -1,0 +1,44 @@
+--
+COMPLETED|00:23:28|
+====
+
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]
+Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 46.62it/s]
+Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 45.77it/s]
+
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Fetching 10 files:  10%|█         | 1/10 [00:00<00:04,  1.89it/s]
+Fetching 10 files:  60%|██████    | 6/10 [00:00<00:00,  7.96it/s]
+Fetching 10 files:  70%|███████   | 7/10 [00:02<00:01,  2.45it/s]
+Fetching 10 files:  80%|████████  | 8/10 [04:20<01:55, 57.77s/it]
+Fetching 10 files:  90%|█████████ | 9/10 [04:57<00:52, 52.71s/it]
+Fetching 10 files: 100%|██████████| 10/10 [05:51<00:00, 53.20s/it]
+Fetching 10 files: 100%|██████████| 10/10 [05:51<00:00, 35.20s/it]
+base tensors 291 ckpt tensors 298
+NEW in ckpt: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+MISSING from ckpt: []
+SHAPE DIFF model.embed_tokens.weight torch.Size([32000, 4096]) torch.Size([32002, 4096])
+SHAPE DIFF lm_head.weight torch.Size([32000, 4096]) torch.Size([32002, 4096])
+ckpt dtypes: {'torch.bfloat16': 291}
+OVERALL: params=7241732096 changed=392138431 (5.415%)
+class                n  changed%    small% chg|small   chg|big |    1ulp    2ulp     3-4    5-16     >16 | signflip  meanrel
+mlp         5637144576    5.485%    13.59%    40.35%    0.000% |    6.7%    5.0%    7.9%   27.2%   53.2% | 10057315   0.3614
+attn        1342177280    5.449%    14.85%    36.69%    0.000% |    7.0%    5.1%    7.9%   26.4%   53.5% |  2427895   0.3668
+embed        131072000    2.687%    15.38%    17.47%    0.000% |   10.7%   10.8%   15.7%   34.4%   28.3% |    53311   0.1847
+lm_head      131072000    4.778%     9.95%    48.02%    0.000% |    4.6%    3.6%    5.6%   20.0%   66.2% |   280677   0.4750
+rmsnorm         266240    0.838%     0.96%    87.01%    0.000% |    3.3%    2.2%    3.0%   13.8%   77.7% |      474   2.6740
+--- new tensors (talk head etc.)
+end_embedding                                                shape=(2, 4096)          dtype=torch.bfloat16 absmean=7.55745 std=7.55793 zeros=0.000
+start_embedding                                              shape=(2, 4096)          dtype=torch.bfloat16 absmean=7.55745 std=7.55793 zeros=0.000
+talk_head.0.0.bias                                           shape=(4096,)            dtype=torch.bfloat16 absmean=0.00000 std=0.00000 zeros=0.000
+talk_head.0.0.weight                                         shape=(4096, 8192)       dtype=torch.bfloat16 absmean=0.01588 std=0.01987 zeros=0.000
+talk_head.0.2.bias                                           shape=(4096,)            dtype=torch.bfloat16 absmean=0.00000 std=0.00000 zeros=0.000
+talk_head.0.2.weight                                         shape=(4096, 4096)       dtype=torch.bfloat16 absmean=0.01588 std=0.01987 zeros=0.000
+talk_head.0.4.weight                                         shape=(1, 4096)          dtype=torch.bfloat16 absmean=0.00000 std=0.00000 zeros=0.000
+--- embeddings of added tokens (last 2 rows of embed_tokens) vs '---' token
+embed shapes (32000, 4096) (32002, 4096)
+added row 32000 absmean=0.01580 max|.|=0.0796
+added row 32001 absmean=0.01585 max|.|=0.0698
+
+[exited with code 0]

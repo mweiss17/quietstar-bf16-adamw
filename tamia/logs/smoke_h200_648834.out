@@ -1,0 +1,426 @@
+node=tg11504.tamia.ecpia.ca job=648834 start=2026-10-27T21:12:37-04:00
+name, memory.total [MiB], driver_version
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+NVIDIA H200, 143771 MiB, 580.178.04
+48
+               total        used        free      shared  buff/cache   available
+Mem:            1007          40         582           0         384         960
+torch 2.3.1+cu121 cuda ok True 8
+=== smoke train: micro_batch=4 (2026-10-27T21:12:47-04:00) ===
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT args: {'steps': 3, 'micro_batch': 4, 'out_dir': '/scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4', 'owm_dir': '/scratch/m/mweiss10/qstar/data/owm_first1000', 'sample_per_class': 150000, 'no_save': False, 'threads': 48, 'layers_per_gpu': '', 'mem_history': False, 'ckpt_mlp': False, 'profile_probe': False}
+Map:   0%|          | 0/1000 [00:00<?, ? examples/s]Map: 100%|██████████| 1000/1000 [00:03<00:00, 273.36 examples/s]Map: 100%|██████████| 1000/1000 [00:03<00:00, 273.06 examples/s]
+Loading model
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:05<00:05,  5.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  3.87s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.14s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loaded model
+PILOT hf_device_map: {'start_embedding': 0, 'end_embedding': 0, 'model.embed_tokens': 0, 'model.layers.0': 0, 'model.layers.1': 0, 'model.layers.2': 0, 'model.layers.3': 1, 'model.layers.4': 1, 'model.layers.5': 1, 'model.layers.6': 1, 'model.layers.7': 1, 'model.layers.8': 2, 'model.layers.9': 2, 'model.layers.10': 2, 'model.layers.11': 2, 'model.layers.12': 2, 'model.layers.13': 3, 'model.layers.14': 3, 'model.layers.15': 3, 'model.layers.16': 3, 'model.layers.17': 3, 'model.layers.18': 4, 'model.layers.19': 4, 'model.layers.20': 4, 'model.layers.21': 4, 'model.layers.22': 4, 'model.layers.23': 5, 'model.layers.24': 5, 'model.layers.25': 5, 'model.layers.26': 5, 'model.layers.27': 5, 'model.layers.28': 6, 'model.layers.29': 6, 'model.layers.30': 6, 'model.layers.31': 6, 'model.norm': 6, 'lm_head': 6, 'talk_head': 6}
+Loading model
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.47s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.25s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loaded model
+PILOT hf_device_map: {'start_embedding': 0, 'end_embedding': 0, 'model.embed_tokens': 0, 'model.layers.0': 0, 'model.layers.1': 0, 'model.layers.2': 0, 'model.layers.3': 1, 'model.layers.4': 1, 'model.layers.5': 1, 'model.layers.6': 1, 'model.layers.7': 1, 'model.layers.8': 2, 'model.layers.9': 2, 'model.layers.10': 2, 'model.layers.11': 2, 'model.layers.12': 2, 'model.layers.13': 3, 'model.layers.14': 3, 'model.layers.15': 3, 'model.layers.16': 3, 'model.layers.17': 3, 'model.layers.18': 4, 'model.layers.19': 4, 'model.layers.20': 4, 'model.layers.21': 4, 'model.layers.22': 4, 'model.layers.23': 5, 'model.layers.24': 5, 'model.layers.25': 5, 'model.layers.26': 5, 'model.layers.27': 5, 'model.layers.28': 6, 'model.layers.29': 6, 'model.layers.30': 6, 'model.layers.31': 6, 'model.norm': 6, 'lm_head': 6, 'talk_head': 6}
+PILOT: shadow hooks registered on AdamW {'lr': 1e-06, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.01, 'amsgrad': False, 'foreach': None, 'maximize': False, 'capturable': False, 'differentiable': False, 'fused': True}
+PILOT shadow group 0: n_params=296 wd=0.001 betas=(0.9, 0.999) eps=1e-08
+PILOT shadow group 1: n_params=2 wd=0.0 betas=(0.9, 0.999) eps=1e-08
+PILOT shadow init: 298 params, 7.292B, class numel={'thought_emb': 16384, 'embed': 131080192, 'attn': 1342177280, 'mlp': 5637144576, 'rmsnorm': 266240, 'lm_head': 131080192, 'talk_head': 50343936}, 11.0s
+PILOT step 1 lr=0.000e+00 |g|post-clip=1.0011 changed=0.0000% dropped=100.0000% |d16|=0.000e+00 |d32|=0.000e+00 shadow 19.1s stats 56.7s
+    attn         changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    embed        changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    lm_head      changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    mlp          changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    rmsnorm      changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    talk_head    changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    thought_emb  changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+{'loss': 2.1953, 'learning_rate': 5e-08, 'epoch': 0.01}
+PILOT step 2 lr=5.000e-08 |g|post-clip=1.0052 changed=0.2964% dropped=99.7036% |d16|=2.269e-04 |d32|=2.999e-03 shadow 18.8s stats 49.4s
+    attn         changed=0.3054% dropped=99.6946% nonzero_upd=99.797% |d16|/|d32|=0.07616018369403585
+    embed        changed=0.0182% dropped=99.9818% nonzero_upd=3.527% |d16|/|d32|=0.09737477242662144
+    lm_head      changed=0.0912% dropped=99.9088% nonzero_upd=92.077% |d16|/|d32|=0.06525680220667937
+    mlp          changed=0.3081% dropped=99.6919% nonzero_upd=99.885% |d16|/|d32|=0.07557703375231081
+    rmsnorm      changed=0.3805% dropped=99.6195% nonzero_upd=9.362% |d16|/|d32|=0.16799369434407577
+    talk_head    changed=0.0081% dropped=99.9919% nonzero_upd=0.008% |d16|/|d32|=1.0001035931117472
+    thought_emb  changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+{'loss': 2.0938, 'learning_rate': 1e-07, 'epoch': 0.02}
+PILOT step 3 lr=1.000e-07 |g|post-clip=0.9994 changed=0.4977% dropped=99.5023% |d16|=5.116e-04 |d32|=4.746e-03 shadow 19.2s stats 52.8s
+    attn         changed=0.5026% dropped=99.4974% nonzero_upd=99.846% |d16|/|d32|=0.10834830071525815
+    embed        changed=0.0409% dropped=99.9591% nonzero_upd=6.370% |d16|/|d32|=0.11730017212249856
+    lm_head      changed=0.2975% dropped=99.7025% nonzero_upd=99.915% |d16|/|d32|=0.08157546078976018
+    mlp          changed=0.5107% dropped=99.4893% nonzero_upd=99.916% |d16|/|d32|=0.10799254466995951
+    rmsnorm      changed=0.4180% dropped=99.5827% nonzero_upd=22.503% |d16|/|d32|=0.09104486240240296
+    talk_head    changed=0.6107% dropped=99.3893% nonzero_upd=0.689% |d16|/|d32|=1.0001277614584871
+    thought_emb  changed=22.3511% dropped=77.6489% nonzero_upd=49.969% |d16|/|d32|=1.1865521593612358
+{'loss': 3656.0, 'learning_rate': 1.5e-07, 'epoch': 0.02}
+{'train_runtime': 260.9972, 'train_samples_per_second': 3065.167, 'train_steps_per_second': 383.146, 'train_loss': 1220.0963541666667, 'epoch': 0.02}
+PILOT: training finished in 270s, shadow steps=3
+PILOT: saved /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/bf16_step3 (16s)
+PILOT: saved /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/shadow_fp32_step3 (38s)
+PILOT: saved /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/shadow_bf16_step3 (50s)
+PILOT: bf16-trained vs shadow-as-bf16 differ on 0.3761% of coordinates
+PILOT_TRAIN_DONE
+=== smoke eval base (64) (2026-10-27T21:18:53-04:00) ===
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/datasets/load.py:2491: FutureWarning: 'ignore_verifications' was deprecated in favor of 'verification_mode' in version 2.9.1 and will be removed in 3.0.0.
+You can remove this warning by passing 'verification_mode=no_checks' instead.
+  warnings.warn(
+Using the latest cached version of the dataset since gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /scratch/m/mweiss10/qstar/hf_home/datasets/gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Tue Oct 27 15:48:17 2026).
+Map:   0%|          | 0/1319 [00:00<?, ? examples/s]Map:  76%|███████▌  | 1000/1319 [00:00<00:00, 5554.13 examples/s]Map: 100%|██████████| 1319/1319 [00:00<00:00, 5472.60 examples/s]
+Using the latest cached version of the dataset since tau/commonsense_qa couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /scratch/m/mweiss10/qstar/hf_home/datasets/tau___commonsense_qa/default/0.0.0/94630fe30dad47192a8546eb75f094926d47e155 (last modified on Tue Oct 27 15:48:20 2026).
+Map:   0%|          | 0/1221 [00:00<?, ? examples/s]Map:  82%|████████▏ | 1000/1221 [00:00<00:00, 6301.22 examples/s]Map: 100%|██████████| 1221/1221 [00:00<00:00, 6258.09 examples/s]
+Loading model from mistralai/Mistral-7B-v0.1
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.94s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.34s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.58s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+{'gsm8k_loss': 2.310546875, 'gsm8k_accuracy': 0.06154736503958702, 'gsm8k_n_items': 64, 'gsm8k_per_item': [0.0019125215476378798, 0.3336421549320221, 0.007905617356300354, 0.05226290598511696, 0.06148303300142288, 0.007128442171961069, 0.00590138603001833, 0.0010530820582062006, 0.0001927182893268764, 0.02494588866829872, 0.0005719703622162342, 0.0002558515698183328, 0.014748685993254185, 0.061097003519535065, 0.057819485664367676, 0.006509571336209774, 0.30156245827674866, 0.00013676982780452818, 0.007340851239860058, 0.14429937303066254, 0.03654281049966812, 0.033573027700185776, 0.06653331220149994, 0.14147844910621643, 0.27988946437835693, 0.2706305682659149, 0.004024594556540251, 0.003706532996147871, 0.15076100826263428, 0.002075851894915104, 0.0011166137410327792, 0.03339479863643646, 0.043648261576890945, 0.1761169582605362, 0.00985319446772337, 0.00638471357524395, 0.010480633936822414, 0.047559842467308044, 0.030324632301926613, 0.059883516281843185, 0.08118963241577148, 0.0002654624986462295, 0.007876531220972538, 0.00020564727310556918, 0.08351777493953705, 0.002436107024550438, 0.0025251866318285465, 0.014715618453919888, 0.4514237642288208, 0.06405016034841537, 0.0001733340905047953, 0.033729858696460724, 0.2477998584508896, 0.006361448206007481, 0.0167709831148386, 0.10870680212974548, 0.20010364055633545, 0.00046623338130302727, 0.02668341062963009, 0.0055436124093830585, 0.06495369225740433, 0.0010101406369358301, 0.019474506378173828, 0.0002990802749991417], 'gsm8k_runtime': 10.0158, 'gsm8k_samples_per_second': 6.39, 'gsm8k_steps_per_second': 0.799}
+PILOT eval base gsm8k: accuracy=0.0615 n=64 (10s)
+{'csqa_loss': 3.28125, 'csqa_accuracy': 0.3680288791656494, 'csqa_n_items': 64, 'csqa_per_item': [0.2046370655298233, 0.28163695335388184, 0.20791225135326385, 0.1458226889371872, 0.12113792449235916, 0.6886023283004761, 0.5996153354644775, 0.2686086595058441, 0.6858011484146118, 0.10349925607442856, 0.014357945881783962, 0.7854443192481995, 0.16309601068496704, 0.16126127541065216, 0.6078200936317444, 0.22061429917812347, 0.2464144080877304, 0.34616997838020325, 0.35778921842575073, 0.2518236041069031, 0.1435515135526657, 0.8134236335754395, 0.3842850923538208, 0.21497811377048492, 0.1304110288619995, 0.8343488574028015, 0.5231271386146545, 0.39471715688705444, 0.6397157311439514, 0.7377336621284485, 0.08145563304424286, 0.3962664008140564, 0.3930005729198456, 0.24352893233299255, 0.12063135206699371, 0.6699835062026978, 0.6901206374168396, 0.38716378808021545, 0.5198734998703003, 0.5576382875442505, 0.44999948143959045, 0.31339162588119507, 0.1025535836815834, 0.16216804087162018, 0.639945924282074, 0.1862846463918686, 0.0933280810713768, 0.3993317782878876, 0.06963126361370087, 0.20362475514411926, 0.2226000279188156, 0.5077390074729919, 0.4629392921924591, 0.47402119636535645, 0.8062748908996582, 0.3204599618911743, 0.35397350788116455, 0.2272626906633377, 0.25372055172920227, 0.16885490715503693, 0.39992356300354004, 0.26341620087623596, 0.4355717897415161, 0.6988081932067871], 'csqa_runtime': 9.378, 'csqa_samples_per_second': 6.824, 'csqa_steps_per_second': 0.853}
+PILOT eval base csqa: accuracy=0.3680 n=64 (9s)
+PILOT_EVAL_SUMMARY {"model": "base", "limit": 64, "gsm8k": 0.06154736503958702, "csqa": 0.3680288791656494}
+PILOT_EVAL_DONE /scratch/m/mweiss10/qstar/results/smoke_h200_eval_base_64.json
+=== smoke eval bf16_step3 (64) (2026-10-27T21:19:31-04:00) ===
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/datasets/load.py:2491: FutureWarning: 'ignore_verifications' was deprecated in favor of 'verification_mode' in version 2.9.1 and will be removed in 3.0.0.
+You can remove this warning by passing 'verification_mode=no_checks' instead.
+  warnings.warn(
+Using the latest cached version of the dataset since gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /scratch/m/mweiss10/qstar/hf_home/datasets/gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Tue Oct 27 21:18:57 2026).
+Using the latest cached version of the dataset since tau/commonsense_qa couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /scratch/m/mweiss10/qstar/hf_home/datasets/tau___commonsense_qa/default/0.0.0/94630fe30dad47192a8546eb75f094926d47e155 (last modified on Tue Oct 27 21:18:57 2026).
+Loading model from /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/bf16_step3
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.96s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:03,  3.00s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.87s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.90s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+{'gsm8k_loss': 9400.0, 'gsm8k_accuracy': 0.06233435869216919, 'gsm8k_n_items': 64, 'gsm8k_per_item': [0.0021023962181061506, 0.33637428283691406, 0.00767931155860424, 0.051295243203639984, 0.06020022928714752, 0.007036580704152584, 0.0060517871752381325, 0.001114986022002995, 0.00018990035459864885, 0.024968592450022697, 0.0005668679368682206, 0.00025613559409976006, 0.014641786925494671, 0.06395573914051056, 0.0581597164273262, 0.0062679327093064785, 0.31193631887435913, 0.00012290549057070166, 0.006883427035063505, 0.14056603610515594, 0.03755897656083107, 0.03426653891801834, 0.06774494051933289, 0.14677239954471588, 0.28595420718193054, 0.2906443774700165, 0.0042351470328867435, 0.0035672064404934645, 0.1447780728340149, 0.0019334236858412623, 0.0010621813125908375, 0.03528544679284096, 0.04338783770799637, 0.17561718821525574, 0.009501061402261257, 0.006182922050356865, 0.010583683848381042, 0.05038785934448242, 0.030126212164759636, 0.06251633167266846, 0.08507012575864792, 0.00029368174728006124, 0.007189541589468718, 0.00021938380086794496, 0.08112476766109467, 0.002380216494202614, 0.0025739131961017847, 0.015012232586741447, 0.45579177141189575, 0.06784883886575699, 0.00016814577975310385, 0.03300975263118744, 0.24765999615192413, 0.006667271256446838, 0.017584839835762978, 0.10871651768684387, 0.20018817484378815, 0.0004998731892555952, 0.027525579556822777, 0.005637651775032282, 0.06093532592058182, 0.0009888469940051436, 0.0195289459079504, 0.00030724453972652555], 'gsm8k_runtime': 10.2967, 'gsm8k_samples_per_second': 6.216, 'gsm8k_steps_per_second': 0.777}
+PILOT eval /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/bf16_step3 gsm8k: accuracy=0.0623 n=64 (10s)
+{'csqa_loss': 10968.0, 'csqa_accuracy': 0.36753854155540466, 'csqa_n_items': 64, 'csqa_per_item': [0.21493709087371826, 0.3048737049102783, 0.20986773073673248, 0.1446247398853302, 0.12346997857093811, 0.6898677349090576, 0.6142346858978271, 0.267901748418808, 0.6990234851837158, 0.10352329909801483, 0.015275624580681324, 0.7823600172996521, 0.15379251539707184, 0.15603792667388916, 0.5963655710220337, 0.21612924337387085, 0.24636855721473694, 0.3494986593723297, 0.35301387310028076, 0.25610342621803284, 0.14194056391716003, 0.8065577745437622, 0.3855876326560974, 0.21943196654319763, 0.13041605055332184, 0.8320556282997131, 0.5230906009674072, 0.3967921733856201, 0.6539192795753479, 0.7359538674354553, 0.08175694197416306, 0.40176838636398315, 0.38814881443977356, 0.23261938989162445, 0.11414630711078644, 0.6666768789291382, 0.6812945604324341, 0.3871501088142395, 0.5173233151435852, 0.5540727972984314, 0.4524230659008026, 0.31475457549095154, 0.1032673791050911, 0.15502814948558807, 0.6453155875205994, 0.19193331897258759, 0.0911974161863327, 0.40129682421684265, 0.06962201744318008, 0.2024417668581009, 0.21918867528438568, 0.5032962560653687, 0.4482437074184418, 0.47264301776885986, 0.8053317666053772, 0.29747098684310913, 0.3440699279308319, 0.23132655024528503, 0.2605016231536865, 0.17564836144447327, 0.39990606904029846, 0.24444550275802612, 0.44900965690612793, 0.6961321234703064], 'csqa_runtime': 9.7476, 'csqa_samples_per_second': 6.566, 'csqa_steps_per_second': 0.821}
+PILOT eval /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/bf16_step3 csqa: accuracy=0.3675 n=64 (10s)
+PILOT_EVAL_SUMMARY {"model": "/scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/bf16_step3", "limit": 64, "gsm8k": 0.06233435869216919, "csqa": 0.36753854155540466}
+PILOT_EVAL_DONE /scratch/m/mweiss10/qstar/results/smoke_h200_eval_bf16_step3_64.json
+=== smoke eval shadow_bf16_step3 (64) (2026-10-27T21:20:11-04:00) ===
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/datasets/load.py:2491: FutureWarning: 'ignore_verifications' was deprecated in favor of 'verification_mode' in version 2.9.1 and will be removed in 3.0.0.
+You can remove this warning by passing 'verification_mode=no_checks' instead.
+  warnings.warn(
+Using the latest cached version of the dataset since gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /scratch/m/mweiss10/qstar/hf_home/datasets/gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Tue Oct 27 21:18:57 2026).
+Using the latest cached version of the dataset since tau/commonsense_qa couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /scratch/m/mweiss10/qstar/hf_home/datasets/tau___commonsense_qa/default/0.0.0/94630fe30dad47192a8546eb75f094926d47e155 (last modified on Tue Oct 27 21:18:57 2026).
+Loading model from /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/shadow_bf16_step3
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.94s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.94s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.17s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.11s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+{'gsm8k_loss': 8988.0, 'gsm8k_accuracy': 0.06235653534531593, 'gsm8k_n_items': 64, 'gsm8k_per_item': [0.0018878430128097534, 0.3369247615337372, 0.007371240761131048, 0.052275657653808594, 0.060189004987478256, 0.006724026054143906, 0.006580131594091654, 0.0009953341213986278, 0.00021085803746245801, 0.025388024747371674, 0.0005735211889259517, 0.0002500946866348386, 0.014604354277253151, 0.06345868855714798, 0.058057837188243866, 0.006548828911036253, 0.3139170706272125, 0.0001331917301286012, 0.007310359738767147, 0.1464344561100006, 0.03505013510584831, 0.03428298234939575, 0.0658734068274498, 0.15185469388961792, 0.2788277566432953, 0.29000431299209595, 0.0040566385723650455, 0.0036997876595705748, 0.14475584030151367, 0.0020050255116075277, 0.0010567997815087438, 0.035159628838300705, 0.04560753330588341, 0.181614488363266, 0.00975473690778017, 0.006128358654677868, 0.010379125364124775, 0.04934190958738327, 0.030168216675519943, 0.061757903546094894, 0.07988213002681732, 0.00028474864666350186, 0.007387574762105942, 0.00021211622515693307, 0.0831127017736435, 0.0026310484390705824, 0.002700241282582283, 0.013546178117394447, 0.45456662774086, 0.06271305680274963, 0.00016940922068897635, 0.03570206090807915, 0.24839484691619873, 0.006507813464850187, 0.017081335186958313, 0.11290236562490463, 0.19150285422801971, 0.0004946652916260064, 0.027782976627349854, 0.005636202171444893, 0.0653308779001236, 0.0009426451870240271, 0.019807450473308563, 0.0003113292623311281], 'gsm8k_runtime': 9.9014, 'gsm8k_samples_per_second': 6.464, 'gsm8k_steps_per_second': 0.808}
+PILOT eval /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/shadow_bf16_step3 gsm8k: accuracy=0.0624 n=64 (10s)
+{'csqa_loss': 10976.0, 'csqa_accuracy': 0.3671588897705078, 'csqa_n_items': 64, 'csqa_per_item': [0.2149938941001892, 0.29175326228141785, 0.21336263418197632, 0.14211280643939972, 0.12482064217329025, 0.6995077729225159, 0.599219024181366, 0.26977381110191345, 0.6914167404174805, 0.10689426958560944, 0.014133104123175144, 0.7854925990104675, 0.16316886246204376, 0.16416259109973907, 0.599543571472168, 0.21591782569885254, 0.24292080104351044, 0.3342987298965454, 0.3611263334751129, 0.2526277005672455, 0.14798949658870697, 0.8160523176193237, 0.3945949971675873, 0.21986450254917145, 0.1260318011045456, 0.8332177400588989, 0.5271691083908081, 0.3936028480529785, 0.6356346607208252, 0.7376936078071594, 0.08371169865131378, 0.38434210419654846, 0.387319415807724, 0.2327205240726471, 0.11417200416326523, 0.6560660600662231, 0.6908412575721741, 0.3908911943435669, 0.5167197585105896, 0.5500110387802124, 0.44085609912872314, 0.3134160339832306, 0.10514876991510391, 0.16056570410728455, 0.6549041271209717, 0.1931561380624771, 0.09125387668609619, 0.39534255862236023, 0.06977556645870209, 0.20363205671310425, 0.22250854969024658, 0.5047795176506042, 0.4629572927951813, 0.45281484723091125, 0.8024466633796692, 0.3055229187011719, 0.35232850909233093, 0.21982036530971527, 0.26955148577690125, 0.17694935202598572, 0.38803422451019287, 0.2430810034275055, 0.4373146891593933, 0.7061173319816589], 'csqa_runtime': 9.3653, 'csqa_samples_per_second': 6.834, 'csqa_steps_per_second': 0.854}
+PILOT eval /scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/shadow_bf16_step3 csqa: accuracy=0.3672 n=64 (9s)
+PILOT_EVAL_SUMMARY {"model": "/scratch/m/mweiss10/qstar/ckpt/smoke_h200_mb4/shadow_bf16_step3", "limit": 64, "gsm8k": 0.06235653534531593, "csqa": 0.3671588897705078}
+PILOT_EVAL_DONE /scratch/m/mweiss10/qstar/results/smoke_h200_eval_shadow_bf16_step3_64.json
+SMOKE_DONE config_ok=h200_mb4 end=2026-10-27T21:20:51-04:00
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                              : Tue Oct 27 21:20:51 2026
+Driver Version                                         : 580.178.04
+CUDA Version                                           : 13.0
+
+Attached GPUs                                          : 8
+GPU 00000000:19:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 0 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 38512 MiB
+            Time                                       : 362891 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 4 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3408 MiB
+            Time                                       : 36682 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 4 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3148 MiB
+            Time                                       : 38359 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 4 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3148 MiB
+            Time                                       : 38070 ms
+            Is Running                                 : 0
+
+GPU 00000000:3B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 1 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 61302 MiB
+            Time                                       : 362793 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 7 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 36656 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 38329 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 38040 ms
+            Is Running                                 : 0
+
+GPU 00000000:4C:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 1 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 61262 MiB
+            Time                                       : 362657 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 7 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 36633 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 38303 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 38014 ms
+            Is Running                                 : 0
+
+GPU 00000000:5D:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 1 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 61262 MiB
+            Time                                       : 362545 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 7 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 36609 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 38280 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 37990 ms
+            Is Running                                 : 0
+
+GPU 00000000:9B:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 1 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 61322 MiB
+            Time                                       : 362431 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 7 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 36584 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 38257 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 7 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 37967 ms
+            Is Running                                 : 0
+
+GPU 00000000:BB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 1 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 61322 MiB
+            Time                                       : 362297 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 7 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 36559 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 38231 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 6 %
+            Memory Utilization                         : 1 %
+            Max memory usage                           : 3944 MiB
+            Time                                       : 37941 ms
+            Is Running                                 : 0
+
+GPU 00000000:CB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 1 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 74344 MiB
+            Time                                       : 362161 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 10 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 5684 MiB
+            Time                                       : 36536 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 10 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 5444 MiB
+            Time                                       : 38206 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 10 %
+            Memory Utilization                         : 2 %
+            Max memory usage                           : 5444 MiB
+            Time                                       : 37916 ms
+            Is Running                                 : 0
+
+GPU 00000000:DB:00.0
+    Accounting Mode                                    : Enabled
+    Accounting Mode Buffer Size                        : 4000
+    Accounted Processes
+        Process ID                                     : 2618609
+            GPU Utilization                            : 0 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 524 MiB
+            Time                                       : 362029 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619649
+            GPU Utilization                            : 0 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 524 MiB
+            Time                                       : 36508 ms
+            Is Running                                 : 0
+        Process ID                                     : 2619977
+            GPU Utilization                            : 0 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 524 MiB
+            Time                                       : 38179 ms
+            Is Running                                 : 0
+        Process ID                                     : 2620311
+            GPU Utilization                            : 0 %
+            Memory Utilization                         : 0 %
+            Max memory usage                           : 524 MiB
+            Time                                       : 37890 ms
+            Is Running                                 : 0
+
+Tue Oct 27 21:20:51 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:19:00.0 Off |                    0 |
+| N/A   43C    P0            124W /  700W |       0MiB / 143771MiB |      8%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:3B:00.0 Off |                    0 |
+| N/A   38C    P0            122W /  700W |       0MiB / 143771MiB |     10%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H200                    On  |   00000000:4C:00.0 Off |                    0 |
+| N/A   38C    P0            125W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H200                    On  |   00000000:5D:00.0 Off |                    0 |
+| N/A   41C    P0            127W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA H200                    On  |   00000000:9B:00.0 Off |                    0 |
+| N/A   44C    P0            128W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA H200                    On  |   00000000:BB:00.0 Off |                    0 |
+| N/A   37C    P0            125W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA H200                    On  |   00000000:CB:00.0 Off |                    0 |
+| N/A   42C    P0            126W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA H200                    On  |   00000000:DB:00.0 Off |                    0 |
+| N/A   36C    P0            120W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

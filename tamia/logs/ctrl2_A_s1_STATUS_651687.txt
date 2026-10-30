@@ -1,0 +1,12 @@
+tag=A_s1 job=651687 node=tg10502.tamia.ecpia.ca stage=done train_rc=0 all_ok=1 time=2026-10-28T20:54:04-04:00 ckpt=/tmp/ctrl2_A_s1
+train_done_marker=1  last_step_line: PILOT-B step 100 lr=9.992e-07 |g|post-clip=0.9978 |upd|=3.110e-03 |proposed|=3.1
+first_batch: sum=12209353
+casts_present: bf16cast_step100 bf16cast_step25 bf16cast_step50 bf16cast_step75 
+result_ok: evalE_A_s1_ppl_off.json
+result_ok: evalE_A_s1_ppl_on_step100.json
+result_ok: evalE_A_s1_harness_step50.json
+result_ok: evalE_A_s1_harness_step100.json
+lane ctrl2_A_s1_harness100_651687.log: --- harness100 rc=0 end=2026-10-28T20:54:04-04:00
+lane ctrl2_A_s1_harness50_651687.log: --- harness50 rc=0 end=2026-10-28T20:53:57-04:00
+lane ctrl2_A_s1_ppl_off_651687.log: --- ppl_off rc=0 end=2026-10-28T20:47:37-04:00
+lane ctrl2_A_s1_ppl_on100_651687.log: --- ppl_on100 rc=0 end=2026-10-28T20:48:01-04:00

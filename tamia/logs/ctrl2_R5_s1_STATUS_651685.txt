@@ -1,0 +1,12 @@
+tag=R5_s1 job=651685 node=tg11501.tamia.ecpia.ca stage=done train_rc=0 all_ok=1 time=2026-10-28T20:49:47-04:00 ckpt=/tmp/ctrl2_R5_s1
+train_done_marker=1  last_step_line: PILOT-B step 100 lr=9.992e-07 |g|post-clip=1.0000 |upd|=4.330e-03 |proposed|=1.8
+first_batch: sum=12209353
+casts_present: bf16cast_step100 bf16cast_step25 bf16cast_step50 bf16cast_step75 
+result_ok: evalE_R5_s1_ppl_off.json
+result_ok: evalE_R5_s1_ppl_on_step100.json
+result_ok: evalE_R5_s1_harness_step50.json
+result_ok: evalE_R5_s1_harness_step100.json
+lane ctrl2_R5_s1_harness100_651685.log: --- harness100 rc=0 end=2026-10-28T20:49:47-04:00
+lane ctrl2_R5_s1_harness50_651685.log: --- harness50 rc=0 end=2026-10-28T20:49:36-04:00
+lane ctrl2_R5_s1_ppl_off_651685.log: --- ppl_off rc=0 end=2026-10-28T20:43:22-04:00
+lane ctrl2_R5_s1_ppl_on100_651685.log: --- ppl_on100 rc=0 end=2026-10-28T20:43:44-04:00

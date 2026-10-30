@@ -1,0 +1,56 @@
+--- L1 start=2026-10-28T15:23:56-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:05<00:05,  5.69s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.31s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.52s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+PILOT_PPL loaded base_seed1 (base, torch.bfloat16) in 14s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "base_seed1", "mode": "off", "seed_resize": 1, "nll": 1.79843, "ppl": 6.04018, "n_tokens": 48088, "runtime_s": 1.89502, "vocab_scored": 32000, "nll_full": 2.0559, "ppl_full": 7.81385, "extra_rows": {"row32000": [-13.861, 14.812], "row32001": [-14.345, 19.438], "mass": [0.082, 1.0], "lm_head_row_norms": [1.283, 1.252]}}
+PILOT_PPL {"model": "base_seed1", "mode": "on", "seed_resize": 1, "nll": 1.79843, "ppl": 6.04018, "n_tokens": 48088, "runtime_s": 31.26191, "vocab_scored": 32000, "nll_full": 2.0559, "ppl_full": 7.81385, "nll_base_hidden": 19.78276, "ppl_base_hidden": 390431814.93979, "nll_talk_hidden": 113.45575, "ppl_talk_hidden": 1.8758776970516753e+49, "w_mean": 0.0, "w_std": 0.0, "w_min": 0.0, "w_max": 0.0, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 22.61488, "nll_talk_hidden_full": 119.65611, "model_loss_mean": 2.05812, "extra_rows": {"row32000": [-13.861, 14.812], "row32001": [-14.345, 19.438], "mass": [0.082, 1.0], "lm_head_row_norms": [1.283, 1.252]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalC_part_base_seed1.json
+--- L1 rc=0 end=2026-10-28T15:24:48-04:00
+--- L1 start=2026-10-28T15:24:48-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.58s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.27s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.46s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+PILOT_PPL loaded base_seed2 (base, torch.bfloat16) in 11s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "base_seed2", "mode": "off", "seed_resize": 2, "nll": 1.79843, "ppl": 6.04018, "n_tokens": 48088, "runtime_s": 1.92947, "vocab_scored": 32000, "nll_full": 1.93835, "ppl_full": 6.94731, "extra_rows": {"row32000": [-14.235, 14.375], "row32001": [-14.908, 22.0], "mass": [0.046, 1.0], "lm_head_row_norms": [1.258, 1.26]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalC_part_base_seed2.json
+--- L1 rc=0 end=2026-10-28T15:25:04-04:00
+--- L1 start=2026-10-28T15:25:04-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.97s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.98s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.87s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.90s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded A_bf16_step100 (/scratch/m/mweiss10/qstar/ckpt/full/bf16_step100, torch.bfloat16) in 11s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "A_bf16_step100", "mode": "off", "seed_resize": null, "nll": 2.12492, "ppl": 8.37225, "n_tokens": 48088, "runtime_s": 1.8831, "vocab_scored": 32000, "nll_full": 2.23954, "ppl_full": 9.38897, "extra_rows": {"row32000": [-20.392, 16.438], "row32001": [-17.347, 17.812], "mass": [0.035, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL {"model": "A_bf16_step100", "mode": "on", "seed_resize": null, "nll": 2.04336, "ppl": 7.71652, "n_tokens": 48088, "runtime_s": 31.30734, "vocab_scored": 32000, "nll_full": 2.12458, "ppl_full": 8.36934, "nll_base_hidden": 23.37415, "ppl_base_hidden": 14166566797.75885, "nll_talk_hidden": 402.81159, "ppl_talk_hidden": 8.68660585283405e+174, "w_mean": 0.04559, "w_std": 0.0023, "w_min": 0.0332, "w_max": 0.05957, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 24.63489, "nll_talk_hidden_full": 402.81159, "model_loss_mean": 3518.08, "extra_rows": {"row32000": [-20.033, 14.75], "row32001": [-17.332, 15.812], "mass": [0.027, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalC_part_A100.json
+--- L1 rc=0 end=2026-10-28T15:25:52-04:00
+--- L1 start=2026-10-28T15:25:52-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.99s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.99s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.85s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.89s/it]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded A_bf16_step50 (/scratch/m/mweiss10/qstar/ckpt/full/step50/bf16_step50, torch.bfloat16) in 11s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "A_bf16_step50", "mode": "off", "seed_resize": null, "nll": 1.93397, "ppl": 6.91693, "n_tokens": 48088, "runtime_s": 1.89235, "vocab_scored": 32000, "nll_full": 2.0902, "ppl_full": 8.08656, "extra_rows": {"row32000": [-18.805, 17.375], "row32001": [-15.862, 17.562], "mass": [0.047, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.90s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.90s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.79s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.82s/it]
+PILOT_PPL loaded A_shadow_bf16_step50 (/scratch/m/mweiss10/qstar/ckpt/full/step50/shadow_bf16_step50, torch.bfloat16) in 9s; gpu mem 14.5 GiB
+PILOT_PPL {"model": "A_shadow_bf16_step50", "mode": "off", "seed_resize": null, "nll": 8.94127, "ppl": 7640.89223, "n_tokens": 48088, "runtime_s": 1.76296, "vocab_scored": 32000, "nll_full": 8.94204, "ppl_full": 7646.75105, "extra_rows": {"row32000": [-29.04, 2.125], "row32001": [-38.296, 8.438], "mass": [0.0, 0.996], "lm_head_row_norms": [1.271, 1.267]}}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.87s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.84s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.79s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.81s/it]
+PILOT_PPL loaded A_shadow_bf16_step100 (/scratch/m/mweiss10/qstar/ckpt/full/shadow_bf16_step100, torch.bfloat16) in 9s; gpu mem 14.5 GiB
+PILOT_PPL {"model": "A_shadow_bf16_step100", "mode": "off", "seed_resize": null, "nll": 14.4027, "ppl": 1798928.07788, "n_tokens": 48088, "runtime_s": 1.75275, "vocab_scored": 32000, "nll_full": 14.40295, "ppl_full": 1799382.37798, "extra_rows": {"row32000": [-17.638, -5.375], "row32001": [-28.515, 7.375], "mass": [0.0, 0.996], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalC_part_A.json
+--- L1 rc=0 end=2026-10-28T15:26:30-04:00

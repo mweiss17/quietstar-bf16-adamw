@@ -1,0 +1,100 @@
+pinning to 26bca36bde8333b5d7f72e9ed20ccda6a618af24 2023-12-11T19:27:24.000Z Adding `safetensors` variant of this model (#101)
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  80%|████████  | 8/10 [00:00<00:00, 16.02it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 18.75it/s]
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+snapshot: /scratch/m/mweiss10/qstar/hf_home/hub/models--mistralai--Mistral-7B-v0.1/snapshots/26bca36bde8333b5d7f72e9ed20ccda6a618af24 ['config.json', 'generation_config.json', 'model-00001-of-00002.safetensors', 'model-00002-of-00002.safetensors', 'model.safetensors.index.json', 'pytorch_model.bin.index.json', 'special_tokens_map.json', 'tokenizer.json', 'tokenizer.model', 'tokenizer_config.json']
+refs/main -> 26bca36bde8333b5d7f72e9ed20ccda6a618af24
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+fast tokenizer loaded: LlamaTokenizerFast len 32000
+ids->tokens ['1', '2', '0', '<0x0A>', '▁A', '▁B', '▁C', '▁D', '▁E']
+encode 'Q: 2+2\nA: 4\n' -> [1, 1186, 28747, 28705, 28750, 28806, 28750, 13, 28741, 28747, 28705, 28781, 13]
+after add: 32002 32000 32001
+Traceback (most recent call last):
+  File "/scratch/m/mweiss10/qstar/scripts/pin_revision.py", line 27, in <module>
+    tok2 = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")  # offline, via refs/main
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 814, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2029, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2261, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/models/llama/tokenization_llama_fast.py", line 124, in __init__
+    super().__init__(
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 111, in __init__
+    fast_tokenizer = TokenizerFast.from_file(fast_tokenizer_file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exception: data did not match any variant of untagged enum PyPreTokenizerTypeWrapper at line 40 column 3
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1746, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1666, in get_hf_file_metadata
+    r = _request_wrapper(
+        ^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 364, in _request_wrapper
+    response = _request_wrapper(
+               ^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 387, in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 104, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/mistralai/Mistral-7B-v0.1/resolve/main/config.json: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/utils/hub.py", line 385, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1232, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1339, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1857, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 773, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/models/auto/configuration_auto.py", line 1100, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/configuration_utils.py", line 634, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/configuration_utils.py", line 689, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/transformers/utils/hub.py", line 425, in cached_file
+    raise EnvironmentError(
+OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like mistralai/Mistral-7B-v0.1 is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.

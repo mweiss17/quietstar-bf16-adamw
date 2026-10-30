@@ -1,0 +1,12 @@
+{
+ "steps": 50,
+ "micro_batch": 4,
+ "grad_accum": 2,
+ "frac_coords_bf16_trained_ne_shadow_bf16": 0.5651511625827634,
+ "n_coords": 7292108800,
+ "dirs": {
+  "bf16": "/scratch/m/mweiss10/qstar/ckpt/full/step50/bf16_step50",
+  "shadow_fp32": "/scratch/m/mweiss10/qstar/ckpt/full/step50/shadow_fp32_step50",
+  "shadow_bf16": "/scratch/m/mweiss10/qstar/ckpt/full/step50/shadow_bf16_step50"
+ }
+}

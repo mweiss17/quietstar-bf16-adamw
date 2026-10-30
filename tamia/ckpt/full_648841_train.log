@@ -1,0 +1,157 @@
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT args: {'steps': 100, 'micro_batch': 4, 'out_dir': '/scratch/m/mweiss10/qstar/ckpt/full', 'owm_dir': '/scratch/m/mweiss10/qstar/data/owm_first1000', 'sample_per_class': 150000, 'no_save': False, 'threads': 48, 'layers_per_gpu': '', 'mem_history': False, 'ckpt_mlp': False, 'profile_probe': False}
+Loading model
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.16s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.38s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loaded model
+PILOT hf_device_map: {'start_embedding': 0, 'end_embedding': 0, 'model.embed_tokens': 0, 'model.layers.0': 0, 'model.layers.1': 0, 'model.layers.2': 0, 'model.layers.3': 1, 'model.layers.4': 1, 'model.layers.5': 1, 'model.layers.6': 1, 'model.layers.7': 1, 'model.layers.8': 2, 'model.layers.9': 2, 'model.layers.10': 2, 'model.layers.11': 2, 'model.layers.12': 2, 'model.layers.13': 3, 'model.layers.14': 3, 'model.layers.15': 3, 'model.layers.16': 3, 'model.layers.17': 3, 'model.layers.18': 4, 'model.layers.19': 4, 'model.layers.20': 4, 'model.layers.21': 4, 'model.layers.22': 4, 'model.layers.23': 5, 'model.layers.24': 5, 'model.layers.25': 5, 'model.layers.26': 5, 'model.layers.27': 5, 'model.layers.28': 6, 'model.layers.29': 6, 'model.layers.30': 6, 'model.layers.31': 6, 'model.norm': 6, 'lm_head': 6, 'talk_head': 6}
+Loading model
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.45s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.24s/it]
+Some weights of MistralForCausalLM were not initialized from the model checkpoint at mistralai/Mistral-7B-v0.1 and are newly initialized: ['end_embedding', 'start_embedding', 'talk_head.0.0.bias', 'talk_head.0.0.weight', 'talk_head.0.2.bias', 'talk_head.0.2.weight', 'talk_head.0.4.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loaded model
+PILOT hf_device_map: {'start_embedding': 0, 'end_embedding': 0, 'model.embed_tokens': 0, 'model.layers.0': 0, 'model.layers.1': 0, 'model.layers.2': 0, 'model.layers.3': 1, 'model.layers.4': 1, 'model.layers.5': 1, 'model.layers.6': 1, 'model.layers.7': 1, 'model.layers.8': 2, 'model.layers.9': 2, 'model.layers.10': 2, 'model.layers.11': 2, 'model.layers.12': 2, 'model.layers.13': 3, 'model.layers.14': 3, 'model.layers.15': 3, 'model.layers.16': 3, 'model.layers.17': 3, 'model.layers.18': 4, 'model.layers.19': 4, 'model.layers.20': 4, 'model.layers.21': 4, 'model.layers.22': 4, 'model.layers.23': 5, 'model.layers.24': 5, 'model.layers.25': 5, 'model.layers.26': 5, 'model.layers.27': 5, 'model.layers.28': 6, 'model.layers.29': 6, 'model.layers.30': 6, 'model.layers.31': 6, 'model.norm': 6, 'lm_head': 6, 'talk_head': 6}
+PILOT: shadow hooks registered on AdamW {'lr': 1e-06, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.01, 'amsgrad': False, 'foreach': None, 'maximize': False, 'capturable': False, 'differentiable': False, 'fused': True}
+PILOT shadow group 0: n_params=296 wd=0.001 betas=(0.9, 0.999) eps=1e-08
+PILOT shadow group 1: n_params=2 wd=0.0 betas=(0.9, 0.999) eps=1e-08
+PILOT shadow init: 298 params, 7.292B, class numel={'thought_emb': 16384, 'embed': 131080192, 'attn': 1342177280, 'mlp': 5637144576, 'rmsnorm': 266240, 'lm_head': 131080192, 'talk_head': 50343936}, 11.1s
+PILOT step 1 lr=0.000e+00 |g|post-clip=1.0011 changed=0.0000% dropped=100.0000% |d16|=0.000e+00 |d32|=0.000e+00 shadow 19.0s stats 53.4s
+    attn         changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    embed        changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    lm_head      changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    mlp          changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    rmsnorm      changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    talk_head    changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+    thought_emb  changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+{'loss': 2.1953, 'learning_rate': 5e-08, 'epoch': 0.01}
+PILOT step 2 lr=5.000e-08 |g|post-clip=1.0052 changed=0.2964% dropped=99.7036% |d16|=2.269e-04 |d32|=2.999e-03 shadow 18.5s stats 35.7s
+    attn         changed=0.3054% dropped=99.6946% nonzero_upd=99.797% |d16|/|d32|=0.07616018369403585
+    embed        changed=0.0182% dropped=99.9818% nonzero_upd=3.527% |d16|/|d32|=0.09737477242662144
+    lm_head      changed=0.0912% dropped=99.9088% nonzero_upd=92.077% |d16|/|d32|=0.06525680220667937
+    mlp          changed=0.3081% dropped=99.6919% nonzero_upd=99.885% |d16|/|d32|=0.07557703375231081
+    rmsnorm      changed=0.3805% dropped=99.6195% nonzero_upd=9.362% |d16|/|d32|=0.16799369434407577
+    talk_head    changed=0.0081% dropped=99.9919% nonzero_upd=0.008% |d16|/|d32|=1.0001035931117472
+    thought_emb  changed=0.0000% dropped=100.0000% nonzero_upd=0.000% |d16|/|d32|=None
+{'loss': 2.0938, 'learning_rate': 1e-07, 'epoch': 0.02}
+PILOT step 3 lr=1.000e-07 |g|post-clip=1.0000 changed=0.4977% dropped=99.5024% |d16|=5.116e-04 |d32|=4.746e-03 shadow 19.4s stats 44.6s
+    attn         changed=0.5026% dropped=99.4974% nonzero_upd=99.846% |d16|/|d32|=0.10835011948640468
+    embed        changed=0.0409% dropped=99.9591% nonzero_upd=6.370% |d16|/|d32|=0.11731867743528661
+    lm_head      changed=0.2975% dropped=99.7025% nonzero_upd=99.915% |d16|/|d32|=0.08157546078976018
+    mlp          changed=0.5107% dropped=99.4893% nonzero_upd=99.916% |d16|/|d32|=0.10799152960518427
+    rmsnorm      changed=0.4173% dropped=99.5827% nonzero_upd=22.506% |d16|/|d32|=0.09114922319794513
+    talk_head    changed=0.6107% dropped=99.3893% nonzero_upd=0.689% |d16|/|d32|=1.0001277614584871
+    thought_emb  changed=22.3389% dropped=77.6611% nonzero_upd=49.963% |d16|/|d32|=1.1857017485879464
+{'loss': 3656.0, 'learning_rate': 1.5e-07, 'epoch': 0.02}
+PILOT step 4 lr=1.500e-07 |g|post-clip=1.0004 changed=0.5965% dropped=99.4035% |d16|=7.257e-04 |d32|=6.023e-03 shadow 19.2s stats 44.4s
+    attn         changed=0.6030% dropped=99.3970% nonzero_upd=99.864% |d16|/|d32|=0.1219956180606161
+    embed        changed=0.1034% dropped=99.8966% nonzero_upd=12.845% |d16|/|d32|=0.12462040857696537
+    lm_head      changed=0.4957% dropped=99.5043% nonzero_upd=99.945% |d16|/|d32|=0.0972159752473902
+    mlp          changed=0.6086% dropped=99.3915% nonzero_upd=99.928% |d16|/|d32|=0.12070398544000546
+    rmsnorm      changed=0.4376% dropped=99.5617% nonzero_upd=28.921% |d16|/|d32|=0.0852432450461117
+    talk_head    changed=0.6109% dropped=99.3891% nonzero_upd=0.717% |d16|/|d32|=0.9994656345167561
+    thought_emb  changed=22.1130% dropped=77.8931% nonzero_upd=50.000% |d16|/|d32|=0.9104103387157664
+{'loss': 26112.0, 'learning_rate': 2e-07, 'epoch': 0.03}
+PILOT step 5 lr=2.000e-07 |g|post-clip=1.0059 changed=0.6965% dropped=99.3035% |d16|=9.519e-04 |d32|=7.043e-03 shadow 18.1s stats 51.1s
+    attn         changed=0.7031% dropped=99.2969% nonzero_upd=99.875% |d16|/|d32|=0.1365173865688778
+    embed        changed=0.1540% dropped=99.8460% nonzero_upd=18.607% |d16|/|d32|=0.12694242160228025
+    lm_head      changed=0.7399% dropped=99.2601% nonzero_upd=99.958% |d16|/|d32|=0.12994564267508565
+    mlp          changed=0.7073% dropped=99.2927% nonzero_upd=99.935% |d16|/|d32|=0.13505565678289025
+    rmsnorm      changed=0.4661% dropped=99.5335% nonzero_upd=36.493% |d16|/|d32|=0.07804397984251753
+    talk_head    changed=0.6107% dropped=99.3893% nonzero_upd=0.740% |d16|/|d32|=0.9990018122969135
+    thought_emb  changed=28.9062% dropped=71.0999% nonzero_upd=50.000% |d16|/|d32|=1.0640545329658373
+{'loss': 37760.0, 'learning_rate': 2.5e-07, 'epoch': 0.04}
+PILOT step 6 lr=2.500e-07 |g|post-clip=1.0003 changed=0.7905% dropped=99.2095% |d16|=1.169e-03 |d32|=8.142e-03 shadow 19.3s stats 49.7s
+    attn         changed=0.8008% dropped=99.1991% nonzero_upd=99.883% |d16|/|d32|=0.14519361677212614
+    embed        changed=0.2116% dropped=99.7884% nonzero_upd=22.302% |d16|/|d32|=0.144993280273205
+    lm_head      changed=0.8810% dropped=99.1190% nonzero_upd=99.966% |d16|/|d32|=0.12759719680635956
+    mlp          changed=0.8009% dropped=99.1991% nonzero_upd=99.939% |d16|/|d32|=0.14386786417927694
+    rmsnorm      changed=0.4860% dropped=99.5143% nonzero_upd=44.467% |d16|/|d32|=0.07407417436434109
+    talk_head    changed=0.6106% dropped=99.3894% nonzero_upd=0.784% |d16|/|d32|=0.9990952168781039
+    thought_emb  changed=32.2815% dropped=67.7185% nonzero_upd=50.000% |d16|/|d32|=1.0631267165252951
+{'loss': 41344.0, 'learning_rate': 3e-07, 'epoch': 0.05}
+PILOT step 7 lr=3.000e-07 |g|post-clip=1.0048 changed=0.8953% dropped=99.1046% |d16|=1.509e-03 |d32|=9.346e-03 shadow 20.2s stats 63.5s
+    attn         changed=0.9136% dropped=99.0863% nonzero_upd=99.891% |d16|/|d32|=0.16430697335289268
+    embed        changed=0.2849% dropped=99.7150% nonzero_upd=25.930% |d16|/|d32|=0.1595941859031335
+    lm_head      changed=1.1288% dropped=98.8712% nonzero_upd=99.973% |d16|/|d32|=0.16301839790994985
+    mlp          changed=0.9022% dropped=99.0978% nonzero_upd=99.942% |d16|/|d32|=0.16062473503820088
+    rmsnorm      changed=0.4962% dropped=99.5038% nonzero_upd=51.429% |d16|/|d32|=0.07321950277213787
+    talk_head    changed=0.6105% dropped=99.3895% nonzero_upd=0.823% |d16|/|d32|=0.9978153635790825
+    thought_emb  changed=36.0657% dropped=63.9526% nonzero_upd=50.000% |d16|/|d32|=1.0121485962300325
+{'loss': 54528.0, 'learning_rate': 3.5e-07, 'epoch': 0.06}
+PILOT step 8 lr=3.500e-07 |g|post-clip=0.9938 changed=0.9914% dropped=99.0086% |d16|=1.837e-03 |d32|=1.043e-02 shadow 19.2s stats 56.6s
+    attn         changed=1.0135% dropped=98.9865% nonzero_upd=99.897% |d16|/|d32|=0.17914878693952438
+    embed        changed=0.3319% dropped=99.6679% nonzero_upd=28.429% |d16|/|d32|=0.1632920690907447
+    lm_head      changed=1.3837% dropped=98.6162% nonzero_upd=99.974% |d16|/|d32|=0.18429570726948571
+    mlp          changed=0.9957% dropped=99.0043% nonzero_upd=99.945% |d16|/|d32|=0.17495031452133866
+    rmsnorm      changed=0.5183% dropped=99.4817% nonzero_upd=55.820% |d16|/|d32|=0.07742014110171645
+    talk_head    changed=0.6104% dropped=99.3896% nonzero_upd=0.846% |d16|/|d32|=0.9952756672362111
+    thought_emb  changed=38.0981% dropped=61.9202% nonzero_upd=50.000% |d16|/|d32|=1.0073215692568898
+{'loss': 35968.0, 'learning_rate': 4e-07, 'epoch': 0.06}
+PILOT step 9 lr=4.000e-07 |g|post-clip=1.0023 changed=1.1102% dropped=98.8897% |d16|=2.222e-03 |d32|=1.182e-02 shadow 19.2s stats 63.2s
+    attn         changed=1.1448% dropped=98.8551% nonzero_upd=99.904% |d16|/|d32|=0.1915637583132649
+    embed        changed=0.3843% dropped=99.6155% nonzero_upd=30.964% |d16|/|d32|=0.1676322279408586
+    lm_head      changed=1.5695% dropped=98.4304% nonzero_upd=99.978% |d16|/|d32|=0.18315951706458652
+    mlp          changed=1.1126% dropped=98.8874% nonzero_upd=99.948% |d16|/|d32|=0.18744679091299044
+    rmsnorm      changed=0.5386% dropped=99.4618% nonzero_upd=60.690% |d16|/|d32|=0.081145053785682
+    talk_head    changed=0.6105% dropped=99.3895% nonzero_upd=0.907% |d16|/|d32|=0.9996372655336123
+    thought_emb  changed=40.3381% dropped=59.6802% nonzero_upd=50.000% |d16|/|d32|=1.0321056659323058
+{'loss': 57344.0, 'learning_rate': 4.5e-07, 'epoch': 0.07}
+PILOT step 10 lr=4.500e-07 |g|post-clip=0.9976 changed=1.1988% dropped=98.8011% |d16|=2.516e-03 |d32|=1.300e-02 shadow 19.7s stats 62.8s
+    attn         changed=1.2398% dropped=98.7601% nonzero_upd=99.909% |d16|/|d32|=0.19729330824717373
+    embed        changed=0.4285% dropped=99.5712% nonzero_upd=33.062% |d16|/|d32|=0.17304186981039751
+    lm_head      changed=1.6641% dropped=98.3359% nonzero_upd=99.979% |d16|/|d32|=0.17954251415294076
+    mlp          changed=1.2013% dropped=98.7986% nonzero_upd=99.950% |d16|/|d32|=0.19380825199448168
+    rmsnorm      changed=0.5491% dropped=99.4509% nonzero_upd=63.792% |d16|/|d32|=0.08123878752313475
+    talk_head    changed=0.6105% dropped=99.3895% nonzero_upd=0.953% |d16|/|d32|=0.9981683349541561
+    thought_emb  changed=42.2180% dropped=57.7820% nonzero_upd=50.000% |d16|/|d32|=1.0393330448486893
+{'loss': 60800.0, 'learning_rate': 5e-07, 'epoch': 0.08}
+PILOT step 11 lr=5.000e-07 |g|post-clip=0.9967 changed=1.2881% dropped=98.7118% |d16|=2.849e-03 |d32|=1.417e-02 shadow 20.7s stats 65.2s
+    attn         changed=1.3312% dropped=98.6688% nonzero_upd=99.914% |d16|/|d32|=0.20473938471289607
+    embed        changed=0.4854% dropped=99.5141% nonzero_upd=35.521% |d16|/|d32|=0.18152299359373542
+    lm_head      changed=1.7329% dropped=98.2672% nonzero_upd=99.980% |d16|/|d32|=0.1775805030174808
+    mlp          changed=1.2921% dropped=98.7078% nonzero_upd=99.952% |d16|/|d32|=0.2019141807871614
+    rmsnorm      changed=0.5533% dropped=99.4471% nonzero_upd=66.411% |d16|/|d32|=0.08323045624829147
+    talk_head    changed=0.6103% dropped=99.3897% nonzero_upd=0.975% |d16|/|d32|=0.9929325888899779
+    thought_emb  changed=43.3105% dropped=56.6650% nonzero_upd=50.000% |d16|/|d32|=1.0228284478408687
+{'loss': 65024.0, 'learning_rate': 5.5e-07, 'epoch': 0.09}
+PILOT step 12 lr=5.500e-07 |g|post-clip=0.9996 changed=1.3877% dropped=98.6123% |d16|=3.347e-03 |d32|=1.535e-02 shadow 19.6s stats 69.4s
+    attn         changed=1.4399% dropped=98.5600% nonzero_upd=99.917% |d16|/|d32|=0.22183792680027498
+    embed        changed=0.5545% dropped=99.4451% nonzero_upd=37.764% |d16|/|d32|=0.1956503757805951
+    lm_head      changed=2.0497% dropped=97.9505% nonzero_upd=99.981% |d16|/|d32|=0.22516715088842762
+    mlp          changed=1.3861% dropped=98.6139% nonzero_upd=99.954% |d16|/|d32|=0.21650356467846735
+    rmsnorm      changed=0.5675% dropped=99.4328% nonzero_upd=68.941% |d16|/|d32|=0.084544576016661
+    talk_head    changed=0.6104% dropped=99.3896% nonzero_upd=1.039% |d16|/|d32|=1.0038184310437372
+    thought_emb  changed=44.4153% dropped=55.5786% nonzero_upd=50.000% |d16|/|d32|=0.9983854184327803
+{'loss': 94464.0, 'learning_rate': 6e-07, 'epoch': 0.1}
+PILOT step 13 lr=6.000e-07 |g|post-clip=1.0015 changed=1.5055% dropped=98.4945% |d16|=3.911e-03 |d32|=1.669e-02 shadow 17.6s stats 69.7s
+    attn         changed=1.5685% dropped=98.4314% nonzero_upd=99.922% |d16|/|d32|=0.23890655025899607
+    embed        changed=0.6123% dropped=99.3871% nonzero_upd=39.449% |d16|/|d32|=0.20530529552155388
+    lm_head      changed=2.3600% dropped=97.6401% nonzero_upd=99.982% |d16|/|d32|=0.25257351122496263
+    mlp          changed=1.4993% dropped=98.5007% nonzero_upd=99.956% |d16|/|d32|=0.23180850438586692
+    rmsnorm      changed=0.5747% dropped=99.4253% nonzero_upd=71.225% |d16|/|d32|=0.0853686312820688
+    talk_head    changed=0.6103% dropped=99.3897% nonzero_upd=1.079% |d16|/|d32|=0.9871246814450607
+    thought_emb  changed=44.9707% dropped=55.0293% nonzero_upd=50.000% |d16|/|d32|=0.9961182481321154
+{'loss': 81664.0, 'learning_rate': 6.5e-07, 'epoch': 0.1}
+PILOT step 14 lr=6.500e-07 |g|post-clip=1.0005 changed=1.6177% dropped=98.3822% |d16|=4.441e-03 |d32|=1.798e-02 shadow 19.4s stats 76.1s
+    attn         changed=1.6953% dropped=98.3046% nonzero_upd=99.925% |d16|/|d32|=0.25248464610731985
+    embed        changed=0.6516% dropped=99.3474% nonzero_upd=40.640% |d16|/|d32|=0.20999800587188866
+    lm_head      changed=2.5613% dropped=97.4385% nonzero_upd=99.982% |d16|/|d32|=0.2599228893011135
+    mlp          changed=1.6087% dropped=98.3912% nonzero_upd=99.958% |d16|/|d32|=0.24473071251227937
+    rmsnorm      changed=0.5852% dropped=99.4148% nonzero_upd=73.249% |d16|/|d32|=0.08766934793850109
+    talk_head    changed=0.6103% dropped=99.3897% nonzero_upd=1.112% |d16|/|d32|=0.9952024129692613
+    thought_emb  changed=45.4834% dropped=54.5227% nonzero_upd=50.000% |d16|/|d32|=1.0067993056652336
+{'loss': 98560.0, 'learning_rate': 7e-07, 'epoch': 0.11}
+PILOT OOM: CUDA out of memory. Tried to allocate 240.00 MiB. GPU  has a total capacity of 139.80 GiB of which 187.06 MiB is free. Including non-PyTorch memory, this process has 139.61 GiB memory in use. Of the allocated memory 136.09 GiB is allocated by PyTorch, and 2.78 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/do
+PILOT OOM gpu0: alloc=34.58G max_alloc=36.36G reserved=36.90G
+PILOT OOM gpu1: alloc=56.34G max_alloc=58.51G reserved=59.14G
+PILOT OOM gpu2: alloc=56.34G max_alloc=58.51G reserved=59.10G
+PILOT OOM gpu3: alloc=56.34G max_alloc=58.51G reserved=59.10G
+PILOT OOM gpu4: alloc=56.34G max_alloc=58.51G reserved=59.10G
+PILOT OOM gpu5: alloc=56.34G max_alloc=58.51G reserved=59.14G
+PILOT OOM gpu6: alloc=136.09G max_alloc=136.16G reserved=138.88G
+PILOT OOM gpu7: alloc=0.00G max_alloc=0.00G reserved=0.00G
+PILOT_OOM_EXIT

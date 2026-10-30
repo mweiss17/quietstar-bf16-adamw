@@ -1,0 +1,11 @@
+--- ppl_on100 start=2026-10-28T19:46:47-04:00
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL data: 200 sequences x 256 from /scratch/m/mweiss10/qstar/data/owm_heldout_1000_1300 (stream rows 1000..1199), 48088 scored tokens
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.14it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.13it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.16it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.15it/s]
+/scratch/m/mweiss10/qstar/env/lib/python3.11/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+PILOT_PPL loaded M5_s42_step100 (/tmp/ctrl2_M5_s42/bf16cast_step100, torch.bfloat16) in 6s; gpu mem 14.1 GiB
+PILOT_PPL {"model": "M5_s42_step100", "mode": "on", "seed_resize": null, "nll": 1.93204, "ppl": 6.90358, "n_tokens": 48088, "runtime_s": 31.4755, "vocab_scored": 32000, "nll_full": 2.01649, "ppl_full": 7.5119, "nll_base_hidden": 21.79072, "ppl_base_hidden": 2907966737.72516, "nll_talk_hidden": 378.53541, "ppl_talk_hidden": 2.48794159436694e+164, "w_mean": 0.04816, "w_std": 0.00259, "w_min": 0.03394, "w_max": 0.06299, "w_frac_gt1": 0.0, "w_frac_lt0": 0.0, "w_positions": 563200, "nll_base_hidden_full": 23.17454, "nll_talk_hidden_full": 378.53582, "model_loss_mean": 12672.0, "extra_rows": {"row32000": [-19.215, 15.0], "row32001": [-16.777, 15.375], "mass": [0.028, 1.0], "lm_head_row_norms": [1.271, 1.267]}}
+PILOT_PPL_DONE /scratch/m/mweiss10/qstar/results/evalE_M5_s42_ppl_on_step100.json
+--- ppl_on100 rc=0 end=2026-10-28T19:47:28-04:00
