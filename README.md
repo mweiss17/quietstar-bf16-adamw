@@ -1,4 +1,4 @@
-# bf16 round-to-nearest might be freezing most of your weights
+# bf16 might be freezing most of your weights
 
 Code and results for the blog post of the same name.
 
