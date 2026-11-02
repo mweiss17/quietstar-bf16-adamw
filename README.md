@@ -1,6 +1,6 @@
 # bf16 might be freezing most of your weights
 
-Code and results for the blog post of the same name.
+Code and results for the blog post of the same name (https://lacuna.tiptreesystems.com/x/D3rCgX).
 
 Code, logs, per-step training statistics and evaluation outputs from rerunning the released [Quiet-STaR](https://github.com/ezelikman/quiet-star) training recipe (Mistral-7B-v0.1, 100 optimizer steps, peak lr 1e-6) with and without fp32 optimizer math, plus mask controls. Runs were done Oct 27–28 2026 on 8×H200 nodes (tamIA, Alliance Canada); CPU analyses ran on Fir.
 
